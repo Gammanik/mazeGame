@@ -1,0 +1,4 @@
+First Meeting
+Present: Blake, Paul, Ben, Nikita
+
+Started figuring out how to use SVN in eclipse
