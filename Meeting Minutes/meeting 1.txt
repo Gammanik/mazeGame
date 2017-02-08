@@ -2,3 +2,26 @@ First Meeting
 Present: Blake, Paul, Ben, Nikita
 
 Started figuring out how to use SVN in eclipse
+
+Getting Started with SVN for Eclipse
+Step 1.
+// So I learned something.  You right-click on the item
+// that you want to checkout in the SVN workspace and
+// select checkout.  Then you switch to the Java work
+// space view in Eclipse.
+Step 2.
+// Now make some changes to the file and save it.  Now you
+// will have a local "uncommitted" change that is only available
+// locally.  To share it with other users, we need to synchronize
+// the project with the SVN repository.
+Step 3
+// If you have an active connection with the repository (i.e. the
+// online server and files) then right-click the folder or file 
+// and select  Team > Synchronize with Repository
+Step 4 
+// if you double-click the modified file you can see the file in the
+// compare changes view and then you can decide what to do with the
+// new changes.
+Step 5
+// Right-click on the modified file and choose between "Commit" or 
+// Revert,  If the changes are good then Commit.
