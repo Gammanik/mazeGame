@@ -19,7 +19,7 @@ public class Main
 {
 
   // Probably should declare any buttons here
-  public JButton lbutton,rbutton, mbutton;
+  //public JButton lbutton,rbutton, mbutton;
   
 
   public static void main(String[] args)
@@ -35,6 +35,10 @@ public class Main
     // or do I make main() the game, manipulating a window?
     // Should GameWindow methods know what they store?
     // Answer is, have the "game" do it.
+    
+    JButton lbutton = new JButton("Just button");
+    
+    game.add(lbutton);
     game.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     game.getContentPane().setBackground(Color.cyan);
     game.setUp();
