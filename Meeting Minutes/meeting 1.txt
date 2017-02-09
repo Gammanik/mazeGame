@@ -25,3 +25,5 @@ Step 4
 Step 5
 // Right-click on the modified file and choose between "Commit" or 
 // Revert,  If the changes are good then Commit.
+Step 6 
+// Get a brewski
