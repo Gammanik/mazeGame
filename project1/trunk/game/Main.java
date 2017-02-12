@@ -36,9 +36,14 @@ public class Main
     // Should GameWindow methods know what they store?
     // Answer is, have the "game" do it.
     
-    JButton lbutton = new JButton("Testing");
+    JButton lbutton = new JButton("New Game"); // changed testing to new game - Benjamin
+    JButton rbutton = new JButton ("Quit"); // the right button - Benjamin 
+    JButton mbutton = new JButton ("Reset"); // the middle button - Benjamin 
     
-    game.add(lbutton);
+    game.add(lbutton); //changed this to the new game button-Benjamin 
+    game.add(mbutton); //added the reset button, not functional - Benjamin
+    game.add(rbutton); //added the quit button, not functional - Benjamin
+   
     game.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     game.getContentPane().setBackground(Color.cyan);
     game.setUp();
