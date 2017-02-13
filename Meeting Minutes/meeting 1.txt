@@ -1,8 +1,10 @@
-First Meeting
+First Meeting - 2/7/17
 Present: Blake, Paul, Ben, Nikita
 
 Started figuring out how to use SVN in eclipse
 
+Second Meeting - 2/9/17
+Present: Nikita, Ben, Blake, Paul, Dylan Was there for a bit, really snarky.
 Getting Started with SVN for Eclipse
 Step 1.
 // So I learned something.  You right-click on the item
@@ -27,3 +29,9 @@ Step 5
 // Revert,  If the changes are good then Commit.
 Step 6 
 // Get a brewski
+
+// 2/13/17 - Meeting #3 (a.k.a. Loud Heater)
+
+Review of how to commit & pull changes and overwrite local.
+
+ 
