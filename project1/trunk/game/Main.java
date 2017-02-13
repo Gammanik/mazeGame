@@ -14,7 +14,7 @@
 package game;
 import javax.swing.*;
 import java.awt.*;
-
+import java.awt.event.*;
 public class Main 
 {
 
@@ -37,16 +37,24 @@ public class Main
     // Answer is, have the "game" do it.
     
     JButton lbutton = new JButton("New Game"); // changed testing to new game - Benjamin
-    JButton rbutton = new JButton ("Quit"); // the right button - Benjamin 
+    JButton exitButton = new JButton ("Quit"); // the right button - Benjamin 
+    exitButton.addActionListener(new ActionListener()
+    {
+    	public void actionPerformed(ActionEvent event)
+    	{
+    		System.exit(0);
+    	}
+    });
     JButton mbutton = new JButton ("Reset"); // the middle button - Benjamin 
     
     game.add(lbutton); //changed this to the new game button-Benjamin 
     game.add(mbutton); //added the reset button, not functional - Benjamin
-    game.add(rbutton); //added the quit button, not functional - Benjamin
+    game.add(exitButton); //added the quit button, not functional - Benjamin
    
     game.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     game.getContentPane().setBackground(Color.cyan);
     game.setUp();
+    
     
     game.setVisible(true);
 
