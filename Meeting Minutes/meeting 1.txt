@@ -31,6 +31,7 @@ Step 6
 // Get a brewski
 
 // 2/13/17 - Meeting #3 (a.k.a. Loud Heater)
+// attendees: Nikita, Paul, Ben
 
 Review of how to commit & pull changes and overwrite local.
 Some change.
