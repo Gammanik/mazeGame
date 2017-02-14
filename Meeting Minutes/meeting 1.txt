@@ -34,5 +34,5 @@ Step 6
 // attendees: Nikita, Paul, Ben
 
 Review of how to commit & pull changes and overwrite local.
-Some change.
+Some change, another change.
  
