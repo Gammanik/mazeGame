@@ -35,4 +35,18 @@ Step 6
 
 Review of how to commit & pull changes and overwrite local.
 Some change, another change.
+// Learning : To see our hidden files go to: Window > Show View > Navigator
+// Trick: New > Project > General (Don't give it a name here, click next) > then
+// name the project > next and/or Finish.
+// When importing files into a project you must go higher in the directory structure
+// than the folder you want for eclipse to be able to import it properly.
+// Eclipse Java Comments Keyboard Shortcut:
+//                 							mac type this: "cmd" + "/"
+//                                          windows      : "ctrl" + "/"
+//                                          dvorak       : "cmd" + "["
+// Eclipse: Double click any open tab to make it fullscreen, double click 
+//          again to restore.
+// Eclipse: search and replace in Java is referred to as refactoring, to do this
+// 1. highlight the variable name > refactor > rename , this will change the name
+//    of the variable everywhere in the code.
  
