@@ -45,12 +45,16 @@ public class Main
     		System.exit(0);
     	}
     });
-    JButton mbutton = new JButton ("Reset"); // the middle button - Benjamin 
     
-    game.add(lbutton); //changed this to the new game button-Benjamin 
-    game.add(mbutton); //added the reset button, not functional - Benjamin
-    game.add(exitButton); //added the quit button, not functional - Benjamin
-   
+    
+    
+    JButton mbutton = new JButton ("Reset"); // the middle button - Benjamin 
+    JPanel panel = new JPanel();
+    panel.add(lbutton); //changed this to the new game button-Benjamin 
+    panel.add(mbutton); //added the reset button, not functional - Benjamin
+    panel.add(exitButton); //added the quit button, not functional - Benjamin
+    game.setLayout(new BorderLayout());
+    game.add(panel, BorderLayout.NORTH);
     game.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     game.getContentPane().setBackground(Color.cyan);
     game.setUp();
