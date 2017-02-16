@@ -62,7 +62,13 @@ public class GameWindow extends JFrame implements ActionListener
         
     }
     
-
+//addButtons() adds buttons to the GameWindow object.
+//currently there are 3 buttons that were created:
+//the new game button, the reset button, and the exit button.
+//These buttons are expected to remain the same throughout the
+//game and are expect to be placed where they are at during 
+//every creation of a new GameWindow object.
+    
     public void addButtons(){
    
     JPanel panel = new JPanel(new GridBagLayout());
@@ -147,13 +153,19 @@ public class GameWindow extends JFrame implements ActionListener
       return;
     }
 
+//the addBoard method is used to add a clean, empty board to 
+//a new GameWindow object. In the future it may be nice to 
+//reuse this method in order to update the game board during
+//game play. 
+    
+    
     public void addBoard(){
     Board gameBoard = new Board();
 	JPanel boardPanel = new JPanel();
 	boardPanel.setLayout(new GridBagLayout());
 	GridBagConstraints c = new GridBagConstraints();
-	c.insets = new Insets(1,1,1,1); 				//sets the space in between tiles
-	for(int i = 0; i< 16; i++) {  					//iterates through the board 
+	c.insets = new Insets(1,1,1,1); 				
+	for(int i = 0; i< 16; i++) {  					 
 		c.gridx = (i+4)%4;                         
 		if(gameBoard.isTileEmptyAt(i) == true) {
 			JButton b = new JButton("Empty");
@@ -174,7 +186,7 @@ public class GameWindow extends JFrame implements ActionListener
 			c.weighty = 1;
 			c.weightx = 1;
 			c.fill = GridBagConstraints.BOTH;
-			b.setBackground(Color.black);
+			b.setBackground(Color.black); 					
 			b.setFocusPainted(false);
 			b.setBorderPainted(false);
 			boardPanel.add(b,c); 

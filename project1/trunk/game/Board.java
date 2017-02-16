@@ -1,9 +1,14 @@
 package game;
 
-import java.awt.GridLayout;
 import java.util.Vector;
 
-import javax.swing.JPanel;
+
+//This Board Class is set up to store specific "cards or game squares" in an array.
+//This Board Class is made up of tiles(16).
+//Each Tile has two properties for now. An "isEmpty" property which
+//stores a boolean value and a TileID which stores the ID of that specific
+//Tile.
+
 
 public class Board {
 	
