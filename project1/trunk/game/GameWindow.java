@@ -31,10 +31,10 @@ public class GameWindow extends JFrame implements ActionListener
     public GameWindow()
     {
       super("Group C Maze");
-     this.setUp();
+     this.setUp();         
     }
 
-    
+    // Written by Dr. Buckner
     public void actionPerformed(ActionEvent e) {
       if("exit".equals(e.getActionCommand()))
         System.exit(0);
@@ -47,7 +47,7 @@ public class GameWindow extends JFrame implements ActionListener
 
     public void setUp()
     {
-    this.setSize(new Dimension(1000, 1000));
+    	this.setSize(new Dimension(900, 900));
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
         this.getContentPane().setBackground(new Color(212,223,230));    
