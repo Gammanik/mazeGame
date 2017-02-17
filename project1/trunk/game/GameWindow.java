@@ -13,6 +13,7 @@
  *
  * Should also see something that shows where the 4x4 board and the "spare"
  * tiles will be when we get them stuffed in.
+ * REMEMBER Dr. Buckner doesn't want the lines longer than 80 characters long.
  */
 package game;
 import javax.swing.*;
@@ -34,7 +35,7 @@ public class GameWindow extends JFrame implements ActionListener
      this.setUp();         
     }
 
-    // Written by Dr. Buckner
+    // Written by Dr. Buckner  -- these are not currently working
     public void actionPerformed(ActionEvent e) {
       if("exit".equals(e.getActionCommand()))
         System.exit(0);
@@ -47,12 +48,14 @@ public class GameWindow extends JFrame implements ActionListener
 
     public void setUp()
     {
-//    	this.setSize(new Dimension(900, 900)); // Paul commented out
-    	this.setSize(700, 700);                // Paul Added
+//    	this.setSize(new Dimension(900, 900));      // Paul commented out
+    	                                            // What is new Dimension() doing?
+    	
+    	this.setSize(700, 700);                     // Paul Added              
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setLocationRelativeTo(null);
-        this.getContentPane().setBackground(new Color(212,223,230)); 
-        
+        this.setLocationRelativeTo(null);           // centers the window onscreen
+        this.getContentPane().setBackground(new Color(212,223,230)); // baby blue
+
         
         //this.setResizable(false);
         this.addBoard();
@@ -77,46 +80,49 @@ public class GameWindow extends JFrame implements ActionListener
    
     JPanel panel = new JPanel(new GridBagLayout());
          
-         panel.setBackground(new Color(142,192,228) );
+         panel.setBackground(new Color(142,192,228) );// sets home menu bar color
+
          GridBagConstraints c = new GridBagConstraints();
        
          JButton newGameButton = new JButton("New Game");
-         newGameButton.setBackground(new Color(142,192,228) );
-         newGameButton.setForeground(Color.WHITE);
-         newGameButton.setFocusPainted(false);
-         newGameButton.setBorderPainted(false);
-         newGameButton.setFont(new Font("Tahoma", Font.BOLD, 12));
-         c.gridx = 0;
-         c.gridy = 0;
-         c.weightx = 0;
-         c.fill = GridBagConstraints.HORIZONTAL;
-         c.insets = new Insets(4,4,4,4);
-         c.anchor = GridBagConstraints.WEST;
-         panel.add(newGameButton,c); 
+	         newGameButton.setBackground(new Color(142,192,228) );
+	         newGameButton.setForeground(Color.WHITE);
+	         newGameButton.setFocusPainted(false);
+	         newGameButton.setBorderPainted(false);
+	         newGameButton.setFont(new Font("Tahoma", Font.BOLD, 12));
+	         c.gridx = 0;
+	         c.gridy = 0;
+	         c.weightx = 0;
+	         c.fill = GridBagConstraints.HORIZONTAL;
+	         c.insets = new Insets(4,4,4,4);
+	         c.anchor = GridBagConstraints.WEST;
+	         panel.add(newGameButton,c); 
+	         
          JButton resetButton = new JButton ("Reset"); 
-         resetButton.setBackground(new Color(142,192,228) );
-         resetButton.setForeground(Color.WHITE);
-         resetButton.setFocusPainted(false);
-         resetButton.setBorderPainted(false);
-         resetButton.setFont(new Font("Tahoma", Font.BOLD, 12));
-         c.gridx = 1;
-         c.gridy = 0;
-         c.weightx = 0;
-         c.anchor = GridBagConstraints.WEST;
-         panel.add(resetButton,c);
+	         resetButton.setBackground(new Color(142,192,228) );
+	         resetButton.setForeground(Color.WHITE);
+	         resetButton.setFocusPainted(false);
+	         resetButton.setBorderPainted(false);
+	         resetButton.setFont(new Font("Tahoma", Font.BOLD, 12));
+	         c.gridx = 1;
+	         c.gridy = 0;
+	         c.weightx = 0;
+	         c.anchor = GridBagConstraints.WEST;
+	         panel.add(resetButton,c);
+	         
          JButton exitButton = new JButton ("Quit"); 
-         exitButton.setBackground(new Color(242,109, 91));
-         exitButton.setForeground(Color.WHITE);
-         exitButton.setFocusPainted(false);
-         exitButton.setFont(new Font("Tahoma", Font.BOLD, 12));
-         exitButton.setBorderPainted(false);
-         c.gridx = 2;
-         c.gridy = 0;
-         c.fill = GridBagConstraints.VERTICAL;
-         c.insets = new Insets(0,0,0,0);
-         c.weightx = 1;
-         c.anchor = GridBagConstraints.WEST;
-         panel.add(exitButton,c);
+	         exitButton.setBackground(new Color(242,109, 91));
+	         exitButton.setForeground(Color.WHITE);
+	         exitButton.setFocusPainted(false);
+	         exitButton.setFont(new Font("Tahoma", Font.BOLD, 12));
+	         exitButton.setBorderPainted(false);
+	         c.gridx = 2;
+	         c.gridy = 0;
+	         c.fill = GridBagConstraints.VERTICAL;
+	         c.insets = new Insets(0,0,0,0);
+	         c.weightx = 1;
+	         c.anchor = GridBagConstraints.WEST;
+	         panel.add(exitButton,c);
          
          /*
          newGameButton.addActionListener(new ActionListener()
@@ -132,7 +138,6 @@ public class GameWindow extends JFrame implements ActionListener
          });
          
         */
-         
          
          exitButton.addActionListener(new ActionListener()
          {
