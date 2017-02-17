@@ -16,11 +16,11 @@
  * REMEMBER Dr. Buckner doesn't want the lines longer than 80 characters long.
  */
 package game;
-import javax.swing.*;
+import javax.swing.*; // doesn't this bring in the entire swing library so no need line 20?
 import javax.swing.border.EmptyBorder;
 
 
-import java.awt.*;
+import java.awt.*;  // doesn't this bring in all awt so next 2 lines redundant?
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -64,7 +64,7 @@ public class GameWindow extends JFrame implements ActionListener
         
         //Paul
         
-        System.out.println(this.getHeight());// height of JFrame
+        System.out.println(this.getHeight());// prints to console height of JFrame
       return;
         
     }
