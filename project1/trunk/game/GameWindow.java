@@ -1,4 +1,4 @@
-/* @author Kim Buckner
+/* @author Ben, Jake, Nikita, Dylan, Paul
  * Date: Feb 01, 2017
  *
  * $Author$
@@ -47,10 +47,11 @@ public class GameWindow extends JFrame implements ActionListener
 
     public void setUp()
     {
-    	this.setSize(new Dimension(900, 900));
+//    	this.setSize(new Dimension(900, 900)); // Paul commented out
+    	this.setSize(700, 700);                // Paul Added
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
-        this.getContentPane().setBackground(new Color(212,223,230));    
+        this.getContentPane().setBackground(new Color(212,223,230)); 
         
         
         //this.setResizable(false);
@@ -58,6 +59,9 @@ public class GameWindow extends JFrame implements ActionListener
         this.addButtons();
         this.setVisible(true);
         
+        //Paul
+        
+        System.out.println(this.getHeight());// height of JFrame
       return;
         
     }
