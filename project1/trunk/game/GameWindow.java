@@ -149,10 +149,12 @@ public class GameWindow extends JFrame implements ActionListener
          
          exitButton.addMouseListener(new java.awt.event.MouseAdapter() {
              public void mouseEntered(java.awt.event.MouseEvent evt) {
+            	 System.out.println("mouse entered");
                  exitButton.setBackground(new Color(250,60, 50));
              }
 
              public void mouseExited(java.awt.event.MouseEvent evt) {
+            	 System.out.println("mouse exit");
                  exitButton.setBackground(new Color(242,109, 91));
              }
          });
@@ -173,7 +175,7 @@ public class GameWindow extends JFrame implements ActionListener
 	JPanel boardPanel = new JPanel();
 	boardPanel.setLayout(new GridBagLayout());
 	GridBagConstraints c = new GridBagConstraints();
-	c.insets = new Insets(1,1,1,1); 				
+	c.insets = new Insets(1,2,2,1); // padding of component and its' edges 				
 	for(int i = 0; i< 16; i++) {  					 
 		c.gridx = (i+4)%4;                         
 		if(gameBoard.isTileEmptyAt(i) == true) {
