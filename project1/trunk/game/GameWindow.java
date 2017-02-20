@@ -24,8 +24,7 @@ import java.awt.*;  // doesn't this bring in all awt so next 2 lines redundant?
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class GameWindow extends JFrame implements ActionListener
-  {
+public class GameWindow extends JFrame implements ActionListener {
     
     public static final long serialVersionUID=1;
 
@@ -49,20 +48,17 @@ public class GameWindow extends JFrame implements ActionListener
     public void setUp()
     {
 //    	this.setSize(new Dimension(900, 900));      // Paul commented out
-    	                                            // What is new Dimension() doing?
-    	
+    	                                            // What is new Dimension() doing? 	
     	this.setSize(700, 700);                     // Paul Added              
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);           // centers the window onscreen
         this.getContentPane().setBackground(new Color(212,223,230)); // baby blue
-
         
         //this.setResizable(false);
         this.addBoard();
         this.addButtons();
+        this.addSideTiles();
         this.setVisible(true);
-        
-        //Paul
         
         System.out.println(this.getHeight());// prints to console height of JFrame
       return;
@@ -76,8 +72,7 @@ public class GameWindow extends JFrame implements ActionListener
 //game and are expect to be placed where they are at during 
 //every creation of a new GameWindow object.
     
-    public void addButtons()
-    {
+    public void addButtons() {
     	JPanel panel = new JPanel(new GridBagLayout()); 
          panel.setBackground(new Color(142,192,228) );// sets home menu bar color
          GridBagConstraints c = new GridBagConstraints();
@@ -164,12 +159,41 @@ public class GameWindow extends JFrame implements ActionListener
     }
 
     
+    
+    public void addSideTiles() {
+	    	
+		//init label layout: 8 rows 2 columns distance between columns  
+		JPanel tilesPanel = new JPanel();
+		tilesPanel.setLayout(new GridLayout(8, 2, this.getWidth()/7*6, 20));    
+		
+		
+		for(int i=16; i>0; i--) {
+			if(i%2 == 0) { //for all the tiles located on the right side
+				TileSide tile = new TileSide("" + (i/2 - 1));
+				tilesPanel.add(tile);
+			} else {
+				TileSide tile = new TileSide("" + (i/2 + 8));
+				tilesPanel.add(tile);
+			}
+		}
+		
+		
+		
+		
+				tilesPanel.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+	      //tilesPanel.setBorder(new EmptyBorder(300, 300, 300, 3000));
+				this.add(tilesPanel);
+	 
+    }
+    
+    
+    
+    
 //the addBoard method is used to add a clean, empty board to 
 //a new GameWindow object. In the future it may be nice to 
 //reuse this method in order to update the game board during
 //game play.   
-    public void addBoard()
-    {
+    public void addBoard() {
 	    Board gameBoard = new Board();
 		JPanel boardPanel = new JPanel();
 		boardPanel.setLayout(new GridBagLayout());
