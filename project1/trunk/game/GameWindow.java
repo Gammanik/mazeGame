@@ -76,12 +76,10 @@ public class GameWindow extends JFrame implements ActionListener
 //game and are expect to be placed where they are at during 
 //every creation of a new GameWindow object.
     
-    public void addButtons(){
-   
-    JPanel panel = new JPanel(new GridBagLayout());
-         
+    public void addButtons()
+    {
+    	JPanel panel = new JPanel(new GridBagLayout()); 
          panel.setBackground(new Color(142,192,228) );// sets home menu bar color
-
          GridBagConstraints c = new GridBagConstraints();
        
          JButton newGameButton = new JButton("New Game");
@@ -147,6 +145,7 @@ public class GameWindow extends JFrame implements ActionListener
           }
          });
          
+         //no use; useless
          exitButton.addMouseListener(new java.awt.event.MouseAdapter() {
              public void mouseEntered(java.awt.event.MouseEvent evt) {
             	 System.out.println("mouse entered");
@@ -164,48 +163,48 @@ public class GameWindow extends JFrame implements ActionListener
       return;
     }
 
+    
 //the addBoard method is used to add a clean, empty board to 
 //a new GameWindow object. In the future it may be nice to 
 //reuse this method in order to update the game board during
-//game play. 
-    
-    
-    public void addBoard(){
-    Board gameBoard = new Board();
-	JPanel boardPanel = new JPanel();
-	boardPanel.setLayout(new GridBagLayout());
-	GridBagConstraints c = new GridBagConstraints();
-	c.insets = new Insets(1,2,2,1); // padding of component and its' edges 				
-	for(int i = 0; i< 16; i++) {  					 
-		c.gridx = (i+4)%4;                         
-		if(gameBoard.isTileEmptyAt(i) == true) {
-			JButton b = new JButton("Empty");
-			c.gridy = (int) Math.floor(i/4);
-			c.anchor = GridBagConstraints.CENTER;
-			c.weighty = 1;
-			c.weightx = 1;
-			c.fill = GridBagConstraints.BOTH;
-			b.setBackground(Color.white);
-			b.setFocusPainted(false);
-			b.setBorderPainted(false);
-			boardPanel.add(b,c); 
+//game play.   
+    public void addBoard()
+    {
+	    Board gameBoard = new Board();
+		JPanel boardPanel = new JPanel();
+		boardPanel.setLayout(new GridBagLayout());
+		GridBagConstraints c = new GridBagConstraints();
+		c.insets = new Insets(1,2,2,1); // padding of component and its' edges 				
+		for(int i = 0; i< 16; i++) {  					 
+			c.gridx = (i+4)%4;                         
+			if(gameBoard.isTileEmptyAt(i) == true) {
+				JButton b = new JButton("Empty");
+				c.gridy = (int) Math.floor(i/4);
+				c.anchor = GridBagConstraints.CENTER;
+				c.weighty = 1;
+				c.weightx = 1;
+				c.fill = GridBagConstraints.BOTH;
+				b.setBackground(Color.white);
+				b.setFocusPainted(false);
+				b.setBorderPainted(false);
+				boardPanel.add(b,c); 
+			}
+			else {
+				JButton b = new JButton("Taken");
+				c.gridy = (int) Math.floor(i/4);
+				c.anchor = GridBagConstraints.CENTER;
+				c.weighty = 1;
+				c.weightx = 1;
+				c.fill = GridBagConstraints.BOTH;
+				b.setBackground(Color.black); 					
+				b.setFocusPainted(false);
+				b.setBorderPainted(false);
+				boardPanel.add(b,c); 
+			}
 		}
-		else {
-			JButton b = new JButton("Taken");
-			c.gridy = (int) Math.floor(i/4);
-			c.anchor = GridBagConstraints.CENTER;
-			c.weighty = 1;
-			c.weightx = 1;
-			c.fill = GridBagConstraints.BOTH;
-			b.setBackground(Color.black); 					
-			b.setFocusPainted(false);
-			b.setBorderPainted(false);
-			boardPanel.add(b,c); 
-		}
-	}
-
-	boardPanel.setBorder(new EmptyBorder(300,300,300,300));
-    this.add(boardPanel, BorderLayout.CENTER);
+	
+		boardPanel.setBorder(new EmptyBorder(300,300,300,300));
+	    this.add(boardPanel, BorderLayout.CENTER);
     }
     
   };
