@@ -117,20 +117,6 @@ public class GameWindow extends JFrame implements ActionListener {
 	         c.anchor = GridBagConstraints.WEST;
 	         panel.add(exitButton,c);
          
-         /*
-         newGameButton.addActionListener(new ActionListener()
-         {
-        public void actionPerformed(ActionEvent evt) {
-            if(evt.getSource() == newGameButton)
-               { 
-                   dispose();
-                   GameWindow game = new GameWindow();
-                   game.setVisible(true);
-               }
-            }
-         });
-         
-        */
          
          exitButton.addActionListener(new ActionListener()
          {
@@ -139,8 +125,8 @@ public class GameWindow extends JFrame implements ActionListener {
           System.exit(0);
           }
          });
-         
-         //no use; useless
+                  
+         //change color of exit button 
          exitButton.addMouseListener(new java.awt.event.MouseAdapter() {
              public void mouseEntered(java.awt.event.MouseEvent evt) {
             	 System.out.println("mouse entered");
@@ -151,6 +137,23 @@ public class GameWindow extends JFrame implements ActionListener {
             	 System.out.println("mouse exit");
                  exitButton.setBackground(new Color(242,109, 91));
              }
+         });
+         
+         
+         newGameButton.addActionListener(new ActionListener()
+         {
+          public void actionPerformed(ActionEvent event)
+          {
+          System.out.println("new game button pressed");
+          }
+         });
+         
+         resetButton.addActionListener(new ActionListener()
+         {
+           public void actionPerformed(ActionEvent event)
+           {
+            System.out.println("reset button pressed");
+           }
          });
          
          this.add(panel, BorderLayout.NORTH);
