@@ -16,9 +16,19 @@ public class Tile {
 		public boolean getStatus() { return isEmpty; }
 	}
 
-/*
- *         
+/*        the UML 
  * 
+ *
+ *        +----------------------+
+ *        |     Tile             |
+ *        +----------------------+
+ *        |   -isEmpty :boolean  |
+ *        |   -tileId  :int      |
+ *        +----------------------+
+ *        |  «cons» Tile(id:int) |
+ *        |  +getTileId():int    |
+ *        |  +getStatus():bool   |
+ *        +----------------------+
  * 
  * 
  * 
