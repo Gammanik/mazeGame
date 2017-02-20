@@ -220,7 +220,7 @@ public class GameWindow extends JFrame implements ActionListener {
 		for(int i = 0; i< 16; i++) {  					 
 			c.gridx = (i+4)%4;                         
 			if(gameBoard.isTileEmptyAt(i) == true) {
-				JButton b = new JButton("Empty");
+				JButton b = new JButton();
 				c.gridy = (int) Math.floor(i/4);
 				c.anchor = GridBagConstraints.CENTER;
 				c.weighty = 1;
@@ -232,7 +232,7 @@ public class GameWindow extends JFrame implements ActionListener {
 				boardPanel.add(b,c); 
 			}
 			else {
-				JButton b = new JButton("Taken");
+				JButton b = new JButton();
 				c.gridy = (int) Math.floor(i/4);
 				c.anchor = GridBagConstraints.CENTER;
 				c.weighty = 1;
