@@ -101,3 +101,7 @@ Some change, another change.
 //  Leave the Replace with input box blank and make sure "regular expressions" is checked.
 //  Hit the Find button, now you can replace all those nasty comments with spaces.
 //  Wow, regular expression are cool.
+//  Ok, guillemets are kind of cool.... at least when you're making UML diagrams.
+//  on Mac alt + \ gives " « " and alt + shift + \ gives " » "
+// If you're using Windows here's he article: https://en.wikipedia.org/wiki/Guillemet
+//
