@@ -73,7 +73,7 @@ Some change, another change.
 // Ben & Paul installed UML Designer short video tutorial here: https://www.youtube.com/watch?v=kbHKcSNlr5I
 // Eclipse shortcut Mac for running when multimedia functions are enabled Fn + Cmd(⌘) + Shift + F11 
 
-// 2/20/17  Tabs & Space in the Eclipse IDE
+// 2/20/17  Tabs & Space in the Eclipse IDE 
 // As per Dr. Buckner's discussion today in class I learned how to make sure we
 // are not using the tab character and to be sure we are using spaces.
 // To check whether we are using tabs or spaces while in Eclipse go under
