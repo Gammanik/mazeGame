@@ -90,5 +90,7 @@ Some change, another change.
 // In the find input box put: " \t " without the quotes.
 // In the Replace With box put: " (4 spaces) " no quotes and those are literal spaces
 // we're not putting text in the replace with input box just 4 invisible space characters.
+// I almost forgot, make sure in the options the "Regular Expressions" check box
+// is checked.
 // Now you can go about replacing tab characters with spaces.  :)  you're welcome !!!  
 // 
