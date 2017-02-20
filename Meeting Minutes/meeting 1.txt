@@ -71,4 +71,5 @@ Some change, another change.
 // wirelessly but I am not able to using 5 GHz USB Dongle Wireless adapter on Mac.
 // Some discussion on how to best work as a team - ongoing.  
 // Ben & Paul installed UML Designer short video tutorial here: https://www.youtube.com/watch?v=kbHKcSNlr5I
-//
+// Eclipse shortcut Mac for running when multimedia functions are enabled Fn + Cmd(⌘) + Shift + F11 
+// 
