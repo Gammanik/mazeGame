@@ -72,4 +72,23 @@ Some change, another change.
 // Some discussion on how to best work as a team - ongoing.  
 // Ben & Paul installed UML Designer short video tutorial here: https://www.youtube.com/watch?v=kbHKcSNlr5I
 // Eclipse shortcut Mac for running when multimedia functions are enabled Fn + Cmd(⌘) + Shift + F11 
+
+// 2/20/17  Tabs & Space in the Eclipse IDE
+// As per Dr. Buckner's discussion today in class I learned how to make sure we
+// are not using the tab character and to be sure we are using spaces.
+// To check whether we are using tabs or spaces while in Eclipse go under
+// Preferences > Java > Code Style > Formatter > Edit > Indentation  if you see
+// tab character in here then you may need to create a custom profile and set the
+// tab to SPACES and not TABS or the tab character.
+// If you've got a new document or haven't paid attention to this subtlety whilst
+// developing here is how you can check to see what your tabs are (spaces or tab characters).
+// Along the top menu bar of the Eclipse IDE there is a button that looks like a 
+// backwards paragraph symbol.  It is the "Show Whitespace Characters" button.  Click 
+// on it to show all hidden formatting symbols.
+// FIX :Now if you happen to have tab characters and tabs are not spaces as they should be
+// here's how to fix it.  Open the find and replace Mac : "Cmd(⌘) + F" or Win : "Ctrl + F".
+// In the find input box put: " \t " without the quotes.
+// In the Replace With box put: " (4 spaces) " no quotes and those are literal spaces
+// we're not putting text in the replace with input box just 4 invisible space characters.
+// Now you can go about replacing tab characters with spaces.  :)  you're welcome !!!  
 // 
