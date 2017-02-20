@@ -49,7 +49,7 @@ public class GameWindow extends JFrame implements ActionListener {
     {
 //    	this.setSize(new Dimension(900, 900));      // Paul commented out
     	                                            // What is new Dimension() doing? 	
-    	this.setSize(700, 700);                     // Paul Added              
+    	this.setSize(1200, 1200);                     // Paul Added              
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);           // centers the window onscreen
         this.getContentPane().setBackground(new Color(212,223,230)); // baby blue
@@ -57,7 +57,7 @@ public class GameWindow extends JFrame implements ActionListener {
         //this.setResizable(false);
         this.addBoard();
         this.addButtons();
-        this.addSideTiles();
+        this.addSideTiles(); 
         this.setVisible(true);
         
         System.out.println(this.getHeight());// prints to console height of JFrame
@@ -163,27 +163,33 @@ public class GameWindow extends JFrame implements ActionListener {
     public void addSideTiles() {
 	    	
 		//init label layout: 8 rows 2 columns distance between columns  
-		JPanel tilesPanel = new JPanel();
-		tilesPanel.setLayout(new GridLayout(8, 2, this.getWidth()/7*6, 20));    
+		JPanel tilePanelWest = new JPanel();
+		JPanel tilePanelEast = new JPanel();
 		
-		
-		for(int i=16; i>0; i--) {
-			if(i%2 == 0) { //for all the tiles located on the right side
+		tilePanelWest.setBackground(Color.BLACK);
+		tilePanelWest.setLayout(new GridLayout(8,1));    
+		tilePanelEast.setLayout(new GridLayout(8,1)); 
+	
+		for(int i=8; i>0; i--) {
+			
 				TileSide tile = new TileSide("" + (i/2 - 1));
-				tilesPanel.add(tile);
-			} else {
-				TileSide tile = new TileSide("" + (i/2 + 8));
-				tilesPanel.add(tile);
+//				tilePanelWest.add(tile);
+//				tile.setSize(3000, 3000);
+				tilePanelEast.add(tile);
+				TileSide tile2 = new TileSide("" + (i/2 + 8));
+				tilePanelWest.add(tile2);
+//				tilePanelEast.add(tile);
 			}
-		}
 		
 		
 		
 		
-				tilesPanel.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+		
+				//tilesPanel.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
 	      //tilesPanel.setBorder(new EmptyBorder(300, 300, 300, 3000));
-				this.add(tilesPanel);
-	 
+		tilePanelWest.setBorder(new EmptyBorder(30,30,30,30));
+				this.add(tilePanelWest, BorderLayout.WEST);
+				this.add(tilePanelEast, BorderLayout.EAST);
     }
     
     
