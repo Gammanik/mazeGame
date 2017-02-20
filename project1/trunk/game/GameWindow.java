@@ -30,7 +30,7 @@ public class GameWindow extends JFrame implements ActionListener {
 
     public GameWindow()
     {
-      super("Group C Maze");
+      super("Group C Maze"); // names the OS window chrome across the top
      this.setUp();         
     }
 
@@ -156,8 +156,8 @@ public class GameWindow extends JFrame implements ActionListener {
            }
          });
          
-         this.add(panel, BorderLayout.NORTH);
-
+         this.add(panel, BorderLayout.NORTH);  // places the buttons across the top of the screen
+                                               // inside the window chrome
       return;
     }
 
