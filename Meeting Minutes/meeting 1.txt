@@ -55,10 +55,18 @@ Some change, another change.
 // What occurred : Everyone was informed of what changes were made in the 
 // Worked on panels to get the buttons laid out right. Dylan was tasked with finishing formatting
 // the buttons.
-//Everyone else has the responsibility of getting the tiles laid out right. 
+// Everyone else has the responsibility of getting the tiles laid out right. 
 
 // Meeting five 2/16/17 (a.k.a. UML & Beyond )
 // Things look peculiar on the Mac when running. OMG... but Bill Gates and Linus are fine.
 // Worked on the UML diagram.  Dylan was a rockstar and got a lot done.  Gold star with oxidation.
 // Moved the Tile class to it's own file out of the Board class.
 // Ben - Merge Tool
+
+// Meetng six 2-19-17 (a.k.a. We are all one) duration hours
+// Attendees: Ben, Blake, Dylan, Nikita, Paul 
+// Talked about deliverables, talked about the UML diagram and differing ways to 
+// generate it.  
+// How does one connect from the library to the Hive?  Some were able to connect
+// wirelessly but I am not able to using 5 GHz USB Dongle Wireless adapter on Mac.
+// Some discussion on how to best work as a team - ongoing.  
