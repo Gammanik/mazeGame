@@ -11,7 +11,7 @@ public class TileSide extends JButton{
 	public TileSide(String num)
 	{	
 		super(num);
-		setBackground(Color.yellow);
+		setBackground(new Color(242,109, 91));
 		setOpaque(true);
 	}
 }

@@ -166,19 +166,25 @@ public class GameWindow extends JFrame implements ActionListener {
 		JPanel tilePanelWest = new JPanel();
 		JPanel tilePanelEast = new JPanel();
 		
-		tilePanelWest.setBackground(Color.BLACK);
-		tilePanelWest.setLayout(new GridLayout(8,1));    
-		tilePanelEast.setLayout(new GridLayout(8,1)); 
-	
-		for(int i=8; i>0; i--) {
-			
-				TileSide tile = new TileSide("" + (i/2 - 1));
+		
+		tilePanelWest.setLayout(new GridBagLayout());    
+		tilePanelEast.setLayout(new GridBagLayout()); 
+		GridBagConstraints c = new GridBagConstraints();
+		for(int i=0; i<8 ; i++) {
+				c.gridy = i;
+				c.weightx = 20;
+				c.insets = new Insets(20,0,20,0);
+				c.weighty = 2;
+				c.fill = GridBagConstraints.BOTH;
+				TileSide tile = new TileSide(""+i);
 //				tilePanelWest.add(tile);
 //				tile.setSize(3000, 3000);
-				tilePanelEast.add(tile);
-				TileSide tile2 = new TileSide("" + (i/2 + 8));
-				tilePanelWest.add(tile2);
+				tilePanelEast.add(tile,c);
+				TileSide tile2 = new TileSide(""+i);
+				tilePanelWest.add(tile2,c);
 //				tilePanelEast.add(tile);
+				
+
 			}
 		
 		
@@ -188,9 +194,12 @@ public class GameWindow extends JFrame implements ActionListener {
 				//tilesPanel.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
 	      //tilesPanel.setBorder(new EmptyBorder(300, 300, 300, 3000));
 		tilePanelWest.setBorder(new EmptyBorder(30,30,30,30));
-				this.add(tilePanelWest, BorderLayout.WEST);
-				this.add(tilePanelEast, BorderLayout.EAST);
-    }
+		tilePanelEast.setBorder(new EmptyBorder(30,30,30,30));
+		tilePanelEast.setPreferredSize(new Dimension(150,150));
+		tilePanelWest.setPreferredSize(new Dimension(150,150));
+		this.add(tilePanelWest, BorderLayout.WEST);
+		this.add(tilePanelEast, BorderLayout.EAST);
+				    }
     
     
     
@@ -233,7 +242,7 @@ public class GameWindow extends JFrame implements ActionListener {
 			}
 		}
 	
-		boardPanel.setBorder(new EmptyBorder(300,300,300,300));
+		boardPanel.setBorder(new EmptyBorder(300,200,300,200));
 	    this.add(boardPanel, BorderLayout.CENTER);
     }
     
