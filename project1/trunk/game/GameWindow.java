@@ -75,7 +75,7 @@ public class GameWindow extends JFrame implements ActionListener {
     public void addButtons() {
     	JPanel panel = new JPanel(new GridBagLayout()); 
          panel.setBackground(new Color(142,192,228) );// sets home menu bar color
-         GridBagConstraints c = new GridBagConstraints();
+         GridBagConstraints constraint = new GridBagConstraints();
        
          JButton newGameButton = new JButton("New Game");
 	         newGameButton.setBackground(new Color(142,192,228) );
@@ -83,13 +83,13 @@ public class GameWindow extends JFrame implements ActionListener {
 	         newGameButton.setFocusPainted(false);
 	         newGameButton.setBorderPainted(false);
 	         newGameButton.setFont(new Font("Tahoma", Font.BOLD, 12));
-	         c.gridx = 0;
-	         c.gridy = 0;
-	         c.weightx = 0;
-	         c.fill = GridBagConstraints.HORIZONTAL;
-	         c.insets = new Insets(4,4,4,4);
-	         c.anchor = GridBagConstraints.WEST;
-	         panel.add(newGameButton,c); 
+	         constraint.gridx = 0;
+	         constraint.gridy = 0;
+	         constraint.weightx = 0;
+	         constraint.fill = GridBagConstraints.HORIZONTAL;
+	         constraint.insets = new Insets(4,4,4,4);
+	         constraint.anchor = GridBagConstraints.WEST;
+	         panel.add(newGameButton,constraint); 
 	         
          JButton resetButton = new JButton ("Reset"); 
 	         resetButton.setBackground(new Color(142,192,228) );
@@ -97,11 +97,11 @@ public class GameWindow extends JFrame implements ActionListener {
 	         resetButton.setFocusPainted(false);
 	         resetButton.setBorderPainted(false);
 	         resetButton.setFont(new Font("Tahoma", Font.BOLD, 12));
-	         c.gridx = 1;
-	         c.gridy = 0;
-	         c.weightx = 0;
-	         c.anchor = GridBagConstraints.WEST;
-	         panel.add(resetButton,c);
+	         constraint.gridx = 1;
+	         constraint.gridy = 0;
+	         constraint.weightx = 0;
+	         constraint.anchor = GridBagConstraints.WEST;
+	         panel.add(resetButton,constraint);
 	         
          JButton exitButton = new JButton ("Quit"); 
 	         exitButton.setBackground(new Color(242,109, 91));
@@ -109,13 +109,13 @@ public class GameWindow extends JFrame implements ActionListener {
 	         exitButton.setFocusPainted(false);
 	         exitButton.setFont(new Font("Tahoma", Font.BOLD, 12));
 	         exitButton.setBorderPainted(false);
-	         c.gridx = 2;
-	         c.gridy = 0;
-	         c.fill = GridBagConstraints.VERTICAL;
-	         c.insets = new Insets(0,0,0,0);
-	         c.weightx = 1;
-	         c.anchor = GridBagConstraints.WEST;
-	         panel.add(exitButton,c);
+	         constraint.gridx = 2;
+	         constraint.gridy = 0;
+	         constraint.fill = GridBagConstraints.VERTICAL;
+	         constraint.insets = new Insets(0,0,0,0);
+	         constraint.weightx = 1;
+	         constraint.anchor = GridBagConstraints.WEST;
+	         panel.add(exitButton,constraint);
          
          
          exitButton.addActionListener(new ActionListener()
@@ -172,19 +172,19 @@ public class GameWindow extends JFrame implements ActionListener {
 		
 		tilePanelWest.setLayout(new GridBagLayout());    
 		tilePanelEast.setLayout(new GridBagLayout()); 
-		GridBagConstraints c = new GridBagConstraints();
+		GridBagConstraints constraint = new GridBagConstraints();
 		for(int i=0; i<8 ; i++) {
-				c.gridy = i;
-				c.weightx = 20;
-				c.insets = new Insets(20,0,20,0);
-				c.weighty = 2;
-				c.fill = GridBagConstraints.BOTH;
+				constraint.gridy = i;
+				constraint.weightx = 20;
+				constraint.insets = new Insets(20,0,20,0);
+				constraint.weighty = 2;
+				constraint.fill = GridBagConstraints.BOTH;
 				TileSide tile = new TileSide(""+i);
 //				tilePanelWest.add(tile);
 //				tile.setSize(3000, 3000);
-				tilePanelEast.add(tile,c);
+				tilePanelEast.add(tile,constraint);
 				TileSide tile2 = new TileSide(""+i);
-				tilePanelWest.add(tile2,c);
+				tilePanelWest.add(tile2,constraint);
 //				tilePanelEast.add(tile);
 				
 
@@ -215,33 +215,33 @@ public class GameWindow extends JFrame implements ActionListener {
 	    Board gameBoard = new Board();
 		JPanel boardPanel = new JPanel();
 		boardPanel.setLayout(new GridBagLayout());
-		GridBagConstraints c = new GridBagConstraints();
-		c.insets = new Insets(1,2,2,1); // padding of component and its' edges 				
+		GridBagConstraints constraint = new GridBagConstraints();
+		constraint.insets = new Insets(1,2,2,1); // padding of component and its' edges 				
 		for(int i = 0; i< 16; i++) {  					 
-			c.gridx = (i+4)%4;                         
+			constraint.gridx = (i+4)%4;                         
 			if(gameBoard.isTileEmptyAt(i) == true) {
-				JButton b = new JButton();
-				c.gridy = (int) Math.floor(i/4);
-				c.anchor = GridBagConstraints.CENTER;
-				c.weighty = 1;
-				c.weightx = 1;
-				c.fill = GridBagConstraints.BOTH;
-				b.setBackground(Color.white);
-				b.setFocusPainted(false);
-				b.setBorderPainted(false);
-				boardPanel.add(b,c); 
+				JButton button = new JButton();
+				constraint.gridy = (int) Math.floor(i/4);
+				constraint.anchor = GridBagConstraints.CENTER;
+				constraint.weighty = 1;
+				constraint.weightx = 1;
+				constraint.fill = GridBagConstraints.BOTH;
+				button.setBackground(Color.white);
+				button.setFocusPainted(false);
+				button.setBorderPainted(false);
+				boardPanel.add(button,constraint); 
 			}
 			else {
-				JButton b = new JButton();
-				c.gridy = (int) Math.floor(i/4);
-				c.anchor = GridBagConstraints.CENTER;
-				c.weighty = 1;
-				c.weightx = 1;
-				c.fill = GridBagConstraints.BOTH;
-				b.setBackground(Color.black); 					
-				b.setFocusPainted(false);
-				b.setBorderPainted(false);
-				boardPanel.add(b,c); 
+				JButton button = new JButton();
+				constraint.gridy = (int) Math.floor(i/4);
+				constraint.anchor = GridBagConstraints.CENTER;
+				constraint.weighty = 1;
+				constraint.weightx = 1;
+				constraint.fill = GridBagConstraints.BOTH;
+				button.setBackground(Color.black); 					
+				button.setFocusPainted(false);
+				button.setBorderPainted(false);
+				boardPanel.add(button,constraint); 
 			}
 		}
 	
