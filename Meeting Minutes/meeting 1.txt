@@ -72,6 +72,7 @@ Some change, another change.
 // Some discussion on how to best work as a team - ongoing.  
 // Ben & Paul installed UML Designer short video tutorial here: https://www.youtube.com/watch?v=kbHKcSNlr5I
 // Eclipse shortcut Mac for running when multimedia functions are enabled Fn + Cmd(⌘) + Shift + F11 
+// The remainder of the code for this part of the project was mostly completed during this meeting as well.
 
 // 2/20/17  Tabs & Space in the Eclipse IDE 
 // As per Dr. Buckner's discussion today in class I learned how to make sure we
@@ -82,7 +83,7 @@ Some change, another change.
 // tab to SPACES and not TABS or the tab character.
 // If you've got a new document or haven't paid attention to this subtlety whilst
 // developing here is how you can check to see what your tabs are (spaces or tab characters).
-// Along the top menu bar of the Eclipse IDE there is a button that looks like a 
+// Along the top menu bar of the Eclipse IDE there is a button that looks like a
 // backwards paragraph symbol.  It is the "Show Whitespace Characters" button.  Click 
 // on it to show all hidden formatting symbols.
 // FIX :Now if you happen to have tab characters and tabs are not spaces as they should be
