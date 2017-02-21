@@ -24,9 +24,9 @@ public class TileSide extends JButton{
  *        +-------------------------------+
  *        |     TileSide                  |
  *        +-------------------------------+
- *        |  Â«consÂ» TileSide(String text) |
+ *        |  «cons» TileSide(String text) |
  *        |  setBackground()              |
- *        |  setOpaque                    |
+ *        |  setOpaque()                  |
  *        +-------------------------------+
  * 
  * 

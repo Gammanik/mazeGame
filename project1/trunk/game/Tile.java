@@ -25,7 +25,7 @@ public class Tile {
  *        |   -isEmpty :boolean  |
  *        |   -tileId  :int      |
  *        +----------------------+
- *        |  Â«consÂ» Tile(id:int) |
+ *        |  «cons» Tile(id:int) |
  *        |  +getTileId():int    |
  *        |  +getStatus():bool   |
  *        +----------------------+
