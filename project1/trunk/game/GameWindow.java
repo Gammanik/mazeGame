@@ -35,7 +35,7 @@ public class GameWindow extends JFrame implements ActionListener {
      this.setUp();         
     }
 
-    // Written by Dr. Buckner  -- these are not currently working
+    // Written by Dr. Buckner  -- these are currently working
     public void actionPerformed(ActionEvent e) {
       if("exit".equals(e.getActionCommand()))
         System.exit(0);
@@ -251,7 +251,13 @@ public class GameWindow extends JFrame implements ActionListener {
 //		size.width = 2500;
 //		setPreferredSize(size);
 		
+//		this.setSize(new Dimension(900,1100));
+		this.setSize(1000,900);
+		this.setMinimumSize(new Dimension(950,800));
 		boardPanel.setLayout(new GridBagLayout());
+
+		
+		
 		GridBagConstraints constraint = new GridBagConstraints();
 		constraint.insets = new Insets(1,2,2,1); // padding of component and its' edges 				
 		for(int i = 0; i< 16; i++) {  					 
@@ -261,8 +267,8 @@ public class GameWindow extends JFrame implements ActionListener {
 				
 				constraint.gridy = (int) Math.floor(i/4);
 				constraint.anchor = GridBagConstraints.CENTER;
-				constraint.weighty = 0.5;
-				constraint.weightx = 0.5;
+				constraint.weighty = 100;
+				constraint.weightx = 100;
 				constraint.fill = GridBagConstraints.BOTH;
 				button.setBackground(Color.white);
 				button.setFocusPainted(false);
