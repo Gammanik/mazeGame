@@ -19,6 +19,7 @@ package game;
 import javax.swing.*; // doesn't this bring in the entire swing library so no need line 20?
 import javax.swing.border.EmptyBorder;
 
+import com.sun.glass.ui.Menu;
 
 import java.awt.*;  // doesn't this bring in all awt so next 2 lines redundant?
 import java.awt.event.ActionEvent;
@@ -28,7 +29,7 @@ public class GameWindow extends JFrame implements ActionListener {
     
     public static final long serialVersionUID=1;
 
-    public GameWindow()
+    public GameWindow()// a Top-Level container a JFrame
     {
       super("Group C Maze"); // names the OS window chrome across the top
      this.setUp();         
@@ -45,18 +46,30 @@ public class GameWindow extends JFrame implements ActionListener {
       }
 
 
+   
+    
     public void setUp()
     {
 //    	this.setSize(new Dimension(900, 900));      // Paul commented out
     	                                            // What is new Dimension() doing? 	
+        // This was added so that we'd have the same look and feel cross platform.
+        try {
+            UIManager.setLookAndFeel( UIManager.getCrossPlatformLookAndFeelClassName() );
+         } catch (Exception e) {
+                    e.printStackTrace();
+         }
+        
+               
     	this.setSize(1200, 1200);                     // Paul Added              
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);           // centers the window onscreen
-        this.getContentPane().setBackground(new Color(212,223,230)); // baby blue
+        this.getContentPane().setBackground(new Color(212,223,230)); //affecting the content pane
+      
         
         //this.setResizable(false);
-        this.addBoard();
-        this.addButtons();
+        this.addBoard();   // center tiles
+//        this.buttonGrid();
+        this.addButtons(); // top menu buttons
         this.addSideTiles(); 
         this.setVisible(true);
         
@@ -72,7 +85,8 @@ public class GameWindow extends JFrame implements ActionListener {
 //game and are expect to be placed where they are at during 
 //every creation of a new GameWindow object.
     
-    public void addButtons() {
+    public void addButtons() {  // probably should be a Menu Bar see comment below
+//http://docs.oracle.com/javase/tutorial/uiswing/components/toplevel.html#menubar
     	JPanel panel = new JPanel(new GridBagLayout()); 
          panel.setBackground(new Color(142,192,228) );// sets home menu bar color
          GridBagConstraints constraint = new GridBagConstraints();
@@ -130,7 +144,7 @@ public class GameWindow extends JFrame implements ActionListener {
          exitButton.addMouseListener(new java.awt.event.MouseAdapter() {
              public void mouseEntered(java.awt.event.MouseEvent evt) {
             	 System.out.println("mouse entered");
-                 exitButton.setBackground(new Color(250,60, 50));
+                 exitButton.setBackground(new Color(250,230, 50));
              }
 
              public void mouseExited(java.awt.event.MouseEvent evt) {
@@ -190,10 +204,6 @@ public class GameWindow extends JFrame implements ActionListener {
 
 			}
 		
-		
-		
-		
-		
 				//tilesPanel.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
 	      //tilesPanel.setBorder(new EmptyBorder(300, 300, 300, 3000));
 		tilePanelWest.setBorder(new EmptyBorder(30,30,30,30));
@@ -204,31 +214,63 @@ public class GameWindow extends JFrame implements ActionListener {
 		this.add(tilePanelEast, BorderLayout.EAST);
 				    }
     
-    
-    
-    
+// THE GREAT HOPE FAILED    
+//public void buttonGrid() {
+//    JPanel boardPaul = new JPanel();
+//    int t = 4;
+//    
+//    boardPaul.setLayout(new GridLayout(t,t,3,3));
+//   
+//    addButtons(t);
+//    boardPaul.setVisible(true);
+//}
+//
+//private void addButtons(int t) {
+//    JButton grid;
+//    for (int y = 0; y < t; y++) {
+//        for (int x = 0; x < t; x++) {
+//            grid = new JButton(x + "," + y); // creates new button
+//            grid.setSize(55,55);
+//            grid.setPreferredSize(new Dimension(55, 55));
+//            add(grid); // adds button to grid
+//
+//        }
+//    }
+//}
+
 //the addBoard method is used to add a clean, empty board to 
 //a new GameWindow object. In the future it may be nice to 
 //reuse this method in order to update the game board during
 //game play.   
     public void addBoard() {
-	    Board gameBoard = new Board();
-		JPanel boardPanel = new JPanel();
+	    Board gameBoard = new Board(); // a vector capable of holding tiles
+	    
+		JPanel boardPanel = new JPanel();  // a new JPanel
+		
+//		Dimension size = getPreferredSize();
+//		size.width = 2500;
+//		setPreferredSize(size);
+		
 		boardPanel.setLayout(new GridBagLayout());
 		GridBagConstraints constraint = new GridBagConstraints();
 		constraint.insets = new Insets(1,2,2,1); // padding of component and its' edges 				
 		for(int i = 0; i< 16; i++) {  					 
 			constraint.gridx = (i+4)%4;                         
 			if(gameBoard.isTileEmptyAt(i) == true) {
-				JButton button = new JButton();
+				JButton button = new JButton(""+i); // let's number the GameBoard tiles
+				
 				constraint.gridy = (int) Math.floor(i/4);
 				constraint.anchor = GridBagConstraints.CENTER;
-				constraint.weighty = 1;
-				constraint.weightx = 1;
+				constraint.weighty = 0.5;
+				constraint.weightx = 0.5;
 				constraint.fill = GridBagConstraints.BOTH;
 				button.setBackground(Color.white);
 				button.setFocusPainted(false);
 				button.setBorderPainted(false);
+				button.setOpaque(true); // brought back button visibility on MAC
+				button.setToolTipText("Button " + i);
+//				boardPanel.setBorder(new EmptyBorder(30,30,30,30));
+//				boardPanel.setPreferredSize(new Dimension(150,150));
 				boardPanel.add(button,constraint); 
 			}
 			else {
@@ -246,6 +288,7 @@ public class GameWindow extends JFrame implements ActionListener {
 		}
 	
 		boardPanel.setBorder(new EmptyBorder(300,200,300,200));
+		
 	    this.add(boardPanel, BorderLayout.CENTER);
     }
     
