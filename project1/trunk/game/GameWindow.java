@@ -74,6 +74,7 @@ public class GameWindow extends JFrame implements ActionListener {
         this.setVisible(true);
         
         System.out.println(this.getHeight());// prints to console height of JFrame
+        System.out.println(this.getComponentCount());
       return;
         
     }
@@ -130,6 +131,7 @@ public class GameWindow extends JFrame implements ActionListener {
 	         constraint.weightx = 1;
 	         constraint.anchor = GridBagConstraints.WEST;
 	         panel.add(exitButton,constraint);
+	         System.out.println("panel" + panel.getComponentCount());
          
          
          exitButton.addActionListener(new ActionListener()
@@ -212,6 +214,7 @@ public class GameWindow extends JFrame implements ActionListener {
 		tilePanelWest.setPreferredSize(new Dimension(150,150));
 		this.add(tilePanelWest, BorderLayout.WEST);
 		this.add(tilePanelEast, BorderLayout.EAST);
+		System.out.println("tilePanelWest" + tilePanelWest.getComponentCount());
 				    }
     
 // THE GREAT HOPE FAILED    
@@ -252,11 +255,12 @@ public class GameWindow extends JFrame implements ActionListener {
 //		setPreferredSize(size);
 		
 //		this.setSize(new Dimension(900,1100));
-		this.setSize(1000,900);
-		this.setMinimumSize(new Dimension(950,800));
+		this.setSize(900,800);
+		this.setMinimumSize(new Dimension(720,600));
 		boardPanel.setLayout(new GridBagLayout());
 
-		
+		// HOW CAN WE CHANGE THE SIZE OF THE BOARDPANEL?
+		System.out.println(boardPanel.getParent());
 		
 		GridBagConstraints constraint = new GridBagConstraints();
 		constraint.insets = new Insets(1,2,2,1); // padding of component and its' edges 				
@@ -278,6 +282,8 @@ public class GameWindow extends JFrame implements ActionListener {
 //				boardPanel.setBorder(new EmptyBorder(30,30,30,30));
 //				boardPanel.setPreferredSize(new Dimension(150,150));
 				boardPanel.add(button,constraint); 
+//				System.out.println("boardPanel" + boardPanel.getComponentCount());
+
 			}
 			else {
 				JButton button = new JButton();
@@ -293,7 +299,7 @@ public class GameWindow extends JFrame implements ActionListener {
 			}
 		}
 	
-		boardPanel.setBorder(new EmptyBorder(300,200,300,200));
+		boardPanel.setBorder(new EmptyBorder(150,100,150,100)); // changes size of boardPanel !
 		
 	    this.add(boardPanel, BorderLayout.CENTER);
     }
