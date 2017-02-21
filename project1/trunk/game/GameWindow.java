@@ -19,7 +19,7 @@ package game;
 import javax.swing.*; // doesn't this bring in the entire swing library so no need line 20?
 import javax.swing.border.EmptyBorder;
 
-import com.sun.glass.ui.Menu;
+
 
 import java.awt.*;  // doesn't this bring in all awt so next 2 lines redundant?
 import java.awt.event.ActionEvent;
@@ -199,7 +199,7 @@ public class GameWindow extends JFrame implements ActionListener {
 //				tilePanelWest.add(tile);
 //				tile.setSize(3000, 3000);
 				tilePanelEast.add(tile,constraint);
-				TileSide tile2 = new TileSide(""+i);
+				TileSide tile2 = new TileSide(""+(i+8));
 				tilePanelWest.add(tile2,constraint);
 //				tilePanelEast.add(tile);
 				
@@ -267,7 +267,7 @@ public class GameWindow extends JFrame implements ActionListener {
 		for(int i = 0; i< 16; i++) {  					 
 			constraint.gridx = (i+4)%4;                         
 			if(gameBoard.isTileEmptyAt(i) == true) {
-				JButton button = new JButton(""+i); // let's number the GameBoard tiles
+				JButton button = new JButton(""); 
 				
 				constraint.gridy = (int) Math.floor(i/4);
 				constraint.anchor = GridBagConstraints.CENTER;
@@ -305,4 +305,26 @@ public class GameWindow extends JFrame implements ActionListener {
     }
     
   };
+  
+  
+
+/*        the UML 
+ * 
+ *
+ *        +----------------------------------------------+
+ *        |       GameWindow                             |
+ *        +----------------------------------------------+
+ *        |  + serialVersionUID : static final long      |
+ *        +----------------------------------------------+
+ *        |  «cons» GameWindow(id:int)                   |
+ *        |  + setUp() : void                            |
+ *        |  + addButtons() : void                       |
+ *        |  + addSideTiles(): void                      |
+ *        |  + addBoard() : void                         |
+ *        |  +  actionPerformed(ActionEvent e) : void    | 
+ *        +----------------------------------------------+
+ * 
+ * 
+ * 
+ */
 

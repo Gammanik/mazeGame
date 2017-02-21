@@ -43,3 +43,24 @@ public class ButtonGrid extends JPanel {
 
     
 }
+
+/*        the UML 
+ * 
+ *
+ *        +---------------------------------------+
+ *        |       ButtonGrid                      |
+ *        +---------------------------------------+
+ *        | + serialVersionUID : static final long|
+ *        +---------------------------------------+
+ *        |  «cons» ButtonGrid()                  |
+ *        |  + setUp() : void                     |
+ *        |  + addButtons(int t) : void           |
+ *        |  + addSideTiles(): void               | 
+ *        +---------------------------------------+
+ * 
+ * 
+ * 
+ */
+
+
+
