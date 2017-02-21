@@ -21,16 +21,13 @@ public class TileSide extends JButton{
 /*        the UML 
  * 
  *
- *        +----------------------+
- *        |     TileSide         |
- *        +----------------------+
- *        |   -isEmpty :boolean  |
- *        |   -tileId  :int      |
- *        +----------------------+
- *        |  «cons» Tile(id:int) |
- *        |  +getTileId():int    |
- *        |  +getStatus():bool   |
- *        +----------------------+
+ *        +-------------------------------+
+ *        |     TileSide                  |
+ *        +-------------------------------+
+ *        |  «cons» TileSide(String text) |
+ *        |  setBackground()              |
+ *        |  setOpaque                    |
+ *        +-------------------------------+
  * 
  * 
  * 
