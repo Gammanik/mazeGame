@@ -25,4 +25,21 @@ public class Board {
 	public int getSize() { return boardContainer.size(); }
 }
 	
-		
+	
+/*        the UML 
+ * 
+ *
+ *        +---------------------------------+
+ *        |          Board                  |
+ *        +---------------------------------+
+ *        |   -boardContainer :Tile         |
+ *        +---------------------------------+
+ *        |  «cons» Board(id:int)           |
+ *        |  +getTileIdAt(index:int):int    |
+ *        |  +isTileEmptyAt(index:int):bool |
+ *        |  +getSize():int                 |
+ *        +---------------------------------+
+ * 
+ * 
+ * 
+ */
