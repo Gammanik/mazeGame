@@ -7,14 +7,14 @@ import javax.swing.JLabel;
 //import javax.swing.JPanel;
 
 public class TileSide extends JButton{
-	
-	public TileSide(String num)
-	{	
-		super(num); // calls the default JButton 1 parameter method and puts
-		            // passed in text (e.g. num on that button)
-		setBackground(new Color(242,109, 91));
-		setOpaque(true);
-	}
+  
+  public TileSide(String num)
+  {  
+    super(num); // calls the default JButton 1 parameter method and puts
+                // passed in text (e.g. num on that button)
+    setBackground(new Color(242,109, 91));
+    setOpaque(true);
+  }
 }
 
 

@@ -5,16 +5,16 @@ package game;
 //the tiles unique ID (which can be used to identify different tiles).
 
 public class Tile {
-		private boolean isEmpty;
-		private int tileId;
-		
-		public Tile(int Id) {
-			isEmpty = true;
-			tileId = Id;
-			}
-		public int getTileId() { return tileId; }
-		public boolean getStatus() { return isEmpty; }
-	}
+    private boolean isEmpty;
+    private int tileId;
+    
+    public Tile(int Id) {
+      isEmpty = true;
+      tileId = Id;
+      }
+    public int getTileId() { return tileId; }
+    public boolean getStatus() { return isEmpty; }
+  }
 
 /*        the UML 
  * 

@@ -1,5 +1,5 @@
 /*
- * from http://stackoverflow.com/questions/36380516/drawing-a-grid-in-a-jframe
+
  * */
 package game;
 import javax.swing.*; // doesn't this bring in the entire swing library so no need line 20?
