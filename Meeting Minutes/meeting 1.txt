@@ -28,7 +28,7 @@ Step 5
 // Right-click on the modified file and choose between "Commit" or 
 // Revert,  If the changes are good then Commit.
 Step 6 
-// Get a brewski
+// Relax
 
 // 2/13/17 - Meeting #3 (a.k.a. Loud Heater)
 // attendees: Nikita, Paul, Ben
@@ -50,8 +50,8 @@ Some change, another change.
 // 1. highlight the variable name > refactor > rename , this will change the name
 //    of the variable everywhere in the code.
  
-// Meeting four 2/14/17 (a.k.a Shot through the taco)
-// Attendees: Dylan, Blake, Benjamin
+// Meeting four 2/14/17 (a.k.a Shot through the heart, but it's still Taco Tuesday)
+// Attendees: Dylan, Blake, Benjamin (Dylan had to leave during the middle of it).
 // What occurred : Everyone was informed of what changes were made in the 
 // Worked on panels to get the buttons laid out right. Dylan was tasked with finishing formatting
 // the buttons.
@@ -63,7 +63,7 @@ Some change, another change.
 // Moved the Tile class to it's own file out of the Board class.
 // Ben - Merge Tool
 
-// Meetng six 2-19-17 (a.k.a. We are all one) duration hours
+// Meetng six 2-19-17 (a.k.a. We are all one) duration: hours
 // Attendees: Ben, Blake, Dylan, Nikita, Paul 
 // Talked about deliverables, talked about the UML diagram and differing ways to 
 // generate it.  
@@ -106,3 +106,15 @@ Some change, another change.
 //  on Mac alt + \ gives " « " and alt + shift + \ gives " » "
 // If you're using Windows here's he article: https://en.wikipedia.org/wiki/Guillemet
 //
+//Meeting 7 (a.k.a We're almost there)
+//Attendees : Paul, Dylan, Blake, and Ben
+//Started to pull all of the seperate class diagrams into a single UML
+//Bounced around ideas about how to fix some resizing issues.
+//Paul and Dylan came up with great ideas that when combined together may fix the 
+//resizing issue
+//
+//Future plans : Ben will investigate how to implement drag and drop 
+//Dylan came up with an idea to help fix some resizing issues
+//and thus will find a way to explain his idea to the group for 
+//the next meeting
+//Investigation on how to implement rotation on tiles will commence
