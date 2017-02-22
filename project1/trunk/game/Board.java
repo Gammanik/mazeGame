@@ -32,9 +32,9 @@ public class Board {
  *        +---------------------------------+
  *        |          Board                  |
  *        +---------------------------------+
- *        |   -boardContainer :Tile         |
+ *        |   -boardContainer<vector> :Tile |
  *        +---------------------------------+
- *        |  «cons» Board(id:int)           |
+ *        |  «cons» Board(id:int)         |
  *        |  +getTileIdAt(index:int):int    |
  *        |  +isTileEmptyAt(index:int):bool |
  *        |  +getSize():int                 |
