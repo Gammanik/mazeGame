@@ -12,6 +12,10 @@
  * Probably need to fix a bunch of stuff, but this compiles and runs.
  *
  */
+//the menu class contains the new game, reset and exit buttons.
+//this class, once initialized shouldn't have to be modified or changed
+//during the game. 
+
 package game;
 import javax.swing.*;
 //import java.awt.*;
