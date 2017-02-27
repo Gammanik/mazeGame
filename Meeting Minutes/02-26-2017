@@ -1,0 +1,23 @@
+Attendees: Dylan, Nikita, Ben, Blake
+Date: 02/26/2017
+Location: Library Room 264
+Time: 7:00pm - 8:00pm
+
+Task for project: For this part of the project our group needs to add click and select
+functionality in order to move tiles around, have all the tiles uniquely identified 
+with integers, create a UML diagram, and refine previous code. 
+
+The main purpose of this meeting was to delegate responsibilities to the each individual
+person in the group. The tasks were delegated as the following:
+
+Ben, Nikita, Blake: Click and Select Functionality
+
+Dylan: UML Diagram
+
+Paul: Uniquely identify and number the board tiles and side tiles. 
+
+The rest of the meeting was spent planning and understanding how the project will 
+come together. The main point of discussion was how we are going to move individual 
+tiles to and from the board. This topic is going to have to be researched. We identified
+parts of the code that could be better and where we can improve upon. We also spent time
+discussing future meetings and how to better work together as a team. 
