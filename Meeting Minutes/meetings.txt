@@ -1,5 +1,4 @@
-// Keep at top, let's just keep meeting minutes in one doc as we started
-// with most recent at top.
+// Keep most recent at top. ( Reverse chronological order).
 
 Attendees: Dylan, Nikita, Ben, Blake
 Date: 02/26/2017
