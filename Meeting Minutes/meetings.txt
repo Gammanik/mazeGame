@@ -1,5 +1,22 @@
 // Keep most recent at top. ( Reverse chronological order).
 
+
+Attendees: Dylan, Paul, Ben, Blake
+Date: 02/28/2017
+Location: EN 4072
+Time: 12:00pm - 3:00pm
+
+Task: start implementation of action listener, as well as a way to extract data from a
+tile and swap data if needed. To begin this process, a "spring cleaning" of the game 
+package was done. The 2 tile classes board and side tile were consolidated into one,
+and the Board and GameBoard classes were deleted, as they were having no effect on the
+functionality of the project. Their data and attempted functionality can be more effectively
+implemented in another existing class.
+
+Future: better meeting scheduling should help speed up progress, and this portion of the 
+project should be completed within the week.
+
+
 Attendees: Dylan, Nikita, Ben, Blake
 Date: 02/26/2017
 Location: Library Room 264
