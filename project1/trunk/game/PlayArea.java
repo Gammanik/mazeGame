@@ -6,7 +6,7 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
 
-import javax.swing.JButton;
+
 import javax.swing.JPanel;
 
 // this class is a panel that contains the board and 
@@ -62,38 +62,21 @@ private void addEastSidePanel() {
 // addBoard() constructs the board and adds it to the object.
 	public void addBoard() {
 		
-		Board gameBoard = new Board();
+//		Board gameBoard = new Board();
 		JPanel boardPanel = new JPanel();
 		boardPanel.setLayout(new GridBagLayout());
 		GridBagConstraints constraint = new GridBagConstraints();
 		constraint.insets = new Insets(1,2,2,1); 
 		
 		for(int i = 0; i< 16; i++) {    
-			constraint.gridx = i%4;                          
-		if(gameBoard.isTileEmptyAt(i) == true) {
-			JButton button = new JButton();
+			constraint.gridx = i%4;                 
+			Tile tile = new Tile();
 			constraint.gridy = (int) Math.floor(i/4);
 			constraint.weighty = 1;
 			constraint.weightx = 1;
 			constraint.fill = GridBagConstraints.BOTH;
-			button.setBackground(Color.white);
-			button.setFocusPainted(false);
-			button.setBorderPainted(false);
-			boardPanel.add(button,constraint); 
-		}
-		else {
-			JButton button = new JButton();
-			constraint.gridy = (int) Math.floor(i/4);
-			constraint.anchor = GridBagConstraints.CENTER;
-			constraint.weighty = 1;
-			constraint.weightx = 1;
-			constraint.fill = GridBagConstraints.BOTH;
-			button.setBackground(Color.black);
-			button.setFocusPainted(false);
-			button.setBorderPainted(false);
-			boardPanel.add(button,constraint); 
-		}
-		
+			tile.setBackground(Color.white); // makes tiles white
+			boardPanel.add(tile,constraint); 
 		}
 		GridBagConstraints gbc = new GridBagConstraints();
 		gbc.anchor = GridBagConstraints.CENTER;

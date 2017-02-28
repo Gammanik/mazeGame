@@ -17,8 +17,6 @@
  */
 package game;
 import javax.swing.*; // doesn't this bring in the entire swing library so no need line 20?
-import javax.swing.border.EmptyBorder;
-
 
 import java.awt.*;  // doesn't this bring in all awt so next 2 lines redundant?
 import java.awt.event.ActionEvent;

@@ -1,14 +1,9 @@
 package game;
 
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 
 import javax.swing.JPanel;
 
@@ -33,7 +28,7 @@ public class SidePanel extends JPanel {
 			cons.weightx = 1;
 			cons.insets = new Insets(5,5,5,5);
 			cons.weighty = 0;
-			TileSide tile = new TileSide("");
+			Tile tile = new Tile();
 			tile.setMinimumSize(new Dimension(50,50));
 			tile.setPreferredSize(new Dimension(100,100));
 			this.add(tile,cons);

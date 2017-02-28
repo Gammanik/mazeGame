@@ -5,18 +5,20 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.JLabel;
-//import javax.swing.JPanel;
 
-public class TileSide extends JLabel{
+public class Tile extends JLabel{
 /**
 * 
 */
 private static final long serialVersionUID = 1L;
 
-public TileSide(String num)
+private boolean clicked = false;
+
+private Color thisColor = Color.BLUE;
+
+public Tile()
 { 
-super(num);
-setBackground(Color.WHITE);
+setBackground(thisColor);
 setOpaque(true);
 //added by blake: basic mouse listener
 this.addMouseListener(new MouseListener()
@@ -24,7 +26,9 @@ this.addMouseListener(new MouseListener()
  @Override
  public void mouseClicked(MouseEvent arg0) {
    System.out.println("clicked tile");
+   doClicked();
    setBackground(Color.CYAN);
+   //send info method
    
  }
 
@@ -52,5 +56,15 @@ this.addMouseListener(new MouseListener()
    
  }
 });
+}
+
+public void doClicked()
+{
+  clicked = true;
+}
+
+public void clearClicked()
+{
+  clicked = false;
 }
 }
