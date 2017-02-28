@@ -126,13 +126,13 @@ Some change, another change.
 // 
 // Okay this is cool. !!!  So let's say someone (Paul) puts in a ton of comments and then
 // it comes time to submit our code to Dr. Buckner and there are too many comments, :(.
-// Regular Expressions to the rescue.  Open Find/Replace: "Cmd(âŒ˜) + F" or Win : "Ctrl + F".
+// Regular Expressions to the rescue.  Open Find/Replace: "Cmd + F" or Win : "Ctrl + F".
 //  In the Find: input box put : " \/\/(.*?)\r?\n " without the quotes
 //  Leave the Replace with input box blank and make sure "regular expressions" is checked.
 //  Hit the Find button, now you can replace all those nasty comments with spaces.
 //  Wow, regular expression are cool.
 //  Ok, guillemets are kind of cool.... at least when you're making UML diagrams.
-//  on Mac alt + \ gives " Â« " and alt + shift + \ gives " Â» "
+//  on Mac alt + \ gives " « " and alt + shift + \ gives "» "
 // If you're using Windows here's he article: https://en.wikipedia.org/wiki/Guillemet
 //
 //Meeting 7 (a.k.a We're almost there)
