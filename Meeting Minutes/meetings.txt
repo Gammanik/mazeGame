@@ -86,6 +86,7 @@ Some change, another change.
 // Everyone else has the responsibility of getting the tiles laid out right. 
 
 // Meeting five 2/16/17 (a.k.a. UML & Beyond )
+// Attendees: Ben & Paul 
 // Things look peculiar on the Mac when running. OMG... but Bill Gates and Linus are fine.
 // Worked on the UML diagram.  Dylan was a rockstar and got a lot done.  Gold star with oxidation.
 // Moved the Tile class to it's own file out of the Board class.
