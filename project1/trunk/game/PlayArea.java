@@ -71,6 +71,7 @@ private void addEastSidePanel() {
 		for(int i = 0; i< 16; i++) {    
 			constraint.gridx = i%4;                 
 			Tile tile = new Tile();
+			tile.setName("PlayArea Tile"); //setting the name for checking it in mouseListener
 			constraint.gridy = (int) Math.floor(i/4);
 			constraint.weighty = 1;
 			constraint.weightx = 1;
