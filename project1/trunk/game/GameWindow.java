@@ -132,9 +132,9 @@ public class GameWindow extends JFrame{
                   //changing color of previous component
                   //in case click on sideTiles again (want to choose another)
                   if(tmp.getName() == "infoTile") {
-                    tmp.setBackground(Color.YELLOW); //Dylan - just added so we can see if tile is selected
+                    tmp.setBackground(Color.BLUE);
                     System.out.println("tile changed: " + tmp);
-                    tmp = new Tile(); //Dylan - just added so we can see if tile is selected
+                    
                   }
                   tmp = component; //remember previous clicked tile
                 } else { //when clicked out of SIDE tiles
