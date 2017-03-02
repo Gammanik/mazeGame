@@ -21,41 +21,34 @@ public Tile()
 setBackground(thisColor);
 setOpaque(true);
 //added by blake: basic mouse listener
-this.addMouseListener(new MouseListener()
-{
- @Override
- public void mouseClicked(MouseEvent arg0) {
-   System.out.println("clicked tile");
-   doClicked();
-   setBackground(Color.CYAN);
-   //send info method
-   
- }
 
- @Override
- public void mouseEntered(MouseEvent arg0) {
-   // TODO Auto-generated method stub
-   
- }
+}
 
- @Override
- public void mouseExited(MouseEvent arg0) {
-   // TODO Auto-generated method stub
+public void addListener() {
+  this.addMouseListener(new MouseListener()
+  {
+   @Override
+   public void mouseClicked(MouseEvent arg0) {
+     System.out.println("clicked tile");
+     doClicked();
+     setBackground(Color.CYAN);
+     //send info method
+     
+   }
    
- }
+   @Override
+   public void mouseEntered(MouseEvent arg0) {   }
+   @Override
+   public void mouseExited(MouseEvent arg0) {   }
+   @Override
+   public void mousePressed(MouseEvent arg0) {   }
+   @Override
+   public void mouseReleased(MouseEvent arg0) {   }
+  });
+}
 
- @Override
- public void mousePressed(MouseEvent arg0) {
-   // TODO Auto-generated method stub
-   
- }
-
- @Override
- public void mouseReleased(MouseEvent arg0) {
-   // TODO Auto-generated method stub
-   
- }
-});
+public String getName1() {
+  return "nameOf888";
 }
 
 public void doClicked()
