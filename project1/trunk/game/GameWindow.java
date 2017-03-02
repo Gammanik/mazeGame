@@ -127,6 +127,7 @@ public class GameWindow extends JFrame{
                 if(component.getName() == "infoTile" && clicks == 2 && !infoTileClicked) {
                   component.setBackground(Color.WHITE);
                   component.getAccessibleContext();
+                  component.setBackground(Color.YELLOW); //just added so we can see if tile is selected
                   infoTileClicked = true;
                   //changing color of previous component
                   //in case click on sideTiles again (want to choose another)
