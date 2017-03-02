@@ -21,10 +21,17 @@ import javax.swing.*; // doesn't this bring in the entire swing library so no ne
 import java.awt.*;  // doesn't this bring in all awt so next 2 lines redundant?
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.beans.EventHandler;
+import java.awt.event.*;
 
-public class GameWindow extends JFrame implements ActionListener {
+public class GameWindow extends JFrame{
     
     public static final long serialVersionUID=1;
+    //saving previous clicked component
+    private static Component tmp = new Tile();
+    private static boolean sideTileClicked = false;
 
     JPanel frame = new JPanel(new GridBagLayout());
     JPanel playArea = new JPanel(new GridBagLayout());
@@ -33,17 +40,8 @@ public class GameWindow extends JFrame implements ActionListener {
      super("Group C Maze"); // names the OS window chrome across the top
      this.addComponents();
      this.setUpWindow();   
+     this.addTilesListeners(this);
     }
-
-    // Written by Dr. Buckner  -- these are not currently working
-    public void actionPerformed(ActionEvent e) {
-      if("exit".equals(e.getActionCommand()))
-        System.exit(0);
-      if("reset".equals(e.getActionCommand()))
-        System.out.println("reset pressed\n");
-      if("new".equals(e.getActionCommand()))
-        System.out.println("new pressed\n");
-      }
 
 
     public void setUpWindow()
@@ -103,6 +101,64 @@ public class GameWindow extends JFrame implements ActionListener {
 	
 	  frame.add(playArea, playAreaPosition);
     }
+    
+    
+    public void addTilesListeners(Container comp) {
+      
+      final Component[] components = comp.getComponents(); 
+
+      
+      for (Component component : components)
+      {
+          if (component instanceof Container)
+          {
+              Component[] child = ((Container)component).getComponents();
+              if (child != null && child.length > 0)
+              {
+                  addTilesListeners((Container)component);
+              }
+          }
+          component.addMouseListener(new MouseAdapter()
+          {
+              public void mousePressed(MouseEvent evt)
+              {
+              
+                int clicks = evt.getClickCount();
+
+                
+                if(sideTileClicked && component.getName() == "PlayArea Tile") {
+                  System.out.println(component.getAccessibleContext().getAccessibleText());
+                  component.setBackground(Color.BLUE);
+                }
+                
+                if(component.getName() == "sidePanel Tile" && clicks == 2 && !sideTileClicked) {
+                  component.setBackground(Color.WHITE);
+                  component.getAccessibleContext();
+                  sideTileClicked = true;
+                  //changing color of previous component
+                  //in case click on sideTiles again (want to choose another)
+                  if(tmp.getName() == "sidePanel Tile") {
+                    tmp.setBackground(Color.BLUE);
+                    System.out.println("tile changed: " + tmp);
+                  }
+                  tmp = component; //remember previous clicked tile
+                } else { //when clicked out of any tiles
+                  sideTileClicked = false;
+                  tmp.setBackground(Color.BLUE);
+                  System.out.println("else case: " + tmp.getName());
+                }
+                
+
+                
+              }
+          });
+      }
+      
+      
+    
+    }
+    
+
     
   };
 
