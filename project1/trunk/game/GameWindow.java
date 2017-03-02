@@ -122,14 +122,7 @@ public class GameWindow extends JFrame{
           {
               public void mousePressed(MouseEvent evt)
               {
-              
                 int clicks = evt.getClickCount();
-
-                
-                if(sideTileClicked && component.getName() == "PlayArea Tile") {
-                  System.out.println(component.getAccessibleContext().getAccessibleText());
-                  component.setBackground(Color.BLUE);
-                }
                 
                 if(component.getName() == "sidePanel Tile" && clicks == 2 && !sideTileClicked) {
                   component.setBackground(Color.WHITE);
@@ -142,12 +135,24 @@ public class GameWindow extends JFrame{
                     System.out.println("tile changed: " + tmp);
                   }
                   tmp = component; //remember previous clicked tile
-                } else { //when clicked out of any tiles
-                  sideTileClicked = false;
-                  tmp.setBackground(Color.BLUE);
+                } else { //when clicked out of SIDE tiles
+                  if(tmp.getName() != "sidePanel Tile used")
+                     tmp.setBackground(Color.BLUE);
                   System.out.println("else case: " + tmp.getName());
+                  //click to the playArea after the side tile it taken
+                  if(sideTileClicked && component.getName() == "PlayArea Tile") { 
+                    //System.out.println(component.getAccessibleContext().getAccessibleText());
+                    component.setBackground(Color.BLUE);
+                    
+                    
+                    tmp.setBackground(Color.WHITE); //make for the color cannot be changed
+                    tmp.setName("sidePanel Tile used"); //marked as used
+                    component.setName("playArea tile occupied");
+                  }
+                  sideTileClicked = false;
                 }
                 
+
 
                 
               }
