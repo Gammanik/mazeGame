@@ -79,22 +79,6 @@ GridBagConstraints constraint = new GridBagConstraints();
          }
      });
      
-     
-     newGameButton.addActionListener(new ActionListener()
-     {
-      public void actionPerformed(ActionEvent event)
-      {
-      System.out.println("new game button pressed");
-      }
-     });
-     
-     resetButton.addActionListener(new ActionListener()
-     {
-       public void actionPerformed(ActionEvent event)
-       {
-        System.out.println("reset button pressed");
-       }
-     });
 }
 
 // the method below is used to change the style of the menu
