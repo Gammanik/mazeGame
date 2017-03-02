@@ -29,6 +29,7 @@ public class SidePanel extends JPanel {
 			cons.insets = new Insets(5,5,5,5);
 			cons.weighty = 0;
 			Tile tile = new Tile();
+			tile.setName("sidePanel Tile"); //for checking in mouseListener
 			tile.setMinimumSize(new Dimension(50,50));
 			tile.setPreferredSize(new Dimension(100,100));
 			this.add(tile,cons);
