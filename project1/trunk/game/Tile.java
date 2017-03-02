@@ -1,5 +1,6 @@
 package game;
 
+import javax.swing.*;
 import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -14,6 +15,7 @@ private static final long serialVersionUID = 1L;
 
 private boolean clicked = false;
 
+private String name;
 private Color thisColor = Color.BLUE;
 
 public Tile()
@@ -47,8 +49,14 @@ public void addListener() {
   });
 }
 
-public String getName1() {
-  return "nameOf888";
+public String getName() 
+{
+  return name;
+}
+
+public void setName(String newName)
+{
+  name = newName;
 }
 
 public void doClicked()
