@@ -69,12 +69,12 @@ GridBagConstraints constraint = new GridBagConstraints();
      //change color of exit button when mouse hovers over
      exitButton.addMouseListener(new java.awt.event.MouseAdapter() {
          public void mouseEntered(java.awt.event.MouseEvent evt) {
-        System.out.println("mouse entered");
+      //  System.out.println("mouse entered");
              exitButton.setBackground(new Color(250,60, 50));
          }
 
          public void mouseExited(java.awt.event.MouseEvent evt) {
-        System.out.println("mouse exit");
+   //     System.out.println("mouse exit");
              exitButton.setBackground(new Color(242,109, 91));
          }
      });

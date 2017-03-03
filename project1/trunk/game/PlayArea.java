@@ -34,7 +34,7 @@ public class PlayArea extends JPanel {
 	
 	private void addWestSidePanel() {
 		GridBagConstraints constraint = new GridBagConstraints();
-		SidePanel tilePanelWest = new SidePanel();
+		SidePanel tilePanelWest = new SidePanel(0);
 
   	constraint.gridx = 0;
   	constraint.gridy = 0;
@@ -48,7 +48,7 @@ public class PlayArea extends JPanel {
 	
 private void addEastSidePanel() {
 		GridBagConstraints constraint = new GridBagConstraints();
-		SidePanel tilePanelEast = new SidePanel();
+		SidePanel tilePanelEast = new SidePanel(8);
 
   	constraint.gridx = 2;
   	constraint.gridy = 0;
