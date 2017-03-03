@@ -30,7 +30,7 @@ public class GameWindow extends JFrame{
     
     public static final long serialVersionUID=1;
     //saving previous clicked component
-    private static Component tmp = new Tile();
+    private static Component previous = new Tile(" ");
     private static boolean infoTileClicked = false;
 
     JPanel frame = new JPanel(new GridBagLayout());
@@ -59,7 +59,7 @@ public class GameWindow extends JFrame{
     this.getContentPane().setBackground(new Color(212,223,230)); //baby blue
     this.add(frame);
     this.setVisible(true);
-    frame.setBackground(Color.GREEN);
+    frame.setBackground(Color.gray);
     System.out.println(this.getHeight());// prints to console height of JFrame     
     }
     
@@ -97,7 +97,7 @@ public class GameWindow extends JFrame{
 	  GridBagConstraints playAreaPosition = new GridBagConstraints();
 	  playAreaPosition.gridx = 0;
 	  playAreaPosition.gridy = 0;
-	  playArea.setBackground(Color.MAGENTA);
+	  playArea.setBackground(Color.gray);
 	
 	  frame.add(playArea, playAreaPosition);
     }
@@ -124,49 +124,37 @@ public class GameWindow extends JFrame{
               {
                 int clicks = evt.getClickCount();
                 
-                if(component.getName() == "infoTile" && clicks == 2 && !infoTileClicked) {
+                if(component.getName() == "infoTile" && clicks == 1 && !infoTileClicked) {
                   component.setBackground(Color.WHITE);
                   component.getAccessibleContext();
-                  component.setBackground(Color.YELLOW); //Dylan - just added so we can see if tile is selected
                   infoTileClicked = true;
                   //changing color of previous component
                   //in case click on sideTiles again (want to choose another)
-                  if(tmp.getName() == "infoTile") {
-                    tmp.setBackground(Color.BLUE);
-                    System.out.println("tile changed: " + tmp);
-                    
+                  if(previous.getName() == "infoTile") {
+                    previous.setBackground(Color.BLUE);
+                    System.out.println("tile changed: " + previous);
                   }
-                  tmp = component; //remember previous clicked tile
+                  previous = component; //remember previous clicked tile
                 } else { //when clicked out of SIDE tiles
-                  if(tmp.getName() != "emptyTile")
-                     tmp.setBackground(Color.BLUE);
-                  System.out.println("else case: " + tmp.getName());
+                  if(previous.getName() != "emptyTile")
+                     previous.setBackground(Color.BLUE);
+                  System.out.println("else case: " + previous.getName());
                   //click to the playArea after the side tile it taken
                   if(infoTileClicked && component.getName() == "emptyTile") { 
                     //System.out.println(component.getAccessibleContext().getAccessibleText());
                     component.setBackground(Color.BLUE);
                     
                     
-                    tmp.setBackground(Color.WHITE); //make for the color cannot be changed
-                    tmp.setName("emptyTile"); //marked as used
+                    previous.setBackground(Color.WHITE); //make for the color cannot be changed
+                    previous.setName("emptyTile"); //marked as used
                     component.setName("infoTile");
                   }
                   infoTileClicked = false;
-                }
-                
-
-
-                
+                } 
               }
           });
       }
-      
-      
-    
-    }
-    
-
-    
+    }    
   };
 
 

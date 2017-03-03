@@ -40,7 +40,7 @@ public class PlayArea extends JPanel {
   	constraint.gridy = 0;
 	  constraint.insets = new Insets(0,150,0,150);
 
-	  tilePanelWest.setBackground(Color.BLACK);
+	  tilePanelWest.setBackground(Color.gray);
 	  
 	  this.add(tilePanelWest, constraint);
 		
@@ -54,7 +54,7 @@ private void addEastSidePanel() {
   	constraint.gridy = 0;
 		constraint.insets = new Insets(0,150,0,150);
 
-	  tilePanelEast.setBackground(Color.BLACK);
+	  tilePanelEast.setBackground(Color.gray);
 	  
 	  this.add(tilePanelEast, constraint);		
 	}
@@ -70,7 +70,7 @@ private void addEastSidePanel() {
 		
 		for(int i = 0; i< 16; i++) {    
 			constraint.gridx = i%4;                 
-			Tile tile = new Tile();
+			Tile tile = new Tile(" ");
 			tile.setName("emptyTile"); //setting the name for checking it in mouseListener
 			constraint.gridy = (int) Math.floor(i/4);
 			constraint.weighty = 1;
@@ -85,7 +85,7 @@ private void addEastSidePanel() {
 		boardPanel.setMinimumSize(new Dimension(200,200));
 		gbc.gridx = 1;
 		gbc.gridy = 0;
-		boardPanel.setBackground(Color.BLUE);
+		boardPanel.setBackground(Color.blue);
 		this.add(boardPanel, gbc);
 		
 	}

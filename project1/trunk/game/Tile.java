@@ -12,42 +12,41 @@ public class Tile extends JLabel{
 * 
 */
 private static final long serialVersionUID = 1L;
-
-private boolean clicked = false;
-
+private String id;
 private String name;
 private Color thisColor = Color.BLUE;
 
-public Tile()
+public Tile(String newID)
 { 
+  id=newID;
 setBackground(thisColor);
 setOpaque(true);
 //added by blake: basic mouse listener
 
 }
 
-public void addListener() {
-  this.addMouseListener(new MouseListener()
-  {
-   @Override
-   public void mouseClicked(MouseEvent arg0) {
-     System.out.println("clicked tile");
-     doClicked();
-     setBackground(Color.CYAN);
-     //send info method
-     
-   }
-   
-   @Override
-   public void mouseEntered(MouseEvent arg0) {   }
-   @Override
-   public void mouseExited(MouseEvent arg0) {   }
-   @Override
-   public void mousePressed(MouseEvent arg0) {   }
-   @Override
-   public void mouseReleased(MouseEvent arg0) {   }
-  });
-}
+//public void addListener() {
+//  this.addMouseListener(new MouseListener()
+//  {
+//   @Override
+//   public void mouseClicked(MouseEvent arg0) {
+//     System.out.println("clicked tile");
+//     doClicked();
+//     setBackground(Color.CYAN);
+//     //send info method
+//     
+//   }
+//   
+//   @Override
+//   public void mouseEntered(MouseEvent arg0) {   }
+//   @Override
+//   public void mouseExited(MouseEvent arg0) {   }
+//   @Override
+//   public void mousePressed(MouseEvent arg0) {   }
+//   @Override
+//   public void mouseReleased(MouseEvent arg0) {   }
+//  });
+//}
 
 public String getName() 
 {
@@ -59,13 +58,13 @@ public void setName(String newName)
   name = newName;
 }
 
-public void doClicked()
-{
-  clicked = true;
-}
-
-public void clearClicked()
-{
-  clicked = false;
-}
+//public void doClicked()
+//{
+//  clicked = true;
+//}
+//
+//public void clearClicked()
+//{
+//  clicked = false;
+//}
 }
