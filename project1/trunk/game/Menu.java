@@ -87,7 +87,7 @@ GridBagConstraints constraint = new GridBagConstraints();
 		
     this.setMinimumSize(new Dimension(250,50));
     this.setPreferredSize(new Dimension(250,50));
-    this.setBackground(Color.ORANGE);
+    this.setBackground(Color.gray);
 	}
 }
 

@@ -6,8 +6,9 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
 
-
+import javax.swing.BorderFactory;
 import javax.swing.JPanel;
+import javax.swing.border.Border;
 
 // this class is a panel that contains the board and 
 // side panels. 
@@ -66,12 +67,14 @@ private void addEastSidePanel() {
 		JPanel boardPanel = new JPanel();
 		boardPanel.setLayout(new GridBagLayout());
 		GridBagConstraints constraint = new GridBagConstraints();
-		constraint.insets = new Insets(1,2,2,1); 
+		//constraint.insets = new Insets(1,1,1,1); 
 		
 		for(int i = 0; i< 16; i++) {    
 			constraint.gridx = i%4;                 
 			Tile tile = new Tile(" ");
 			tile.setName("emptyTile"); //setting the name for checking it in mouseListener
+			Border border = BorderFactory.createLineBorder(Color.BLACK, 1);
+			tile.setBorder(border);
 			constraint.gridy = (int) Math.floor(i/4);
 			constraint.weighty = 1;
 			constraint.weightx = 1;

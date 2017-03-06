@@ -10,7 +10,7 @@ public class Tile extends JLabel{
 private static final long serialVersionUID = 1L;
 private String id;
 private String name;
-private Color thisColor = Color.BLUE;
+private Color thisColor = Color.ORANGE;
 
 public Tile(String newID)
 { 

@@ -17,13 +17,10 @@
  */
 package game;
 import javax.swing.*; // doesn't this bring in the entire swing library so no need line 20?
+import javax.swing.border.Border;
 
 import java.awt.*;  // doesn't this bring in all awt so next 2 lines redundant?
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.beans.EventHandler;
 import java.awt.event.*;
 
 public class GameWindow extends JFrame{
@@ -127,7 +124,7 @@ public class GameWindow extends JFrame{
                 
                 
                 if(component.getName() == "infoTile" && clicks == 1 && !infoTileClicked) {
-                  component.setBackground(Color.WHITE);
+                  component.setBackground(Color.YELLOW);
                   if(component instanceof Tile)
                   {
                     Tile temp = (Tile) component;
@@ -145,20 +142,24 @@ public class GameWindow extends JFrame{
                   
                 } else { //when clicked out of SIDE tiles
                   if(previous.getName() != "emptyTile")
-                     previous.setBackground(Color.BLUE);
+                     previous.setBackground(Color.ORANGE);
                   System.out.println("else case: " + previous.getName());
                   
                   // click to a empty tile after an info tile
                   if(infoTileClicked && component.getName() == "emptyTile") { 
                     //System.out.println(component.getAccessibleContext().getAccessibleText());
-                    component.setBackground(Color.BLUE);
+                    component.setBackground(Color.ORANGE);
                     ((Tile) component).setText(previous.getText()); // -edit  by Dylan 
+                    ((Tile) component).setFont(new Font("Tahoma", Font.BOLD, 20));
+                    Border border = BorderFactory.createLineBorder(Color.BLACK, 0);
+                    ((Tile) component).setBorder(border);
                     //the above code sets the text from the previously clicked tile
                     //into the currently clicked tile
                     ((Tile) component).setHorizontalAlignment(SwingConstants.CENTER); // -edit by Dylan
                     //the above code centers the numbers in the tiles
                     previous.setText(" "); // -edit by Dylan 
-                    
+                    border = BorderFactory.createLineBorder(Color.BLACK, 1);
+                    previous.setBorder(border);
                     previous.setBackground(Color.WHITE); //make for the color cannot be changed
                     previous.setName("emptyTile"); //marked as used
                     component.setName("infoTile");
