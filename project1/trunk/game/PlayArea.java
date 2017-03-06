@@ -75,14 +75,14 @@ private void addEastSidePanel() {
 			constraint.gridy = (int) Math.floor(i/4);
 			constraint.weighty = 1;
 			constraint.weightx = 1;
-			constraint.fill = GridBagConstraints.BOTH;
+			constraint.fill = GridBagConstraints.NONE;
 			tile.setBackground(Color.white); // makes tiles white
+			tile.setMinimumSize(new Dimension(50,50));
+			tile.setPreferredSize(new Dimension(100,100));
 			boardPanel.add(tile,constraint); 
 		}
 		GridBagConstraints gbc = new GridBagConstraints();
 		gbc.anchor = GridBagConstraints.CENTER;
-		boardPanel.setPreferredSize(new Dimension(400,400));
-		boardPanel.setMinimumSize(new Dimension(200,200));
 		gbc.gridx = 1;
 		gbc.gridy = 0;
 		boardPanel.setBackground(Color.blue);

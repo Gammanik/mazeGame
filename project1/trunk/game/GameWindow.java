@@ -33,8 +33,8 @@ public class GameWindow extends JFrame{
     private static Tile previous = new Tile(" ");
     private static boolean infoTileClicked = false;
 
-    JPanel frame = new JPanel(new GridBagLayout());
-    JPanel playArea = new JPanel(new GridBagLayout());
+   private JPanel frame = new JPanel(new GridBagLayout());
+ 
     
     public GameWindow() {
      super("Group C Maze"); // names the OS window chrome across the top
@@ -135,18 +135,14 @@ public class GameWindow extends JFrame{
                      System.out.print(number); // just for testing clicks
                   
                  // String temp = Tile.getId();
-                 
+                  }
                  // component.getAccessibleContext();
                   infoTileClicked = true;
                   //changing color of previous component
                   //in case click on sideTiles again (want to choose another)
-                  if(previous.getName() == "infoTile") {
-                    previous.setBackground(Color.BLUE);
-                    
-                    System.out.println("tile changed: " + previous);
-                  }
+                 
                   previous = (Tile) component; //remember previous clicked tile
-                  }
+                  
                 } else { //when clicked out of SIDE tiles
                   if(previous.getName() != "emptyTile")
                      previous.setBackground(Color.BLUE);
@@ -156,7 +152,12 @@ public class GameWindow extends JFrame{
                   if(infoTileClicked && component.getName() == "emptyTile") { 
                     //System.out.println(component.getAccessibleContext().getAccessibleText());
                     component.setBackground(Color.BLUE);
-                    previous.setText(number);
+                    ((Tile) component).setText(previous.getText()); // -edit  by Dylan 
+                    //the above code sets the text from the previously clicked tile
+                    //into the currently clicked tile
+                    ((Tile) component).setHorizontalAlignment(SwingConstants.CENTER); // -edit by Dylan
+                    //the above code centers the numbers in the tiles
+                    previous.setText(" "); // -edit by Dylan 
                     
                     previous.setBackground(Color.WHITE); //make for the color cannot be changed
                     previous.setName("emptyTile"); //marked as used

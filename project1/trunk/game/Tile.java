@@ -1,10 +1,6 @@
 package game;
 
-import javax.swing.*;
 import java.awt.Color;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-
 import javax.swing.JLabel;
 
 public class Tile extends JLabel{

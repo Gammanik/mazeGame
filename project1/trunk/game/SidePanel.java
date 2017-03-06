@@ -7,6 +7,7 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 
 // this class created the side panels
 
@@ -31,6 +32,7 @@ public class SidePanel extends JPanel {
 			cons.weighty = 0;
 			Tile tile = new Tile("" + i);
 			tile.setText(""+ i);
+			tile.setHorizontalAlignment(SwingConstants.CENTER); //edit by Dylan
 			tile.setFont(new Font("Tahoma", Font.BOLD, 12));
 			tile.setName("infoTile"); //for checking in mouseListener
 			tile.setMinimumSize(new Dimension(50,50));
