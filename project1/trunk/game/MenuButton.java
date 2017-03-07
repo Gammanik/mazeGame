@@ -12,24 +12,23 @@ import javax.swing.JButton;
 
 //only contains one method which is called to change
 //the style of the buttons.
-public class MenuButton extends JButton{
-/**
+public class MenuButton extends JButton {
+  /**
 *
 */
-private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
-public MenuButton(String s){
-	super(s);
-	menuButtonStyle();
-        
-}
+  public MenuButton(String s) {
+    super(s);
+    menuButtonStyle();
 
+  }
 
-	public void menuButtonStyle(){
-	this.setForeground(Color.WHITE);
+  public void menuButtonStyle() {
+    this.setForeground(Color.WHITE);
     this.setFocusPainted(false);
     this.setBorderPainted(false);
-    this.setFont(new Font("Tahoma", Font.BOLD, 12)); 
-    this.setBackground(new Color(142,192,228));
-	}
+    this.setFont(new Font("Tahoma", Font.BOLD, 12));
+    this.setBackground(new Color(142, 192, 228));
+  }
 }

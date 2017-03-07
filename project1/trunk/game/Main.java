@@ -17,45 +17,36 @@
 //during the game. 
 
 package game;
+
 import javax.swing.*;
+
 //import java.awt.*;
-public class Main 
-{
+public class Main {
 
-
-  public static void main(String[] args)
-  {
+  public static void main(String[] args) {
     // This is the play area
     new GameWindow();
-    
-    
-    
 
-    
     try {
       // The 4 that installed on Linux here
       // May have to test on Windows boxes to see what is there.
       UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
-      //This is the "Java" or CrossPlatform version and the default
-      //UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
-      //Linux only
-      //UIManager.setLookAndFeel("com.sun.java.swing.plaf.gtk.GTKLookAndFeel");
-      // really old style Motif 
-      //UIManager.setLookAndFeel("com.sun.java.swing.plaf.motif.MotifLookAndFeel");
-    } 
-    catch (UnsupportedLookAndFeelException e) {
-     // handle possible exception
+      // This is the "Java" or CrossPlatform version and the default
+      // UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
+      // Linux only
+      // UIManager.setLookAndFeel("com.sun.java.swing.plaf.gtk.GTKLookAndFeel");
+      // really old style Motif
+      // UIManager.setLookAndFeel("com.sun.java.swing.plaf.motif.MotifLookAndFeel");
+    } catch (UnsupportedLookAndFeelException e) {
+      // handle possible exception
+    } catch (ClassNotFoundException e) {
+      // handle possible exception
+    } catch (InstantiationException e) {
+      // handle possible exception
+    } catch (IllegalAccessException e) {
+      // handle possible exception
     }
-    catch (ClassNotFoundException e) {
-     // handle possible exception
-    }
-    catch (InstantiationException e) {
-     // handle possible exception
-    }
-    catch (IllegalAccessException e) {
-     // handle possible exception
-    }
-  
+
   }
-  
+
 };
