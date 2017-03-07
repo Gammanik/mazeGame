@@ -8,7 +8,7 @@ Create Action Listeners to register Tile presses, and allow select
 and place movement functionality.
 
 Dylan:
-UML updates, assist when asked for all other tasks
+UML updates, assist when asked for all other tasks.
 
 //Specifics: 
 Nikita:
@@ -16,8 +16,8 @@ Create Actionlistener for all Components, specifically register presses outside
 a tile.
 
 Blake, Ben, Paul:
-Send Data of each tile when Tile is moved, format and write all data transfer 
-code. allow tiles to be moved to any open spot.
+Send data of each Tile when Tile is moved, format and write all data transfer 
+code. Allow tiles to be moved to any open spot.
 
 
 
@@ -25,8 +25,8 @@ code. allow tiles to be moved to any open spot.
 
 //Users Guide:
 
-When a tile is clicked, it will slightly change color to inform the user which 
-tile is about to be moved. Clicking on any other information tile will cancel 
+When a Tile is clicked, it will slightly change color to inform the user which 
+Tile is about to be moved. Clicking on any other information Tile will cancel 
 the selection and wait for more input. Clicking an empty space will move the 
-selected tile to that tile and wait for more input. The only functional Menu 
-Button is the quit button which merely exits the program.
+selected Tile to the empty Tile and wait for more input. The only functional menu 
+button is the Quit button which merely exits the program.
