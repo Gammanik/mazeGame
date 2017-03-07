@@ -57,7 +57,7 @@ public class GameWindow extends JFrame{
     this.add(frame);
     this.setVisible(true);
     frame.setBackground(Color.gray);
-    System.out.println(this.getHeight());// prints to console height of JFrame     
+    //System.out.println(this.getHeight());// prints to console height of JFrame     
     }
     
 //    this is where the different components of the game window are
@@ -129,7 +129,7 @@ public class GameWindow extends JFrame{
                   {
                     Tile temp = (Tile) component;
                     number = temp.getText();
-                     System.out.print(number); // just for testing clicks
+                     //System.out.print(number); // just for testing clicks
                   
                  // String temp = Tile.getId();
                   }
@@ -143,11 +143,11 @@ public class GameWindow extends JFrame{
                 } else { //when clicked out of SIDE tiles
                   if(previous.getName() != "emptyTile")
                      previous.setBackground(Color.ORANGE);
-                  System.out.println("else case: " + previous.getName());
+                  //System.out.println("else case: " + previous.getName());
                   
                   // click to a empty tile after an info tile
                   if(infoTileClicked && component.getName() == "emptyTile") { 
-                    //System.out.println(component.getAccessibleContext().getAccessibleText());
+                    ////System.out.println(component.getAccessibleContext().getAccessibleText());
                     component.setBackground(Color.ORANGE);
                     ((Tile) component).setText(previous.getText()); // -edit  by Dylan 
                     ((Tile) component).setFont(new Font("Tahoma", Font.BOLD, 20));

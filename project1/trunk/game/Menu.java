@@ -52,7 +52,7 @@ GridBagConstraints constraint = new GridBagConstraints();
 //setting the positioning for the exit button         
     constraint.gridx = 2;
     constraint.weightx = 1;
-    MenuButton exitButton = new MenuButton("Exit");
+    MenuButton exitButton = new MenuButton("Quit");
     exitButton.setBackground(Color.RED);
     this.add(exitButton,constraint);
         
