@@ -1,6 +1,8 @@
 package game;
 
 import java.awt.Color;
+import java.awt.Graphics;
+
 import javax.swing.JLabel;
 
 public class Tile extends JLabel {
@@ -16,32 +18,24 @@ public class Tile extends JLabel {
     id = newID;
     setBackground(thisColor);
     setOpaque(true);
+    
+    this.setText(this.getId());
     // added by blake: basic mouse listener
 
   }
+  
+  public void paintComponent(Graphics g){
+    super.paintComponent(g);
+    for(int i = 0; i < 16; i++) {
+    if(this.getName() == "infoTile" && this.getId().equals("0")) {
+      g.drawLine(0, 10, 60, 60); 
+      }
+    else if(this.getName() == "infoTile" && this.getId().equals("1")) {
+      g.drawLine(0, 10, 60, 10); 
+      }
+    }
+  }
 
-  // public void addListener() {
-  // this.addMouseListener(new MouseListener()
-  // {
-  // @Override
-  // public void mouseClicked(MouseEvent arg0) {
-  // System.out.println("clicked tile");
-  // doClicked();
-  // setBackground(Color.CYAN);
-  // //send info method
-  //
-  // }
-  //
-  // @Override
-  // public void mouseEntered(MouseEvent arg0) { }
-  // @Override
-  // public void mouseExited(MouseEvent arg0) { }
-  // @Override
-  // public void mousePressed(MouseEvent arg0) { }
-  // @Override
-  // public void mouseReleased(MouseEvent arg0) { }
-  // });
-  // }
 
   public String getName() {
     return name;
@@ -64,13 +58,4 @@ public class Tile extends JLabel {
   }
 }
 
-// public void doClicked()
-// {
-// clicked = true;
-// }
-//
-// public void clearClicked()
-// {
-// clicked = false;
-// }
 

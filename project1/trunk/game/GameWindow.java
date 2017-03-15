@@ -117,19 +117,16 @@ public class GameWindow extends JFrame{
           }
           component.addMouseListener(new MouseAdapter()
           {
-            String number; //  number of the tile
-              public void mousePressed(MouseEvent evt)
+            public void mousePressed(MouseEvent evt)
               {
                 int clicks = evt.getClickCount();
-                
-                
+                                
                 if(component.getName() == "infoTile" && clicks == 1 && !infoTileClicked) {
                   component.setBackground(Color.YELLOW);
                   if(component instanceof Tile)
                   {
                     Tile temp = (Tile) component;
-                    number = temp.getText();
-                     //System.out.print(number); // just for testing clicks
+                    temp.getText();
                   
                  // String temp = Tile.getId();
                   }
@@ -149,6 +146,7 @@ public class GameWindow extends JFrame{
                   if(infoTileClicked && component.getName() == "emptyTile") { 
                     ////System.out.println(component.getAccessibleContext().getAccessibleText());
                     component.setBackground(Color.ORANGE);
+                    ((Tile) component).setId(previous.getId());
                     ((Tile) component).setText(previous.getText()); // -edit  by Dylan 
                     ((Tile) component).setFont(new Font("Tahoma", Font.BOLD, 20));
                     Border border = BorderFactory.createLineBorder(Color.BLACK, 0);
@@ -162,9 +160,9 @@ public class GameWindow extends JFrame{
                     previous.setBorder(border);
                     previous.setBackground(Color.WHITE); //make for the color cannot be changed
                     previous.setName("emptyTile"); //marked as used
+                    previous.setId("");
                     component.setName("infoTile");
                   }
-                
                   infoTileClicked = false;
                 } 
               }
