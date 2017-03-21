@@ -44,9 +44,9 @@ public class Main {
   
  try
  {   
-  // FileReader fileReader = new FileReader("Test.txt");
+
   in = new FileInputStream("Test.txt");
-  // BufferedReader bufferedReader = new BufferedReader(fileReader);
+ 
    
    
     int c;
