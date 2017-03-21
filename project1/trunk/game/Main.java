@@ -17,14 +17,53 @@
 //during the game. 
 
 package game;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.nio.ByteBuffer;
 
 import javax.swing.*;
 
 //import java.awt.*;
 public class Main {
-
-  public static void main(String[] args) {
-    // This is the play area
+  public static int convertToInt(byte[] array) {
+    ByteBuffer buffer = ByteBuffer.wrap(array);
+    return buffer.getInt();
+}
+  
+  
+  
+  public static void main(String[] args) throws IOException 
+  {
+    FileInputStream in = null;
+    //  FileOutputStream output = null;
+   
+  
+ try
+ {   
+  // FileReader fileReader = new FileReader("Test.txt");
+  in = new FileInputStream("Test.txt");
+  // BufferedReader bufferedReader = new BufferedReader(fileReader);
+   
+   
+    int c;
+    while((c = in.read()) != -1)
+    {
+      System.out.println(c);
+    }
+ }
+   finally {
+     if(in!=null)
+      in.close();
+ }
+    
+    
+    
+    
+ // This is the play area
     new GameWindow();
 
     try {
