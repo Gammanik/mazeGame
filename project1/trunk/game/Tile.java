@@ -12,6 +12,8 @@ public class Tile extends JLabel {
   private static final long serialVersionUID = 1L;
   private String id;
   private String name;
+//  possibly store maze line points in an array for each instance.
+//  and use below in paintComponent
   private Color thisColor = Color.ORANGE;
 
   public Tile(String newID) {
@@ -20,18 +22,34 @@ public class Tile extends JLabel {
     setOpaque(true);
     
     this.setText(this.getId());
-    // added by blake: basic mouse listener
-
   }
   
+  //copy constructor
+  public Tile(Tile originalCopy) {
+    this.setBackground(originalCopy.getBackground());
+    this.setText(originalCopy.getText());
+    this.setBorder(originalCopy.getBorder());
+    this.setName(originalCopy.getName());
+    this.setPreferredSize(originalCopy.getPreferredSize());
+    this.setMinimumSize(originalCopy.getMinimumSize());
+    this.setLocation(originalCopy.getLocation());
+    this.setHorizontalAlignment(originalCopy.getHorizontalAlignment());
+    this.setId(originalCopy.getId());
+    this.setSize(originalCopy.getSize());
+    this.setFont(originalCopy.getFont());
+ 
+  }
+  
+
+
   public void paintComponent(Graphics g){
     super.paintComponent(g);
     for(int i = 0; i < 16; i++) {
     if(this.getName() == "infoTile" && this.getId().equals("0")) {
-      g.drawLine(0, 10, 60, 60); 
+      g.drawLine(0, 10, 600, 600); 
       }
     else if(this.getName() == "infoTile" && this.getId().equals("1")) {
-      g.drawLine(0, 10, 60, 10); 
+      g.drawLine(0, 10, 600, 10); 
       }
     }
   }

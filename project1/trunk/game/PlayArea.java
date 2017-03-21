@@ -1,6 +1,8 @@
 package game;
 
 import java.awt.Color;
+import java.awt.Component;
+import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -21,14 +23,18 @@ public class PlayArea extends JPanel {
 	 * 
 	 */
 
+  private Component[][] startingConfig;   
+  
+  
   private static final long serialVersionUID = 1L;
 
   PlayArea() {
-    this.setLayout(new GridBagLayout());
+    setLayout(new GridBagLayout());
     addWestSidePanel();
     addBoard();
     addEastSidePanel();
     playAreaStyle();
+    
   }
 
   private void addWestSidePanel() {
@@ -38,7 +44,8 @@ public class PlayArea extends JPanel {
     constraint.gridx = 0;
     constraint.gridy = 0;
     constraint.insets = new Insets(0, 150, 0, 150);
-
+    
+    tilePanelWest.setName("tilePanelWest");
     tilePanelWest.setBackground(Color.gray);
 
     this.add(tilePanelWest, constraint);
@@ -52,7 +59,8 @@ public class PlayArea extends JPanel {
     constraint.gridx = 2;
     constraint.gridy = 0;
     constraint.insets = new Insets(0, 150, 0, 150);
-
+    
+    tilePanelEast.setName("tilePanelEast");
     tilePanelEast.setBackground(Color.gray);
 
     this.add(tilePanelEast, constraint);
@@ -92,9 +100,28 @@ public class PlayArea extends JPanel {
 
   }
 
+  public final void saveConfig() {
+    Component[][] temp = new Component[3][];
+    temp[0] = new Component [8];
+    temp[1] = new Component [16];
+    temp[2] = new Component [8];
+    for(int i = 0; i < getComponents().length; i++) {
+      Component[] tiles = ((Container) getComponents()[i]).getComponents();
+      for(int j= 0; j < tiles.length; j++) {
+        Tile originalTile = new Tile((Tile) tiles[j]);
+         temp[i][j] = originalTile;
+      }
+   }
+    startingConfig = temp.clone();   
+  }
+
+   
+  public Component[][] getOriginalConfig() {
+    return startingConfig;
+  }
+  
   // currently not being used but theoretically for styling the
   // playArea panel.
-
   public void playAreaStyle() {
     // area to set color, size, and things dealing with the style
   }

@@ -47,13 +47,14 @@ public class Menu extends JPanel {
     // setting the positioning for the new game button
     constraint.gridx = 1;
     MenuButton resetButton = new MenuButton("Reset");
+    resetButton.addActionListener(new ResetComponentAction());
     this.add(resetButton, constraint);
 
     // setting the positioning for the exit button
     constraint.gridx = 2;
     constraint.weightx = 1;
     MenuButton exitButton = new MenuButton("Quit");
-    exitButton.setBackground(Color.RED);
+    exitButton.setBackground(new Color(242, 119, 101));
     this.add(exitButton, constraint);
 
     exitButton.addActionListener(new ActionListener() {
@@ -61,19 +62,34 @@ public class Menu extends JPanel {
         System.exit(0);
       }
     });
+       
 
     // change color of exit button when mouse hovers over
     exitButton.addMouseListener(new java.awt.event.MouseAdapter() {
       public void mouseEntered(java.awt.event.MouseEvent evt) {
         // System.out.println("mouse entered");
-        exitButton.setBackground(new Color(250, 60, 50));
+        exitButton.setBackground(new Color(240, 0, 0));
       }
 
       public void mouseExited(java.awt.event.MouseEvent evt) {
         // System.out.println("mouse exit");
-        exitButton.setBackground(new Color(242, 109, 91));
+        exitButton.setBackground(new Color(242, 119, 101));
       }
     });
+    
+    resetButton.addMouseListener(new java.awt.event.MouseAdapter() {
+      public void mouseEntered(java.awt.event.MouseEvent evt) {
+        // System.out.println("mouse entered");
+        resetButton.setBackground(new Color(50, 80, 250));
+      }
+
+      public void mouseExited(java.awt.event.MouseEvent evt) {
+        // System.out.println("mouse exit");
+        resetButton.setBackground(new Color(142, 192, 228));
+      }
+    });
+    
+      
 
   }
 

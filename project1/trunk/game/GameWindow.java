@@ -50,7 +50,7 @@ public class GameWindow extends JFrame{
                     e.printStackTrace();
          }
     	
-    this.setSize(1000, 1000);                    
+    this.setSize(1000, 1050);                    
     this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     this.setLocationRelativeTo(null);           
     this.getContentPane().setBackground(new Color(212,223,230)); //baby blue
@@ -95,41 +95,42 @@ public class GameWindow extends JFrame{
 	  playAreaPosition.gridx = 0;
 	  playAreaPosition.gridy = 0;
 	  playArea.setBackground(Color.gray);
-	
+	  playArea.setName("playArea");
+	  playArea.saveConfig();
 	  frame.add(playArea, playAreaPosition);
-    }
-    
-    
-    public void addTilesListeners(Container comp) {
-      
-      final Component[] components = comp.getComponents(); 
 
+    }
+     
+    public void addTilesListeners(Container comp) {
+            
+      final Component[] components = comp.getComponents(); 
       
+  
       for (Component component : components)
       {
+      
           if (component instanceof Container)
           {
               Component[] child = ((Container)component).getComponents();
+              
               if (child != null && child.length > 0)
               {
+                
                   addTilesListeners((Container)component);
+                  
               }
           }
+          
           component.addMouseListener(new MouseAdapter()
           {
             public void mousePressed(MouseEvent evt)
               {
+                            
                 int clicks = evt.getClickCount();
-                                
+                
                 if(component.getName() == "infoTile" && clicks == 1 && !infoTileClicked) {
                   component.setBackground(Color.YELLOW);
-                  if(component instanceof Tile)
-                  {
-                    Tile temp = (Tile) component;
-                    temp.getText();
                   
-                 // String temp = Tile.getId();
-                  }
                  // component.getAccessibleContext();
                   infoTileClicked = true;
                   //changing color of previous component
@@ -165,8 +166,9 @@ public class GameWindow extends JFrame{
                   }
                   infoTileClicked = false;
                 } 
+                
               }
-              
+             
           });
       }
     }    
