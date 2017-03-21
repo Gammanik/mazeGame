@@ -79,7 +79,7 @@ public class PlayArea extends JPanel {
       constraint.weightx = 1;
       constraint.fill = GridBagConstraints.NONE;
       tile.setBackground(Color.white); // makes tiles white
-      tile.setMinimumSize(new Dimension(50, 50));
+      tile.setMinimumSize(new Dimension(100, 100));
       tile.setPreferredSize(new Dimension(100, 100));
       boardPanel.add(tile, constraint);
     }

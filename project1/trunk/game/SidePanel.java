@@ -34,7 +34,7 @@ public class SidePanel extends JPanel {
       tile.setHorizontalAlignment(SwingConstants.CENTER); // edit by Dylan
       tile.setFont(new Font("Tahoma", Font.BOLD, 20));
       tile.setName("infoTile"); // for checking in mouseListener
-      tile.setMinimumSize(new Dimension(50, 50));
+      tile.setMinimumSize(new Dimension(100, 100));
       tile.setPreferredSize(new Dimension(100, 100));
       this.add(tile, cons);
     }
