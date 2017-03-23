@@ -44,12 +44,12 @@ public class Main {
    
    
     in.readInt();
-    int temp = in.readInt();
-    while(temp != -1) {
-      for(int i = 0; i< (temp * 4); i++){
+    
+    while(in.readInt() != -1) {
+      int numberOfLines = in.readInt();
+      for(int i = 0; i< (numberOfLines * 4); i++){
         in.readFloat();
       }
-      temp = in.readInt();
     }
         
  }
