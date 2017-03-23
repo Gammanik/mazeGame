@@ -46,7 +46,14 @@ public class Tile extends JLabel {
     super.paintComponent(g);
     for(int i = 0; i < 16; i++) {
     if(this.getName() == "infoTile" && this.getId().equals("0")) {
-      g.drawLine(0, 10, 600, 600); 
+      g.drawLine(1, 1, 99, 1); 
+      g.drawLine(1, 1, 1, 99);
+      g.drawLine(1, 75, 25, 75);
+      g.drawLine(25, 25, 25, 75);
+      g.drawLine(25, 25, 99, 25);
+      g.drawLine(50, 99, 50, 50);
+      g.drawLine(50, 50, 99, 50);
+      g.drawLine(75, 99, 75, 75);
       }
     else if(this.getName() == "infoTile" && this.getId().equals("1")) {
       g.drawLine(0, 10, 600, 10); 
