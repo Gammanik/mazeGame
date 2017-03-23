@@ -34,6 +34,7 @@ public class PlayArea extends JPanel {
     addBoard();
     addEastSidePanel();
     playAreaStyle();
+    this.setName("playArea");
     
   }
 

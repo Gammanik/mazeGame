@@ -20,7 +20,6 @@ import javax.swing.*; // doesn't this bring in the entire swing library so no ne
 import javax.swing.border.Border;
 
 import java.awt.*;  // doesn't this bring in all awt so next 2 lines redundant?
-import java.awt.event.MouseEvent;
 import java.awt.event.*;
 
 public class GameWindow extends JFrame{
@@ -34,13 +33,15 @@ public class GameWindow extends JFrame{
  
     
     public GameWindow() {
+      
      super("Group C Maze"); // names the OS window chrome across the top
      this.addComponents();
+     frame.setName("frame");
      this.setUpWindow();   
      this.addTilesListeners(this);
+     
     }
-
-
+    
     public void setUpWindow()
     {
 

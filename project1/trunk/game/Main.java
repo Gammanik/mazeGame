@@ -24,13 +24,17 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.nio.ByteBuffer;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import javax.swing.*;
 
 //import java.awt.*;
 public class Main {
-  public static int convertToInt(byte[] array) {
-    ByteBuffer buffer = ByteBuffer.wrap(array);
+  
+  public static int convertToInt(byte[] c) {
+    ByteBuffer buffer = ByteBuffer.wrap(c);
     return buffer.getInt();
 }
   
@@ -38,22 +42,32 @@ public class Main {
   
   public static void main(String[] args) throws IOException 
   {
-    FileInputStream in = null;
+    ReadFile in = null;
     //  FileOutputStream output = null;
    
   
  try
  {   
 
-  in = new FileInputStream("Test.txt");
- 
+    in = new ReadFile("default.mze");
+    Path path = Paths.get("default.mze");
+    byte[] bArray = Files.readAllBytes(path);
+    
    
-   
-    int c;
-    while((c = in.read()) != -1)
-    {
-      System.out.println(c);
+    
+//    while(in.readInt() != -1)
+//    {
+//     
+//   }
+    in.readInt();
+    int temp = in.readInt();
+    while(temp != -1) {
+      for(int i = 0; i< (temp * 4); i++){
+        in.readFloat();
+      }
+      temp = in.readInt();
     }
+        
  }
    finally {
      if(in!=null)
