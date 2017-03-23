@@ -17,17 +17,8 @@
 //during the game. 
 
 package game;
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.FileReader;
 import java.io.IOException;
 import java.nio.ByteBuffer;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-
 import javax.swing.*;
 
 //import java.awt.*;
@@ -49,16 +40,9 @@ public class Main {
  try
  {   
 
-    in = new ReadFile("default.mze");
-    Path path = Paths.get("default.mze");
-    byte[] bArray = Files.readAllBytes(path);
-    
+    in = new ReadFile("default.mze");    
    
-    
-//    while(in.readInt() != -1)
-//    {
-//     
-//   }
+   
     in.readInt();
     int temp = in.readInt();
     while(temp != -1) {
@@ -73,8 +57,6 @@ public class Main {
      if(in!=null)
       in.close();
  }
-    
-    
     
     
  // This is the play area

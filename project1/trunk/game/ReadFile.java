@@ -6,7 +6,6 @@ import java.io.IOException;
 
 public class ReadFile extends FileInputStream {
 
-  private byte[] byteArray;
   
   public ReadFile(String name) throws FileNotFoundException {
     super(name);
