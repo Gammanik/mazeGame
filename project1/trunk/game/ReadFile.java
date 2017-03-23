@@ -15,7 +15,7 @@ public class ReadFile extends FileInputStream {
     byte[] myArray = new byte[4];
     for(int i = 0; i<4; i++) {
       myArray[i] = (byte) read();
-//    System.out.println(read());
+
     }
     System.out.println(ConvertByte.convertToInt(myArray));
     return ConvertByte.convertToInt(myArray);
@@ -25,7 +25,7 @@ public class ReadFile extends FileInputStream {
     byte[] myArray = new byte[4];
     for(int i = 0; i<4; i++) {
       myArray[i] = (byte) read();
-//    System.out.println(read());
+
     }
     System.out.println(ConvertByte.convertToFloat(myArray));
     return ConvertByte.convertToFloat(myArray);
