@@ -45,6 +45,10 @@ public class Main {
            this.coordinates = coordinates;
       }
     
+     public  float[] getCoordinates()
+     {
+       return coordinates;
+     }
     }
     
     ArrayList<ArrayList<Line>> matrix = new ArrayList<ArrayList<Line>>();
@@ -62,7 +66,6 @@ public class Main {
       tileIndex = in.readInt(); //current tile number
       ArrayList<Line> linesForTile = new ArrayList<Line>();
       
-      
       int numberOfLines = in.readInt();
       for(int i = 0; i< numberOfLines; i++){
         
@@ -71,14 +74,12 @@ public class Main {
         for(int coordNum = 0; coordNum < 4; coordNum++) {
           lineCoordsArray[coordNum] = in.readFloat();
         }
-        
-        matrix.add(linesForTile);
-        //TODO: matrix[tileNum] = linesForTile
-        
-       
-        
+        Line tempLine = new Line(lineCoordsArray);
+        linesForTile.add(tempLine);
       }
-      
+        matrix.add(linesForTile);
+        linesForTile.clear();
+        //TODO: matrix[tileNum] = linesForTile 
     }
         
  }
