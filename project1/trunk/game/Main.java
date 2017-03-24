@@ -20,6 +20,7 @@ package game;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import javax.swing.*;
+import java.util.ArrayList;
 
 //import java.awt.*;
 public class Main {
@@ -36,6 +37,17 @@ public class Main {
     ReadFile in = null;
     //  FileOutputStream output = null;
    
+    class Line{
+
+      private float[] coordinates = new float[4];
+      
+     public Line(float[] coordinates) {
+           this.coordinates = coordinates;
+      }
+    
+    }
+    
+    ArrayList<ArrayList<Line>> matrix = new ArrayList<ArrayList<Line>>();
   
  try
  {   
@@ -43,13 +55,21 @@ public class Main {
     in = new ReadFile("default.mze");    
    
    
-    in.readInt();
+    in.readInt(); //read 16
     
-    while(in.readInt() != -1) {
+    //while(in.readInt() != -1) { //tile number
+    for(int tileNum = 0; tileNum < 15; ) { 
+      
+      tileNum = in.readInt(); //current tile number
+      
       int numberOfLines = in.readInt();
       for(int i = 0; i< (numberOfLines * 4); i++){
+        
+        //for
         in.readFloat();
       }
+      
+      //TODO: add tile with lines here
     }
         
  }
