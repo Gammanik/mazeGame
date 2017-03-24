@@ -21,6 +21,8 @@ import javax.swing.border.Border;
 
 import java.awt.*;  // doesn't this bring in all awt so next 2 lines redundant?
 import java.awt.event.*;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
 
 public class GameWindow extends JFrame{
     
@@ -40,11 +42,12 @@ public class GameWindow extends JFrame{
      this.setUpWindow();   
      this.addTilesListeners(this);
      
+     
+     
     }
     
     public void setUpWindow()
     {
-
     	try {
             UIManager.setLookAndFeel( UIManager.getCrossPlatformLookAndFeelClassName() );
          } catch (Exception e) {

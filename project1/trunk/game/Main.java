@@ -34,59 +34,7 @@ public class Main {
   
   public static void main(String[] args) throws IOException 
   {
-    ReadFile in = null;
-    //  FileOutputStream output = null;
    
-    class Line{
-
-      private float[] coordinates = new float[4];
-      
-     public Line(float[] coordinates) {
-           this.coordinates = coordinates;
-      }
-    
-     public  float[] getCoordinates()
-     {
-       return coordinates;
-     }
-    }
-    
-    ArrayList<ArrayList<Line>> matrix = new ArrayList<ArrayList<Line>>();
-  
- try
- {   
-
-    in = new ReadFile("default.mze");    
-   
-   
-    in.readInt(); //read 16
-    
-    for(int tileIndex = 0; tileIndex < 15; ) { 
-      
-      tileIndex = in.readInt(); //current tile number
-      ArrayList<Line> linesForTile = new ArrayList<Line>();
-      
-      int numberOfLines = in.readInt();
-      for(int i = 0; i< numberOfLines; i++){
-        
-        //read four coordinates
-        float[] lineCoordsArray = new float[4];
-        for(int coordNum = 0; coordNum < 4; coordNum++) {
-          lineCoordsArray[coordNum] = in.readFloat();
-        }
-        Line tempLine = new Line(lineCoordsArray);
-        linesForTile.add(tempLine);
-      }
-        matrix.add(linesForTile);
-        linesForTile.clear();
-        //TODO: matrix[tileNum] = linesForTile 
-    }
-        
- }
-   finally {
-     if(in!=null)
-      in.close();
- }
     
     
  // This is the play area
