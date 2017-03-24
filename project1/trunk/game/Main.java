@@ -57,19 +57,28 @@ public class Main {
    
     in.readInt(); //read 16
     
-    //while(in.readInt() != -1) { //tile number
-    for(int tileNum = 0; tileNum < 15; ) { 
+    for(int tileIndex = 0; tileIndex < 15; ) { 
       
-      tileNum = in.readInt(); //current tile number
+      tileIndex = in.readInt(); //current tile number
+      ArrayList<Line> linesForTile = new ArrayList<Line>();
+      
       
       int numberOfLines = in.readInt();
-      for(int i = 0; i< (numberOfLines * 4); i++){
+      for(int i = 0; i< numberOfLines; i++){
         
-        //for
-        in.readFloat();
+        //read four coordinates
+        float[] lineCoordsArray = new float[4];
+        for(int coordNum = 0; coordNum < 4; coordNum++) {
+          lineCoordsArray[coordNum] = in.readFloat();
+        }
+        
+        matrix.add(linesForTile);
+        //TODO: matrix[tileNum] = linesForTile
+        
+       
+        
       }
       
-      //TODO: add tile with lines here
     }
         
  }
