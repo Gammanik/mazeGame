@@ -51,19 +51,21 @@ public class Tile extends JLabel {
       in = new ReadFile("default.mze");
     } catch (FileNotFoundException e1) {
       // TODO Auto-generated catch block
-      e1.printStackTrace();
+      System.out.println("File not Found Exception");
+      //e1.printStackTrace();
     }    
      try {
       matrix = in.getLines();
     } catch (IOException e) {
+      System.out.println("IO Exception");
       // TODO Auto-generated catch block
-      e.printStackTrace();
+      //e.printStackTrace();
     }
     for (int i = 0; i < 16; i++) {
       if (this.getName() == "infoTile" && this.getId().equals("0"))
         {
             //for (ArrayList<Line> list :matrix)
-            {
+            
               ArrayList<Line> temp = matrix.get(0);
               for (Line l : temp)
               {
@@ -74,7 +76,7 @@ public class Tile extends JLabel {
                 g.drawLine(temp1, temp2, temp3, temp4);
               }
               
-            }
+            
         
         
         }
