@@ -43,6 +43,8 @@ public class Menu extends JPanel {
     constraint.fill = GridBagConstraints.BOTH;
     constraint.insets = new Insets(4, 4, 4, 4);
     MenuButton newGameButton = new MenuButton("New Game");
+    newGameButton.setMinimumSize(new Dimension (100,40));
+    newGameButton.setPreferredSize(new Dimension(100,40));
     this.add(newGameButton, constraint);
 
     // setting the positioning for the new game button
@@ -57,7 +59,6 @@ public class Menu extends JPanel {
     MenuButton exitButton = new MenuButton("Quit");
     exitButton.setBackground(new Color(242, 119, 101));
     this.add(exitButton, constraint);
-
     exitButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent event) {
         System.exit(0);
@@ -98,8 +99,8 @@ public class Menu extends JPanel {
 
   public void menuStyle() {
 
-    this.setMinimumSize(new Dimension(250, 50));
-    this.setPreferredSize(new Dimension(250, 50));
+//    this.setMinimumSize(new Dimension(250, 50));
+//    this.setPreferredSize(new Dimension(250, 50));
     this.setBackground(Color.gray);
   }
 }
