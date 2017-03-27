@@ -25,15 +25,43 @@ import java.util.ArrayList;
 //import java.awt.*;
 public class Main {
   
+  static ArrayList<ArrayList<Line>> matrix = new ArrayList<ArrayList<Line>>();
   public static int convertToInt(byte[] c) {
     ByteBuffer buffer = ByteBuffer.wrap(c);
     return buffer.getInt();
 }
   
-  
-  
   public static void main(String[] args) throws IOException 
   {
+    ReadFile in = null;
+    in = new ReadFile("default.mze");
+    
+    int numTiles = in.readInt(); //read 16
+    System.out.println(numTiles);
+    
+    while(in.readInt() != -1) { 
+      
+     // int tileIndex = this.readInt(); //current tile number
+      //System.out.println(tileIndex);
+      ArrayList<Line> linesForTile = new ArrayList<Line>();
+      
+      int numberOfLines = in.readInt();
+      for(int i = 0; i< numberOfLines; i++){
+        
+        //read four coordinates
+        float[] lineCoordsArray = new float[4];
+        for(int coordNum = 0; coordNum < 4; coordNum++) 
+        {
+          lineCoordsArray[coordNum] = in.readFloat();
+        }
+        Line tempLine = new Line(lineCoordsArray);
+        linesForTile.add(tempLine);
+      }
+        matrix.add(linesForTile);
+        linesForTile.clear();
+    }
+    
+    in.close();
    
     
     

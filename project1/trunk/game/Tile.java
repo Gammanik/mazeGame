@@ -45,34 +45,22 @@ public class Tile extends JLabel {
 
   public void paintComponent(Graphics g) {
     super.paintComponent(g);
-    ReadFile in = null;
-     ArrayList<ArrayList<Line>> matrix = new ArrayList<ArrayList<Line>>();  
-     try {
-      in = new ReadFile("default.mze");
-    } catch (FileNotFoundException e1) {
-      // TODO Auto-generated catch block
-      System.out.println("File not Found Exception");
-      //e1.printStackTrace();
-    }    
-     try {
-      matrix = in.getLines();
-    } catch (IOException e) {
-      System.out.println("IO Exception");
-      // TODO Auto-generated catch block
-      //e.printStackTrace();
-    }
     for (int i = 0; i < 16; i++) {
       if (this.getName() == "infoTile" && this.getId().equals("0"))
         {
             //for (ArrayList<Line> list :matrix)
             
-              ArrayList<Line> temp = matrix.get(0);
+              ArrayList<Line> temp = Main.matrix.get(0);
               for (Line l : temp)
               {
                 int temp1 = (int) l.getCoordinates()[0];
+                System.out.println((int) l.getCoordinates()[0]);
                 int temp2 = (int) l.getCoordinates()[1];
+                System.out.println((int) l.getCoordinates()[1]);
                 int temp3 = (int) l.getCoordinates()[2];
+                System.out.println((int) l.getCoordinates()[2]);
                 int temp4 = (int) l.getCoordinates()[3];
+                System.out.println((int) l.getCoordinates()[3]);
                 g.drawLine(temp1, temp2, temp3, temp4);
               }
               
@@ -89,7 +77,7 @@ public class Tile extends JLabel {
 //        g.drawLine(50, 50, 99, 50);
 //        g.drawLine(75, 99, 75, 75);
        else if (this.getName() == "infoTile" && this.getId().equals("1")) {
-        g.drawLine(0, 10, 600, 10);
+        //g.drawLine(0, 10, 600, 10);
       }
     }
   }

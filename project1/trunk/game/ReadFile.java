@@ -18,7 +18,7 @@ public class ReadFile extends FileInputStream {
       myArray[i] = (byte) read();
 
     }
-    System.out.println(ConvertByte.convertToInt(myArray));
+    //System.out.println(ConvertByte.convertToInt(myArray));
     return ConvertByte.convertToInt(myArray);
     }
     
@@ -28,36 +28,12 @@ public class ReadFile extends FileInputStream {
       myArray[i] = (byte) read();
 
     }
-    System.out.println(ConvertByte.convertToFloat(myArray));
+    //System.out.println(ConvertByte.convertToFloat(myArray));
     return ConvertByte.convertToFloat(myArray);
     }
   
-  public ArrayList<ArrayList<Line>> getLines() throws IOException {
-    ArrayList<ArrayList<Line>> matrix = new ArrayList<ArrayList<Line>>();
-    this.readInt(); //read 16
+ // public ArrayList<ArrayList<Line>> getLines() throws IOException {
     
-    for(int tileIndex = 0; tileIndex < 15; ) { 
-      
-      tileIndex = this.readInt(); //current tile number
-      ArrayList<Line> linesForTile = new ArrayList<Line>();
-      
-      int numberOfLines = this.readInt();
-      for(int i = 0; i< numberOfLines; i++){
-        
-        //read four coordinates
-        float[] lineCoordsArray = new float[4];
-        for(int coordNum = 0; coordNum < 4; coordNum++) {
-          lineCoordsArray[coordNum] = this.readFloat();
-        }
-        Line tempLine = new Line(lineCoordsArray);
-        linesForTile.add(tempLine);
-      }
-        matrix.add(linesForTile);
-        linesForTile.clear();
-        //TODO: matrix[tileNum] = linesForTile 
-    }
-    return matrix;
-  }
   
   
   
