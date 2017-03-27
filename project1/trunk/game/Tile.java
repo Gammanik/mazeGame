@@ -1,7 +1,9 @@
 package game;
 
+import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 //import java.io.FileNotFoundException;
 //import java.io.IOException;
 import java.util.ArrayList;
@@ -24,7 +26,7 @@ public class Tile extends JLabel {
     setBackground(thisColor);
     setOpaque(true);
 
-    this.setText(this.getId());
+   // this.setText(this.getId());
   }
 
   // copy constructor
@@ -43,9 +45,12 @@ public class Tile extends JLabel {
 
   }
 
-  public void paintComponent(Graphics g) {
+  public void paintComponent(Graphics g) 
+  {
     super.paintComponent(g);
-    for (int i = 0; i < Main.matrix.size(); i++) {
+    Graphics2D g2 = (Graphics2D) g;
+    for (int i = 0; i < Main.matrix.size(); i++) 
+    {
       if (this.getName() == "infoTile" && this.getId().equals(""+i))
         {
               ArrayList<Line> temp = Main.matrix.get(i);
@@ -55,7 +60,8 @@ public class Tile extends JLabel {
                 int temp2 = (int) l.getCoordinates()[1];
                 int temp3 = (int) l.getCoordinates()[2];
                 int temp4 = (int) l.getCoordinates()[3];
-                g.drawLine(temp1, temp2, temp3, temp4);
+                g2.setStroke(new BasicStroke(3));
+                g2.drawLine(temp1, temp2, temp3, temp4);
               }
         }
         }
