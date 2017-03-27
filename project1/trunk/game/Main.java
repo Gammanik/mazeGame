@@ -38,8 +38,9 @@ public class Main {
     
     int numTiles = in.readInt(); //read 16
     System.out.println(numTiles);
-    
-    while(in.readInt() != -1) { 
+    int tileNum = in.readInt();
+    while(tileNum != -1) 
+    { 
       
      // int tileIndex = this.readInt(); //current tile number
       //System.out.println(tileIndex);
@@ -57,11 +58,14 @@ public class Main {
         Line tempLine = new Line(lineCoordsArray);
         linesForTile.add(tempLine);
       }
-        matrix.add(linesForTile);
+       // System.out.println(tileNum + " - numLines: " + linesForTile.size() + " - last Float: "+ (int) linesForTile.get(linesForTile.size()-1).getCoordinates()[0]);
+        matrix.add((ArrayList<Line>) linesForTile.clone());
         linesForTile.clear();
+        tileNum = in.readInt();
     }
     
     in.close();
+   // System.out.println(matrix);
    
     
     
