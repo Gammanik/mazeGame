@@ -49,7 +49,8 @@ public class Main {
         float[] lineCoordsArray = new float[4];
         for(int coordNum = 0; coordNum < 4; coordNum++) 
         {
-          lineCoordsArray[coordNum] = in.readFloat();
+          //reduces the float value so that the coordinates work on a reduced tile size
+          lineCoordsArray[coordNum] = (float) (in.readFloat()*.75); 
         }
         Line tempLine = new Line(lineCoordsArray);
         linesForTile.add(tempLine);

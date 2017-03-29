@@ -48,12 +48,12 @@ public class GameWindow extends JFrame{
     
     public void setUpWindow()
     {
-    	try {
+    try {
             UIManager.setLookAndFeel( UIManager.getCrossPlatformLookAndFeelClassName() );
          } catch (Exception e) {
                     e.printStackTrace();
          }
-    	
+    
     this.setSize(1000, 1050);                    
     this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     this.setLocationRelativeTo(null);           
@@ -78,7 +78,7 @@ public class GameWindow extends JFrame{
     public void addMenu() {
 //      the menu object is a panel that includes the new game, reset,
 //      and exit buttons
-    	Menu menu = new Menu();
+         Menu menu = new Menu();
          GridBagConstraints gbc = new GridBagConstraints();
          gbc.weightx = 1;
          gbc.weighty = 1;
@@ -95,13 +95,13 @@ public class GameWindow extends JFrame{
 //      the playArea is a panel that includes the 4X4 board and the side
 //      panels
     PlayArea playArea = new PlayArea();
-	  GridBagConstraints playAreaPosition = new GridBagConstraints();
-	  playAreaPosition.gridx = 0;
-	  playAreaPosition.gridy = 0;
-	  playArea.setBackground(Color.gray);
-	  playArea.setName("playArea");
-	  playArea.saveConfig();
-	  frame.add(playArea, playAreaPosition);
+    GridBagConstraints playAreaPosition = new GridBagConstraints();
+    playAreaPosition.gridx = 0;
+    playAreaPosition.gridy = 0;
+    playArea.setBackground(Color.gray);
+    playArea.setName("playArea");
+    playArea.saveConfig();
+    frame.add(playArea, playAreaPosition);
 
     }
      
