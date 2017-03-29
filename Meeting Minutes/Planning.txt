@@ -1,3 +1,26 @@
+
+Project 3
+Notes on what occurred during meetings. The group met several times from the time
+we got back from spring break to when the project was turned in. Some work was done
+outside of the meetings while some was done during the meetings.
+
+Specifically Dylan worked on the reset function and coded the classes needed to read the file
+while the rest of the group worked on actually reading the file.
+Individual members also worked on debugging the code to see where things were going wrong
+
+Members who felt as if they hadn't contributed to the coding enough wrote the meeting minutes as well as the UML
+
+To be more specific:
+Dylan:Coded reset functionality and designed classes to be used for file reading and help the others if they got stuck
+Everyone else: Work on getting the program to read the file and use the data to draw lines on the maze.
+ Blake and Nikita did the most coding on this part
+Benjamin and Paul -Design the UML 
+Benjamin - Write the meeting minutes and edit the code so that it looked better and better fit the style guide
+Also deleted unnecessary code
+
+
+
+
 // Project 2
 
 // Plan

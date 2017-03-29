@@ -1,3 +1,15 @@
+Met multiple times
+Most of the time the meetings were spent working on the project
+The reset function was done outside of the class while most of the rest of the code was done during class
+Debugging became very important during this iteration of the project and thus at least one meeting had a good portion of it
+dedicated to it
+For more specific information on who did what, refer to the planning text.
+
+
+ 
+
+
+
 // Keep most recent at top. ( Reverse chronological order).
 
 
@@ -52,115 +64,115 @@ Second Meeting - 2/9/17
 Present: Nikita, Ben, Blake, Paul, Dylan Was there for a bit, really snarky.
 Getting Started with SVN for Eclipse
 Step 1.
-// So I learned something.  You right-click on the item
-// that you want to checkout in the SVN workspace and
-// select checkout.  Then you switch to the Java work
-// space view in Eclipse.
+ So I learned something.  You right-click on the item
+ that you want to checkout in the SVN workspace and
+ select checkout.  Then you switch to the Java work
+ space view in Eclipse.
 Step 2.
-// Now make some changes to the file and save it.  Now you
-// will have a local "uncommitted" change that is only available
-// locally.  To share it with other users, we need to synchronize
-// the project with the SVN repository.
+ Now make some changes to the file and save it.  Now you
+ will have a local "uncommitted" change that is only available
+ locally.  To share it with other users, we need to synchronize
+ the project with the SVN repository.
 Step 3
-// If you have an active connection with the repository (i.e. the
-// online server and files) then right-click the folder or file 
-// and select  Team > Synchronize with Repository
+ If you have an active connection with the repository (i.e. the
+ online server and files) then right-click the folder or file 
+ and select  Team > Synchronize with Repository
 Step 4 
-// if you double-click the modified file you can see the file in the
-// compare changes view and then you can decide what to do with the
-// new changes.
+ if you double-click the modified file you can see the file in the
+ compare changes view and then you can decide what to do with the
+ new changes.
 Step 5
-// Right-click on the modified file and choose between "Commit" or 
-// Revert,  If the changes are good then Commit.
+ Right-click on the modified file and choose between "Commit" or 
+ Revert,  If the changes are good then Commit.
 Step 6 
-// Relax
+ Relax
 
-// 2/13/17 - Meeting #3 (a.k.a. Loud Heater)
-// attendees: Nikita, Paul, Ben
+ 2/13/17 - Meeting #3 (a.k.a. Loud Heater)
+ attendees: Nikita, Paul, Ben
 
 Review of how to commit & pull changes and overwrite local.
 Some change, another change.
-// Learning : To see our hidden files go to: Window > Show View > Navigator
-// Trick: New > Project > General (Don't give it a name here, click next) > then
-// name the project > next and/or Finish.
-// When importing files into a project you must go higher in the directory structure
-// than the folder you want for eclipse to be able to import it properly.
-// Eclipse Java Comments Keyboard Shortcut:
-//                 							mac type this: "cmd" + "/"
-//                                          windows      : "ctrl" + "/"
-//                                          dvorak       : "cmd" + "["
-// Eclipse: Double click any open tab to make it fullscreen, double click 
-//          again to restore.
-// Eclipse: search and replace in Java is referred to as refactoring, to do this
-// 1. highlight the variable name > refactor > rename , this will change the name
-//    of the variable everywhere in the code.
+ Learning : To see our hidden files go to: Window > Show View > Navigator
+ Trick: New > Project > General (Don't give it a name here, click next) > then
+ name the project > next and/or Finish.
+ When importing files into a project you must go higher in the directory structure
+ than the folder you want for eclipse to be able to import it properly.
+ Eclipse Java Comments Keyboard Shortcut:
+                 							mac type this: "cmd" + "/"
+                                          windows      : "ctrl" + "/"
+                                          dvorak       : "cmd" + "["
+ Eclipse: Double click any open tab to make it fullscreen, double click 
+          again to restore.
+ Eclipse: search and replace in Java is referred to as refactoring, to do this
+ 1. highlight the variable name > refactor > rename , this will change the name
+    of the variable everywhere in the code.
  
-// Meeting four 2/14/17 (a.k.a Shot through the heart, but it's still Taco Tuesday)
-// Attendees: Dylan, Blake, Benjamin (Dylan had to leave during the middle of it).
-// What occurred : Everyone was informed of what changes were made in the 
-// Worked on panels to get the buttons laid out right. Dylan was tasked with finishing formatting
-// the buttons.
-// Everyone else has the responsibility of getting the tiles laid out right. 
+ Meeting four 2/14/17 (a.k.a Shot through the heart, but it's still Taco Tuesday)
+ Attendees: Dylan, Blake, Benjamin (Dylan had to leave during the middle of it).
+ What occurred : Everyone was informed of what changes were made in the 
+ Worked on panels to get the buttons laid out right. Dylan was tasked with finishing formatting
+ the buttons.
+ Everyone else has the responsibility of getting the tiles laid out right. 
 
-// Meeting five 2/16/17 (a.k.a. UML & Beyond )
-// Attendees: Ben & Paul 
-// Things look peculiar on the Mac when running. OMG... but Bill Gates and Linus are fine.
-// Worked on the UML diagram.  Dylan was a rockstar and got a lot done.  Gold star with oxidation.
-// Moved the Tile class to it's own file out of the Board class.
-// Ben - Merge Tool
+ Meeting five 2/16/17 (a.k.a. UML & Beyond )
+ Attendees: Ben & Paul 
+ Things look peculiar on the Mac when running. OMG... but Bill Gates and Linus are fine.
+ Worked on the UML diagram.  Dylan was a rockstar and got a lot done.  Gold star with oxidation.
+ Moved the Tile class to it's own file out of the Board class.
+ Ben - Merge Tool
 
-// Meetng six 2-19-17 (a.k.a. We are all one) duration: hours
-// Attendees: Ben, Blake, Dylan, Nikita, Paul 
-// Talked about deliverables, talked about the UML diagram and differing ways to 
-// generate it.  
-// How does one connect from the library to the Hive?  Some were able to connect
-// wirelessly but I am not able to using 5 GHz USB Dongle Wireless adapter on Mac.
-// Some discussion on how to best work as a team - ongoing.  
-// Ben & Paul installed UML Designer short video tutorial here: https://www.youtube.com/watch?v=kbHKcSNlr5I
-// Eclipse shortcut Mac for running when multimedia functions are enabled Fn + Cmd(âŒ˜) + Shift + F11 
-// The remainder of the code for this part of the project was mostly completed during this meeting as well.
+ Meetng six 2-19-17 (a.k.a. We are all one) duration: hours
+ Attendees: Ben, Blake, Dylan, Nikita, Paul 
+ Talked about deliverables, talked about the UML diagram and differing ways to 
+ generate it.  
+ How does one connect from the library to the Hive?  Some were able to connect
+ wirelessly but I am not able to using 5 GHz USB Dongle Wireless adapter on Mac.
+ Some discussion on how to best work as a team - ongoing.  
+ Ben & Paul installed UML Designer short video tutorial here: https://www.youtube.com/watch?v=kbHKcSNlr5I
+ Eclipse shortcut Mac for running when multimedia functions are enabled Fn + Cmd(âŒ˜) + Shift + F11 
+ The remainder of the code for this part of the project was mostly completed during this meeting as well.
 
-// 2/20/17  Tabs & Space in the Eclipse IDE 
-// As per Dr. Buckner's discussion today in class I learned how to make sure we
-// are not using the tab character and to be sure we are using spaces.
-// To check whether we are using tabs or spaces while in Eclipse go under
-// Preferences > Java > Code Style > Formatter > Edit > Indentation  if you see
-// tab character in here then you may need to create a custom profile and set the
-// tab to SPACES and not TABS or the tab character.
-// If you've got a new document or haven't paid attention to this subtlety whilst
-// developing here is how you can check to see what your tabs are (spaces or tab characters).
-// Along the top menu bar of the Eclipse IDE there is a button that looks like a
-// backwards paragraph symbol.  It is the "Show Whitespace Characters" button.  Click 
-// on it to show all hidden formatting symbols.
-// FIX :Now if you happen to have tab characters and tabs are not spaces as they should be
-// here's how to fix it.  Open the find and replace Mac : "Cmd(âŒ˜) + F" or Win : "Ctrl + F".
-// In the find input box put: " \t " without the quotes.
-// In the Replace With box put: " (4 spaces) " no quotes and those are literal spaces
-// we're not putting text in the replace with input box just 4 invisible space characters.
-// I almost forgot, make sure in the options the "Regular Expressions" check box
-// is checked.
-// Now you can go about replacing tab characters with spaces.  :)  you're welcome !!!  
-// 
-// Okay this is cool. !!!  So let's say someone (Paul) puts in a ton of comments and then
-// it comes time to submit our code to Dr. Buckner and there are too many comments, :(.
-// Regular Expressions to the rescue.  Open Find/Replace: "Cmd + F" or Win : "Ctrl + F".
-//  In the Find: input box put : " \/\/(.*?)\r?\n " without the quotes
-//  Leave the Replace with input box blank and make sure "regular expressions" is checked.
-//  Hit the Find button, now you can replace all those nasty comments with spaces.
-//  Wow, regular expression are cool.
-//  Ok, guillemets are kind of cool.... at least when you're making UML diagrams.
-//  on Mac alt + \ gives " « " and alt + shift + \ gives "» "
-// If you're using Windows here's he article: https://en.wikipedia.org/wiki/Guillemet
-//
-//Meeting 7 (a.k.a We're almost there)
-//Attendees : Paul, Dylan, Blake, and Ben
-//Started to pull all of the seperate class diagrams into a single UML
-//Bounced around ideas about how to fix some resizing issues.
-//Paul and Dylan came up with great ideas that when combined together may fix the 
-//resizing issue
-//
-//Future plans : Ben will investigate how to implement drag and drop 
-//Dylan came up with an idea to help fix some resizing issues
-//and thus will find a way to explain his idea to the group for 
-//the next meeting
-//Investigation on how to implement rotation on tiles will commence
+ 2/20/17  Tabs & Space in the Eclipse IDE 
+ As per Dr. Buckner's discussion today in class I learned how to make sure we
+ are not using the tab character and to be sure we are using spaces.
+ To check whether we are using tabs or spaces while in Eclipse go under
+ Preferences > Java > Code Style > Formatter > Edit > Indentation  if you see
+ tab character in here then you may need to create a custom profile and set the
+ tab to SPACES and not TABS or the tab character.
+ If you've got a new document or haven't paid attention to this subtlety whilst
+ developing here is how you can check to see what your tabs are (spaces or tab characters).
+ Along the top menu bar of the Eclipse IDE there is a button that looks like a
+ backwards paragraph symbol.  It is the "Show Whitespace Characters" button.  Click 
+ on it to show all hidden formatting symbols.
+ FIX :Now if you happen to have tab characters and tabs are not spaces as they should be
+ here's how to fix it.  Open the find and replace Mac : "Cmd(âŒ˜) + F" or Win : "Ctrl + F".
+ In the find input box put: " \t " without the quotes.
+ In the Replace With box put: " (4 spaces) " no quotes and those are literal spaces
+ we're not putting text in the replace with input box just 4 invisible space characters.
+ I almost forgot, make sure in the options the "Regular Expressions" check box
+ is checked.
+ Now you can go about replacing tab characters with spaces.  :)  you're welcome !!!  
+ 
+ Okay this is cool. !!!  So let's say someone (Paul) puts in a ton of comments and then
+ it comes time to submit our code to Dr. Buckner and there are too many comments, :(.
+ Regular Expressions to the rescue.  Open Find/Replace: "Cmd + F" or Win : "Ctrl + F".
+  In the Find: input box put : " \/\/(.*?)\r?\n " without the quotes
+  Leave the Replace with input box blank and make sure "regular expressions" is checked.
+  Hit the Find button, now you can replace all those nasty comments with spaces.
+  Wow, regular expression are cool.
+  Ok, guillemets are kind of cool.... at least when you're making UML diagrams.
+  on Mac alt + \ gives " « " and alt + shift + \ gives "» "
+ If you're using Windows here's he article: https://en.wikipedia.org/wiki/Guillemet
+
+Meeting 7 (a.k.a We're almost there)
+Attendees : Paul, Dylan, Blake, and Ben
+Started to pull all of the seperate class diagrams into a single UML
+Bounced around ideas about how to fix some resizing issues.
+Paul and Dylan came up with great ideas that when combined together may fix the 
+resizing issue
+
+Future plans : Ben will investigate how to implement drag and drop 
+Dylan came up with an idea to help fix some resizing issues
+and thus will find a way to explain his idea to the group for 
+the next meeting
+Investigation on how to implement rotation on tiles will commence
