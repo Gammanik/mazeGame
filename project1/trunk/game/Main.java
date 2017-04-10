@@ -21,6 +21,8 @@ import java.io.IOException;
 import java.nio.ByteBuffer;
 import javax.swing.*;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
 
 //import java.awt.*;
 public class Main {
@@ -59,6 +61,7 @@ public class Main {
         linesForTile.clear();
         tileNum = in.readInt();
     }
+    Collections.shuffle(matrix, new Random());
     
     in.close();
    
