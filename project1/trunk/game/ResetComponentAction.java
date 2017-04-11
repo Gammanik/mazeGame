@@ -28,6 +28,9 @@ public class ResetComponentAction implements ActionListener {
           ((JComponent) tiles[j]).setBorder(((JComponent) originalConfig[i][j]).getBorder());
           tiles[j].setName(originalConfig[i][j].getName());
           ((Tile) tiles[j]).setId(((Tile) originalConfig[i][j]).getId());
+          ((Tile) tiles[j]).setAngle(((Tile) originalConfig[i][j]).getAngle());
+          ((Tile) tiles[j]).repaint();
+          
       }
    }
   }

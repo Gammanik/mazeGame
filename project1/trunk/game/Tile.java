@@ -45,6 +45,7 @@ public class Tile extends JLabel {
     this.setId(originalCopy.getId());
     this.setSize(originalCopy.getSize());
     this.setFont(originalCopy.getFont());
+    this.setAngle(originalCopy.getAngle());
 
   }
 

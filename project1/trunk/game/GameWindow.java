@@ -184,7 +184,7 @@ public class GameWindow extends JFrame{
                  if(SwingUtilities.isRightMouseButton(evt) && (component.getName() == "infoTile"))
                 {
                    ((Tile) component).changeAngle();
-                  repaint();
+                  component.repaint();
                 }
                   
               }
