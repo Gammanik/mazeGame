@@ -1,9 +1,6 @@
 package game;
 
 import java.awt.Color;
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
-
 import javax.swing.JPanel;
 
 
@@ -16,23 +13,17 @@ import javax.swing.JPanel;
 
 public class Menu extends JPanel 
   {
-    private GridBagConstraints constraint = new GridBagConstraints();
 	  private static final long serialVersionUID = 1L;
 	  
 	  public Menu() 
 	  {
 	  this.setName("menu");
 	  this.menuStyle();
-	  constraint.weightx = 1;
 	  }
 	  
     public void addButton(String name)
     {
-    	add(new MenuButton(name), constraint);
-    }
-    public void setInsets(int top, int left, int bottom, int right)
-    {
-      constraint.insets = new Insets(top,left,bottom,right);
+    	add(new MenuButton(name));
     }
     public void menuStyle() 
     {
