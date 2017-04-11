@@ -40,16 +40,12 @@ public abstract class TileMovement {
           {
             public void mousePressed(MouseEvent evt)
               {
-            //   if(SwingUtilities.isLeftMouseButton(evt))      
-              // {
-                int clicks = evt.getClickCount();
                   if(SwingUtilities.isLeftMouseButton(evt))  
                     {
-                    if(component.getName() == "infoTile" && clicks == 1 && !infoTileClicked) 
+                    if(component.getName() == "infoTile"  && !infoTileClicked) 
                     {
                       component.setBackground(Color.YELLOW);
                   
-                 // component.getAccessibleContext();
                   infoTileClicked = true;
                   //changing color of previous component
                   //in case click on sideTiles again (want to choose another)
