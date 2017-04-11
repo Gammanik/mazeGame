@@ -1,11 +1,9 @@
 package game;
 
-import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
-
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
@@ -17,15 +15,18 @@ public class SidePanel extends JPanel {
 	 */
   private static final long serialVersionUID = 1L;
 
-  public SidePanel(int offset) {
+  public SidePanel(int offset) 
+  {
     addTiles(offset);
   }
 
-  public void addTiles(int offset) {
+  public void addTiles(int offset) 
+  {
     this.setLayout(new GridBagLayout());
     GridBagConstraints cons = new GridBagConstraints();
 
-    for (int i = 0 + offset; i < 8 + offset; i++) {
+    for (int i = 0 + offset; i < 8 + offset; i++) 
+    {
       cons.gridy = i;
       cons.weightx = 1;
       cons.insets = new Insets(5, 5, 5, 5);
@@ -34,8 +35,7 @@ public class SidePanel extends JPanel {
       tile.setHorizontalAlignment(SwingConstants.CENTER); // edit by Dylan
       tile.setFont(new Font("Tahoma", Font.BOLD, 20));
       tile.setName("infoTile"); // for checking in mouseListener
-      tile.setMinimumSize(new Dimension(75, 75)); 
-      tile.setPreferredSize(new Dimension(75, 75));
+     
       this.add(tile, cons);
     }
 

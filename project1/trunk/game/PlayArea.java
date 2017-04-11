@@ -3,14 +3,10 @@ package game;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Container;
-import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
-
-import javax.swing.BorderFactory;
 import javax.swing.JPanel;
-import javax.swing.border.Border;
 
 // this class is a panel that contains the board and 
 // side panels. 
@@ -70,28 +66,7 @@ public class PlayArea extends JPanel {
   // addBoard() constructs the board and adds it to the object.
   public void addBoard() {
 
-    // Board gameBoard = new Board();
-    JPanel boardPanel = new JPanel();
-    boardPanel.setLayout(new GridBagLayout());
-    GridBagConstraints constraint = new GridBagConstraints();
-    // constraint.insets = new Insets(1,1,1,1);
-
-    for (int i = 0; i < 16; i++) {
-      constraint.gridx = i % 4;
-      Tile tile = new Tile(" ");
-      tile.setName("emptyTile"); // setting the name for checking it in
-                                 // mouseListener
-      Border border = BorderFactory.createLineBorder(Color.BLACK, 1);
-      tile.setBorder(border);
-      constraint.gridy = (int) Math.floor(i / 4);
-      constraint.weighty = 1;
-      constraint.weightx = 1;
-      constraint.fill = GridBagConstraints.NONE;
-      tile.setBackground(Color.white); // makes tiles white
-      tile.setMinimumSize(new Dimension(75, 75));
-      tile.setPreferredSize(new Dimension(75, 75));
-      boardPanel.add(tile, constraint);
-    }
+   Board boardPanel = new Board();
     GridBagConstraints gbc = new GridBagConstraints();
     gbc.anchor = GridBagConstraints.CENTER;
     gbc.gridx = 1;

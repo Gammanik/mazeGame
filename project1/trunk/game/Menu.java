@@ -1,12 +1,7 @@
 package game;
 
 import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+
 
 import javax.swing.JPanel;
 
@@ -17,90 +12,22 @@ import javax.swing.JPanel;
 //this class has methods that specify where the buttons are placed
 // and a method that styles the object.
 
-public class Menu extends JPanel {
-  /**
-* 
-*/
-  private static final long serialVersionUID = 1L;
-
-  public Menu() {
-    this.setName("menu");
-    this.addMenuButtons();
-    this.menuStyle();
+public class Menu extends JPanel 
+{
+	  private static final long serialVersionUID = 1L;
+	  public Menu() {
+	  this.setName("menu");
+	  this.menuStyle();
   }
 
-  // the addmenubuttons method specifies how the buttons should be
-  // placed within the menu object.
-
-  public void addMenuButtons() {
-    this.setLayout(new GridBagLayout());
-    GridBagConstraints constraint = new GridBagConstraints();
-    // setting the positioning for the new game button
-    constraint.gridx = 0;
-    constraint.gridy = 0;
-    constraint.weighty = 1;
-    constraint.weightx = 0;
-    constraint.fill = GridBagConstraints.BOTH;
-    constraint.insets = new Insets(4, 4, 4, 4);
-    MenuButton newGameButton = new MenuButton("New Game");
-    newGameButton.setMinimumSize(new Dimension (100,40));
-    newGameButton.setPreferredSize(new Dimension(100,40));
-    this.add(newGameButton, constraint);
-
-    // setting the positioning for the new game button
-    constraint.gridx = 1;
-    MenuButton resetButton = new MenuButton("Reset");
-    resetButton.addActionListener(new ResetComponentAction());
-    this.add(resetButton, constraint);
-
-    // setting the positioning for the exit button
-    constraint.gridx = 2;
-    constraint.weightx = 1;
-    MenuButton exitButton = new MenuButton("Quit");
-    exitButton.setBackground(new Color(242, 119, 101));
-    this.add(exitButton, constraint);
-    exitButton.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent event) {
-        System.exit(0);
-      }
-    });
-       
-
-    // change color of exit button when mouse hovers over
-    exitButton.addMouseListener(new java.awt.event.MouseAdapter() {
-      public void mouseEntered(java.awt.event.MouseEvent evt) {
-        // System.out.println("mouse entered");
-        exitButton.setBackground(new Color(240, 0, 0));
-      }
-
-      public void mouseExited(java.awt.event.MouseEvent evt) {
-        // System.out.println("mouse exit");
-        exitButton.setBackground(new Color(242, 119, 101));
-      }
-    });
-    
-    resetButton.addMouseListener(new java.awt.event.MouseAdapter() {
-      public void mouseEntered(java.awt.event.MouseEvent evt) {
-        // System.out.println("mouse entered");
-        resetButton.setBackground(new Color(50, 80, 250));
-      }
-
-      public void mouseExited(java.awt.event.MouseEvent evt) {
-        // System.out.println("mouse exit");
-        resetButton.setBackground(new Color(142, 192, 228));
-      }
-    });
-    
-      
-
-  }
-
+public void addButton(String name)
+{
+	add(new MenuButton(name));
+}
   // the method below is used to change the style of the menu
 
-  public void menuStyle() {
-
-//    this.setMinimumSize(new Dimension(250, 50));
-//    this.setPreferredSize(new Dimension(250, 50));
+  public void menuStyle() 
+  {
     this.setBackground(Color.gray);
   }
 }

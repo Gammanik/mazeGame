@@ -18,55 +18,16 @@
 
 package game;
 import java.io.IOException;
-import java.nio.ByteBuffer;
 import javax.swing.*;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Random;
 
 //import java.awt.*;
 public class Main {
-  
-  static ArrayList<ArrayList<Line>> matrix = new ArrayList<ArrayList<Line>>();
-  public static int convertToInt(byte[] c) {
-    ByteBuffer buffer = ByteBuffer.wrap(c);
-    return buffer.getInt();
-}
-  
+    
   public static void main(String[] args) throws IOException 
   {
-    ReadFile in = null;
-    in = new ReadFile("default.mze");
-    
-    int numTiles = in.readInt(); //read 16
-    int tileNum = in.readInt();
-    while(tileNum != -1) 
-    { 
-      ArrayList<Line> linesForTile = new ArrayList<Line>();
-      
-      int numberOfLines = in.readInt();
-      for(int i = 0; i< numberOfLines; i++){
-        
-        //read four coordinates
-        float[] lineCoordsArray = new float[4];
-        for(int coordNum = 0; coordNum < 4; coordNum++) 
-        {
-          //reduces the float value so that the coordinates work on a reduced tile size
-          lineCoordsArray[coordNum] = (float) (in.readFloat()*.75); 
-        }
-        Line tempLine = new Line(lineCoordsArray);
-        linesForTile.add(tempLine);
-      }
-        matrix.add((ArrayList<Line>) linesForTile.clone());
-        linesForTile.clear();
-        tileNum = in.readInt();
-    }
-    Collections.shuffle(matrix, new Random());
-    
-    in.close();
-   
-    
-    
+//	  reads the data from the file and allows manipulation
+   FileManager data = new FileManager("default.mze");
+   data.randomize();
  // This is the play area
     new GameWindow();
 

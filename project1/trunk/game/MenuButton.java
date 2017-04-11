@@ -13,19 +13,26 @@ import javax.swing.JButton;
 
 //only contains one method which is called to change
 //the style of the buttons.
-public class MenuButton extends JButton {
+public class MenuButton extends JButton 
+{
   /**
 *
 */
   private static final long serialVersionUID = 1L;
 
-  public MenuButton(String s) {
+  public MenuButton(String s) 
+  {
     super(s);
+    setName(s);
+    this.addActionListener(new ButtonPressed());
+    this.addMouseListener(new ButtonHover());
     menuButtonStyle();
-
+    if(s.equals("Quit"))
+    	setBackground(new Color(242, 119, 101));
   }
 
-  public void menuButtonStyle() {
+  public void menuButtonStyle() 
+  {
     this.setForeground(Color.WHITE);
     this.setFocusPainted(false);
     this.setBorderPainted(false);
