@@ -129,11 +129,14 @@ public class GameWindow extends JFrame{
           {
             public void mousePressed(MouseEvent evt)
               {
-                            
+            //   if(SwingUtilities.isLeftMouseButton(evt))      
+              // {
                 int clicks = evt.getClickCount();
-                
-                if(component.getName() == "infoTile" && clicks == 1 && !infoTileClicked) {
-                  component.setBackground(Color.YELLOW);
+                  if(SwingUtilities.isLeftMouseButton(evt))  
+                    {
+                    if(component.getName() == "infoTile" && clicks == 1 && !infoTileClicked) 
+                    {
+                      component.setBackground(Color.YELLOW);
                   
                  // component.getAccessibleContext();
                   infoTileClicked = true;
@@ -142,13 +145,16 @@ public class GameWindow extends JFrame{
                  
                   previous = (Tile) component; //remember previous clicked tile
                   
-                } else { //when clicked out of SIDE tiles
+                      } 
+                    else
+                    { //when clicked out of SIDE tiles
                   if(previous.getName() != "emptyTile")
                      previous.setBackground(Color.ORANGE);
                   //System.out.println("else case: " + previous.getName());
                   
                   // click to a empty tile after an info tile
-                  if(infoTileClicked && component.getName() == "emptyTile") { 
+                  if(infoTileClicked && component.getName() == "emptyTile")
+                  { 
                     ////System.out.println(component.getAccessibleContext().getAccessibleText());
                     component.setBackground(Color.ORANGE);
                     ((Tile) component).setId(previous.getId());
@@ -170,7 +176,13 @@ public class GameWindow extends JFrame{
                   }
                   infoTileClicked = false;
                 } 
-                
+            //  }
+            }
+                 if(SwingUtilities.isRightMouseButton(evt) && (component.getName() == "infoTile"))
+                {
+                  repaint();
+                }
+                  
               }
              
           });
