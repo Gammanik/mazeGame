@@ -69,16 +69,13 @@ public class GameWindow extends JFrame {
 //      the menu object is a panel that includes the new game, reset,
 //      and exit buttons
          Menu menu = new Menu();
-         menu.addButton("New");
-         menu.addButton("Reset");
-         menu.addButton("Quit");
          GridBagConstraints gbc = new GridBagConstraints();
          gbc.weightx = 1;
          gbc.weighty = 1;
          gbc.gridx = 0;
          gbc.gridy = 0;
          gbc.anchor = GridBagConstraints.NORTH;
-         gbc.insets = new Insets(10,0,0,0);
+         gbc.insets = new Insets(30,0,0,0);
          frame.add(menu, gbc);  
     }
 

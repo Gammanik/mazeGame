@@ -30,7 +30,7 @@ public class PlayArea extends JPanel {
     addBoard();
     addEastSidePanel();
     playAreaStyle();
-    this.setName("playArea");
+    setName("playArea");
     
   }
 
@@ -45,7 +45,7 @@ public class PlayArea extends JPanel {
     tilePanelWest.setName("tilePanelWest");
     tilePanelWest.setBackground(Color.gray);
 
-    this.add(tilePanelWest, constraint);
+    add(tilePanelWest, constraint);
 
   }
 
@@ -60,7 +60,7 @@ public class PlayArea extends JPanel {
     tilePanelEast.setName("tilePanelEast");
     tilePanelEast.setBackground(Color.gray);
 
-    this.add(tilePanelEast, constraint);
+    add(tilePanelEast, constraint);
   }
 
   // addBoard() constructs the board and adds it to the object.
@@ -72,7 +72,7 @@ public class PlayArea extends JPanel {
     gbc.gridx = 1;
     gbc.gridy = 0;
     boardPanel.setBackground(Color.blue);
-    this.add(boardPanel, gbc);
+    add(boardPanel, gbc);
 
   }
 

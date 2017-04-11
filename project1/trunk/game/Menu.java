@@ -1,6 +1,10 @@
 package game;
 
 import java.awt.Color;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
+
 import javax.swing.JPanel;
 
 
@@ -17,13 +21,25 @@ public class Menu extends JPanel
 	  
 	  public Menu() 
 	  {
-	  this.setName("menu");
-	  this.menuStyle();
+	  setName("menu");
+	  menuStyle();
+	  addButtons();
 	  }
 	  
-    public void addButton(String name)
+    public void addButtons()
     {
-    	add(new MenuButton(name));
+    	setLayout(new GridBagLayout());
+    	GridBagConstraints constraints = new GridBagConstraints();
+ 
+    	MenuButton newGameButton = new MenuButton("New Game");
+    	add(newGameButton, constraints);
+    	constraints.insets = new Insets(0,30,0,0);
+    	MenuButton resetButton = new MenuButton("Reset");
+    	add(resetButton, constraints);
+
+    	constraints.insets = new Insets(0,10,0,0);
+    	MenuButton quitButton = new MenuButton("Quit");
+    	add(quitButton, constraints);
     }
     public void menuStyle() 
     {
