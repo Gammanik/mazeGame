@@ -106,6 +106,11 @@ public class Tile extends JLabel {
     return angle;
     
   }
+  
+  public void setAngle(int x)
+  {
+    angle = x;
+  }
   public void changeAngle()
   {
     angle += 90;

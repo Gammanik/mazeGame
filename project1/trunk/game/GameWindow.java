@@ -173,6 +173,7 @@ public class GameWindow extends JFrame{
                     previous.setName("emptyTile"); //marked as used
                     previous.setId("");
                     component.setName("infoTile");
+                    repaint();
                   }
                   infoTileClicked = false;
                 } 
