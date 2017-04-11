@@ -177,7 +177,7 @@ public class GameWindow extends JFrame{
                     ((Tile) previous).setAngle(0);
                   }
                   infoTileClicked = false;
-                  repaint();
+//                  repaint();
                 } 
             //  }
             }
