@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.geom.AffineTransform;
+import java.util.Random;
 //import java.io.FileNotFoundException;
 //import java.io.IOException;
 import java.util.ArrayList;
@@ -12,9 +13,11 @@ import java.util.ArrayList;
 import javax.swing.JLabel;
 
 public class Tile extends JLabel {
-  /**
-  * 
-  */
+  
+  //for random rotation 
+  private boolean firstDraw = true;
+  private int randomAngle;
+  
   private int mode = 0;
   private int angle = 0;
   private static final long serialVersionUID = 1L;
@@ -71,7 +74,16 @@ public class Tile extends JLabel {
                 g2.setStroke(new BasicStroke(3));
                 g2.drawLine(temp1, temp2, temp3, temp4);
                 
+                if(firstDraw) {
+                  //make no zero angles^)
+                  Random rnd = new Random();
+                  //random angle of 90 180 or 270
+                  randomAngle = (rnd.nextInt(2) + 1) * 90;
+                  g2.rotate(randomAngle*Math.PI/180, 
+                      g2.getClipBounds().getWidth()/2, g2.getClipBounds().getHeight()/2);
                 
+                  firstDraw = false;
+                }
                 
               }
         }
