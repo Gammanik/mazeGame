@@ -53,7 +53,6 @@ public class Tile extends JLabel {
     
     super.paintComponent(g);
     Graphics2D g2 = (Graphics2D) g.create();
-    // this.changeAngle();
      g2.rotate(angle*Math.PI/180,this.getBounds().width/2,this.getBounds().height/2);
    // if (mode == 0)
     //{
@@ -106,13 +105,12 @@ public class Tile extends JLabel {
     return angle;
     
   }
-  
-  public void setAngle(int x)
-  {
-    angle = x;
-  }
   public void changeAngle()
   {
     angle += 90;
+  }
+  public void setAngle(int ang)
+  {
+    angle = ang;
   }
 }

@@ -173,17 +173,18 @@ public class GameWindow extends JFrame{
                     previous.setName("emptyTile"); //marked as used
                     previous.setId("");
                     component.setName("infoTile");
-                    repaint();
+                    ((Tile) component).setAngle(((Tile) previous).getAngle());
+                    ((Tile) previous).setAngle(0);
                   }
                   infoTileClicked = false;
+                  repaint();
                 } 
             //  }
             }
                  if(SwingUtilities.isRightMouseButton(evt) && (component.getName() == "infoTile"))
                 {
                    ((Tile) component).changeAngle();
-                 repaint();
-               
+                  repaint();
                 }
                   
               }
