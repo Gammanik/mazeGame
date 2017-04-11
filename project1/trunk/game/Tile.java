@@ -4,6 +4,7 @@ import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.geom.AffineTransform;
 //import java.io.FileNotFoundException;
 //import java.io.IOException;
 import java.util.ArrayList;
@@ -14,6 +15,8 @@ public class Tile extends JLabel {
   /**
   * 
   */
+  private int mode = 0;
+  private int angle = 0;
   private static final long serialVersionUID = 1L;
   private String id;
   private String name;
@@ -47,8 +50,11 @@ public class Tile extends JLabel {
 
   public void paintComponent(Graphics g) 
   {
+    
     super.paintComponent(g);
-    Graphics2D g2 = (Graphics2D) g;
+    Graphics2D g2 = (Graphics2D) g.create();
+   // if (mode == 0)
+    //{
     for (int i = 0; i < Main.matrix.size(); i++) 
     {
       if (this.getName() == "infoTile" && this.getId().equals(""+i))
@@ -62,9 +68,19 @@ public class Tile extends JLabel {
                 int temp4 = (int) l.getCoordinates()[3];
                 g2.setStroke(new BasicStroke(3));
                 g2.drawLine(temp1, temp2, temp3, temp4);
+                
+                g2.rotate(angle*Math.PI/180,);
+                if(mode == 1)
+                {
+                 changeAngle();
+                }
+                
               }
         }
         }
+    mode = 1;
+    //}
+     
   }
 
   public String getName() {
@@ -85,5 +101,14 @@ public class Tile extends JLabel {
 
   public String getAccesibleContext() {
     return id;
+  }
+  public int getAngle()
+  {
+    return angle;
+    
+  }
+  public void changeAngle()
+  {
+    angle += 90;
   }
 }
