@@ -7,7 +7,6 @@ import java.awt.Insets;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
-// this class created the side panels
 
 public class SidePanel extends JPanel {
   /**
@@ -32,9 +31,9 @@ public class SidePanel extends JPanel {
       cons.insets = new Insets(5, 5, 5, 5);
       cons.weighty = 0;
       Tile tile = new Tile("" + i);
-      tile.setHorizontalAlignment(SwingConstants.CENTER); // edit by Dylan
+      tile.setHorizontalAlignment(SwingConstants.CENTER); 
       tile.setFont(new Font("Tahoma", Font.BOLD, 20));
-      tile.setName("infoTile"); // for checking in mouseListener
+      tile.setName("infoTile"); 
      
       this.add(tile, cons);
     }

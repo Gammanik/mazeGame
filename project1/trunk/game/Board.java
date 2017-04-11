@@ -9,10 +9,6 @@ import javax.swing.border.Border;
 
 public class Board extends JPanel{
 
-  
-  /**
-   * 
-   */
   private static final long serialVersionUID = 1L;
 
   public Board() {
@@ -24,20 +20,18 @@ public class Board extends JPanel{
   public void addTiles(){
     
     GridBagConstraints constraint = new GridBagConstraints();
-    // constraint.insets = new Insets(1,1,1,1);
 
     for (int i = 0; i < 16; i++) {
       constraint.gridx = i % 4;
       Tile tile = new Tile(" ");
-      tile.setName("emptyTile"); // setting the name for checking it in
-                                 // mouseListener
+      tile.setName("emptyTile"); 
       Border border = BorderFactory.createLineBorder(Color.BLACK, 1);
       tile.setBorder(border);
       constraint.gridy = (int) Math.floor(i / 4);
       constraint.weighty = 1;
       constraint.weightx = 1;
       constraint.fill = GridBagConstraints.NONE;
-      tile.setBackground(Color.WHITE); // makes tiles white
+      tile.setBackground(Color.WHITE); 
       tile.setAngle(0);
       add(tile, constraint);
     }

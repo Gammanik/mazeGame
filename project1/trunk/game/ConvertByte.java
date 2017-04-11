@@ -5,7 +5,6 @@ import java.nio.ByteBuffer;
 
 public class ConvertByte {
 
-
 public static int convertToInt(byte[] array) 
 {
     ByteBuffer buffer = ByteBuffer.wrap(array);

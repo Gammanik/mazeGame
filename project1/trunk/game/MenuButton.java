@@ -6,13 +6,6 @@ import java.awt.Font;
 
 import javax.swing.JButton;
 
-//the menubutton class is used to create 
-//the specific buttons used for the menu.
-//once initilized these buttons physically
-//shouldn't change.
-
-//only contains one method which is called to change
-//the style of the buttons.
 public class MenuButton extends JButton 
 {
   /**
@@ -24,8 +17,8 @@ public class MenuButton extends JButton
   {
     super(s);
     setName(s);
-    this.addActionListener(new ButtonPressed());
-    this.addMouseListener(new ButtonHover());
+    addActionListener(new ButtonPressed());
+    addMouseListener(new ButtonHover());
     menuButtonStyle();
     if(s.equals("Quit"))
     	setBackground(new Color(242, 119, 101));
@@ -33,12 +26,12 @@ public class MenuButton extends JButton
 
   public void menuButtonStyle() 
   {
-    this.setForeground(Color.WHITE);
-    this.setFocusPainted(false);
-    this.setBorderPainted(false);
-    this.setMinimumSize(new Dimension(90,40));
-    this.setPreferredSize(new Dimension(90,40));
-    this.setFont(new Font("Tahoma", Font.BOLD, 12));
-    this.setBackground(new Color(142, 192, 228));
+    setForeground(Color.WHITE);
+    setFocusPainted(false);
+    setBorderPainted(false);
+    setMinimumSize(new Dimension(110,50));
+    setPreferredSize(new Dimension(110,50));
+    setFont(new Font("Tahoma", Font.BOLD, 12));
+    setBackground(new Color(142, 192, 228));
   }
 }
