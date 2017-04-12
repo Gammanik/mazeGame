@@ -1,3 +1,14 @@
+Project 4
+
+For this iteration of the project, it was decided that most of the work would be done outside of the meetings
+With some of it done during the meeting when a group member needed help.
+As stated in the other document the work was divided up as follows:
+Ben and Paul worked on the rotation functionality
+Blake worked on randomizing the initial order of the tile placements
+Nikita worked on randomizing the number of initial tile replacements 
+Dylan helped out group members when they got stuck on their part of the project as well as made the UML
+Ben and Paul also worked on the planning and meeting minutes.
+
 
 Project 3
 Notes on what occurred during meetings. The group met several times from the time
