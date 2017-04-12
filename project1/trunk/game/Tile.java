@@ -27,12 +27,11 @@ public class Tile extends JLabel {
 
   public Tile(String newID) 
   {
-	System.out.println(n);
     id = newID;
     setBackground(thisColor);
     setOpaque(true);
-    setMinimumSize(new Dimension(100, 100)); 
-    setPreferredSize(new Dimension(100, 100));
+    setMinimumSize(new Dimension(101, 101)); 
+    setPreferredSize(new Dimension(101, 101));
   }
 
   // copy constructor
