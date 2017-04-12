@@ -3,18 +3,21 @@ Throughout the duration of this iteration the group met multiple times.
 A good portion of the meetings resolved around preparing for the presentation 
 Though we did devote time to work exclusively on the project. 
 A lot of the project was done by individual members outside of the meetings.
-That being said we all had assigned parts of the project to complete.
+That being said we all had assigned parts of the project to complete which were decided during the meetings 
 Ben and Paul worked on rotation.
 Blake worked on randomizing the order of the tile placements.
 Nikita worked on randomizing the rotation of the tiles.
 Dylan was there to help out the rest of the group, which he did, as he already had a clear understanding of the project
 Dylan also worked on making the maze more appealing as well as the UML
-Ben and Paul worked on making meeting minutes.
+Ben and Paul worked on making meeting minutes and the planning document
 
 Meeting dates: 4-10
 			   4-6
 			   4-4
-Each meeting lasted out for at least an hour
+Each meeting lasted out for at least an hour though with the longest one going on for about an hour and fifty minutes.
+
+End of meeting notes.
+
 
 
 Met multiple times
