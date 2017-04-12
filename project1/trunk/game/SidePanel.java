@@ -10,8 +10,8 @@ import javax.swing.SwingConstants;
 
 public class SidePanel extends JPanel {
   /**
-	 * 
-	 */
+ * 
+ */
   private static final long serialVersionUID = 1L;
 
   public SidePanel(int offset) 

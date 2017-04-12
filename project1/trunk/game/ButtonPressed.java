@@ -22,7 +22,7 @@ public class ButtonPressed implements ActionListener {
     
     else if(((MenuButton)e.getSource()).getName().equalsIgnoreCase("Reset")) 
     {
-    	Component source = (Component) e.getSource();
+    Component source = (Component) e.getSource();
         Component Parent = source.getParent().getParent();
         Component[] menuAndPlayArea = ((Container) Parent).getComponents();
         Component playArea = menuAndPlayArea[1];
@@ -33,7 +33,8 @@ public class ButtonPressed implements ActionListener {
         for(int i = 0; i < sidePanelsAndGrid.length; i++) 
         {
           Component[] tiles = ((Container) sidePanelsAndGrid[i]).getComponents();
-          for(int j= 0; j < tiles.length; j++) {
+          for(int j= 0; j < tiles.length; j++) 
+            {
               tiles[j].setBackground(originalConfig[i][j].getBackground());
               ((JLabel) tiles[j]).setText(((JLabel) originalConfig[i][j]).getText());
               ((JComponent) tiles[j]).setBorder(((JComponent) originalConfig[i][j]).getBorder());
@@ -42,7 +43,7 @@ public class ButtonPressed implements ActionListener {
               ((Tile) tiles[j]).setAngle(((Tile) originalConfig[i][j]).getAngle());
               ((Tile) tiles[j]).repaint();
               
-          }
+            }
      }
     }
        

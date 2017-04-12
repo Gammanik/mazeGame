@@ -71,9 +71,9 @@ public abstract class TileMovement {
                     ((Tile) component).setBorder(border);
                     //the above code sets the text from the previously clicked tile
                     //into the currently clicked tile
-                    ((Tile) component).setHorizontalAlignment(SwingConstants.CENTER); // -edit by Dylan
+                    ((Tile) component).setHorizontalAlignment(SwingConstants.CENTER); 
                     //the above code centers the numbers in the tiles
-                    previous.setText(" "); // -edit by Dylan 
+                    previous.setText(" "); 
                     border = BorderFactory.createLineBorder(Color.BLACK, 1);
                     previous.setBorder(border);
                     previous.setBackground(Color.WHITE); //make for the color cannot be changed

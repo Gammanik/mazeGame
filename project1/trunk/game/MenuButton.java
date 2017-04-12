@@ -21,7 +21,7 @@ public class MenuButton extends JButton
     addMouseListener(new ButtonHover());
     menuButtonStyle();
     if(s.equalsIgnoreCase("Quit"))
-    	setBackground(new Color(242, 119, 101));
+    setBackground(new Color(242, 119, 101));
   }
 
   public void menuButtonStyle() 

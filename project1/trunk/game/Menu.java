@@ -17,29 +17,29 @@ import javax.swing.JPanel;
 
 public class Menu extends JPanel 
   {
-	  private static final long serialVersionUID = 1L;
-	  
-	  public Menu() 
-	  {
-	  setName("menu");
-	  menuStyle();
-	  addButtons();
-	  }
-	  
+  private static final long serialVersionUID = 1L;
+  
+  public Menu() 
+  {
+  setName("menu");
+  menuStyle();
+  addButtons();
+  }
+  
     public void addButtons()
     {
-    	setLayout(new GridBagLayout());
-    	GridBagConstraints constraints = new GridBagConstraints();
+    setLayout(new GridBagLayout());
+    GridBagConstraints constraints = new GridBagConstraints();
  
-    	MenuButton newGameButton = new MenuButton("New Game");
-    	add(newGameButton, constraints);
-    	constraints.insets = new Insets(0,30,0,0);
-    	MenuButton resetButton = new MenuButton("Reset");
-    	add(resetButton, constraints);
+    MenuButton newGameButton = new MenuButton("New Game");
+    add(newGameButton, constraints);
+    constraints.insets = new Insets(0,30,0,0);
+    MenuButton resetButton = new MenuButton("Reset");
+    add(resetButton, constraints);
 
-    	constraints.insets = new Insets(0,10,0,0);
-    	MenuButton quitButton = new MenuButton("Quit");
-    	add(quitButton, constraints);
+    constraints.insets = new Insets(0,10,0,0);
+    MenuButton quitButton = new MenuButton("Quit");
+    add(quitButton, constraints);
     }
     public void menuStyle() 
     {

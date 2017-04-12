@@ -16,7 +16,7 @@ import javax.swing.JPanel;
 
 public class PlayArea extends JPanel {
   /**
-   * 
+   *
    */
 
   private Component[][] startingConfig;   
