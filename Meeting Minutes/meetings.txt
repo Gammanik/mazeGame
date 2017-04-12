@@ -1,3 +1,18 @@
+Meeting notes for fourth iteration
+Throughout the duration of this iteration the group met multiple times. 
+A good portion of the meetings resolved around preparing for the presentation 
+Though we did devote time to work exclusively on the project. 
+A lot of the project was done by individual members outside of the meetings.
+That being said we all had assigned parts of the project to complete.
+Ben and Paul worked on rotation.
+Blake worked on randomizing the order of the tile placements.
+Nikita worked on randomizing the rotation of the tiles.
+Dylan was there to help out the rest of the group, which he did, as he already had a clear understanding of the project
+Dylan also worked on making the maze more appealing as well as the UML
+Ben and Paul worked on making meeting minutes.
+
+
+
 Met multiple times
 Most of the time the meetings were spent working on the project
 The reset function was done outside of the class while most of the rest of the code was done during class
