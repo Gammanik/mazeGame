@@ -25,7 +25,7 @@ public class Board extends JPanel{
       constraint.gridx = i % 4;
       Tile tile = new Tile(" ");
       tile.setName("emptyTile"); 
-      Border border = BorderFactory.createLineBorder(Color.BLACK, 1);
+      Border border = BorderFactory.createLineBorder(Color.gray, 1);
       tile.setBorder(border);
       constraint.gridy = (int) Math.floor(i / 4);
       constraint.weighty = 1;
