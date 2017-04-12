@@ -15,12 +15,12 @@ public class ButtonPressed implements ActionListener {
   @Override
   public void actionPerformed(ActionEvent e) 
   {
-    if(((MenuButton) e.getSource()).getName() == "Quit") 
+    if(((MenuButton) e.getSource()).getName().equalsIgnoreCase("Quit")) 
     {
       System.exit(0);
     }
     
-    else if(((MenuButton)e.getSource()).getName() == "Reset") 
+    else if(((MenuButton)e.getSource()).getName().equalsIgnoreCase("Reset")) 
     {
     	Component source = (Component) e.getSource();
         Component Parent = source.getParent().getParent();

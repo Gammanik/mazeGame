@@ -20,7 +20,7 @@ public class MenuButton extends JButton
     addActionListener(new ButtonPressed());
     addMouseListener(new ButtonHover());
     menuButtonStyle();
-    if(s.equals("Quit"))
+    if(s.equalsIgnoreCase("Quit"))
     	setBackground(new Color(242, 119, 101));
   }
 
@@ -29,9 +29,9 @@ public class MenuButton extends JButton
     setForeground(Color.WHITE);
     setFocusPainted(false);
     setBorderPainted(false);
-    setMinimumSize(new Dimension(110,50));
-    setPreferredSize(new Dimension(110,50));
-    setFont(new Font("Tahoma", Font.BOLD, 12));
+    setMinimumSize(new Dimension(125,60));
+    setPreferredSize(new Dimension(125,60));
+    setFont(new Font("Tahoma", Font.BOLD, 14));
     setBackground(new Color(142, 192, 228));
   }
 }

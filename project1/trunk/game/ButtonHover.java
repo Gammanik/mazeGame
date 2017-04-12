@@ -27,15 +27,15 @@ public class ButtonHover implements MouseListener {
   @Override
   public void mouseEntered(MouseEvent e) 
   {
-    if(((MenuButton) e.getSource()).getName() == "Quit")
+    if(((MenuButton) e.getSource()).getName().equalsIgnoreCase("Quit"))
     {
       ((MenuButton) e.getSource()).setBackground(new Color(240, 0, 0));
     }
-    else if(((MenuButton) e.getSource()).getName() == "Reset")
+    else if(((MenuButton) e.getSource()).getName().equalsIgnoreCase("Reset"))
     {
       ((MenuButton) e.getSource()).setBackground(new Color(50, 80, 250));
     }
-    else if(((MenuButton) e.getSource()).getName() == "New Game")
+    else if(((MenuButton) e.getSource()).getName().equalsIgnoreCase("New Game"))
     {
       //((GUIButton) e.getSource()).setBackground(new Color(50, 80, 250));
     }
@@ -46,15 +46,15 @@ public class ButtonHover implements MouseListener {
   public void mouseExited(MouseEvent e) 
   {
     // TODO Auto-generated method stub
-    if(((MenuButton) e.getSource()).getName() == "Quit")
+    if(((MenuButton) e.getSource()).getName().equalsIgnoreCase("Quit"))
     {
       ((MenuButton) e.getSource()).setBackground(new Color(242, 119, 101));
     }
-    else if(((MenuButton) e.getSource()).getName() == "Reset")
+    else if(((MenuButton) e.getSource()).getName().equalsIgnoreCase("Reset"))
     {
       ((MenuButton) e.getSource()).setBackground(new Color(142, 192, 228));
     }
-    else if(((MenuButton) e.getSource()).getName() == "New Game")
+    else if(((MenuButton) e.getSource()).getName().equalsIgnoreCase("New Game"))
     {
 //      ((MenuButton) e.getSource()).setBackground(new Color(142, 192, 228));
     }

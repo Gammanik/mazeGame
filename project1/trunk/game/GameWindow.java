@@ -75,7 +75,7 @@ public class GameWindow extends JFrame {
          gbc.gridx = 0;
          gbc.gridy = 0;
          gbc.anchor = GridBagConstraints.NORTH;
-         gbc.insets = new Insets(30,0,0,0);
+         gbc.insets = new Insets(50,0,0,0);
          frame.add(menu, gbc);  
     }
 
