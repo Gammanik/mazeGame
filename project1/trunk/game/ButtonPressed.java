@@ -42,12 +42,12 @@ public class ButtonPressed implements ActionListener {
       else if(click == 1){
         resetButton.setName("Reset");
         resetButton.setText("Reset");
-        
         quitButton.setName("Quit");
         quitButton.setText("Quit");
-        quitButton.setBackground(new Color(240, 0, 0));
+        quitButton.setBackground(new Color(242, 119, 101));
         click = 0;
       }
+      
       
           	
     }
