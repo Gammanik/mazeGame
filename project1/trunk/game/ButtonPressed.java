@@ -1,29 +1,60 @@
 package game;
 
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.Container;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JComponent;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 
 public class ButtonPressed implements ActionListener {
   
-  
+  private int click = 0;
   
   @Override
   public void actionPerformed(ActionEvent e) 
   {
-    if(((MenuButton) e.getSource()).getName().equalsIgnoreCase("Quit")) 
+    MenuButton currentButton = (MenuButton) e.getSource();
+    MenuButton resetButton = (MenuButton) currentButton.getParent().getComponent(1);     
+    MenuButton quitButton = (MenuButton) currentButton.getParent().getComponent(2);
+    
+    if(currentButton.getName().equalsIgnoreCase("Quit")) 
     {
       System.exit(0);
     }
-    
-    else if(((MenuButton)e.getSource()).getName().equalsIgnoreCase("Reset")) 
+    else if(currentButton.getName().equalsIgnoreCase("File"))
     {
-    Component source = (Component) e.getSource();
-        Component Parent = source.getParent().getParent();
+      if(click == 0) 
+      {
+        resetButton.setName("Save");
+        resetButton.setText("Save");
+        quitButton.setName("Load");
+        quitButton.setText("Load");
+        quitButton.setBackground(new Color(142, 192, 228));
+        click = 1;
+      }
+      else if(click == 1){
+        resetButton.setName("Reset");
+        resetButton.setText("Reset");
+        
+        quitButton.setName("Quit");
+        quitButton.setText("Quit");
+        quitButton.setBackground(new Color(240, 0, 0));
+        click = 0;
+      }
+      
+          	
+    }
+    else if(currentButton.getName().equalsIgnoreCase("Reset")) 
+    {
+
+        Component Parent = currentButton.getParent().getParent();
         Component[] menuAndPlayArea = ((Container) Parent).getComponents();
         Component playArea = menuAndPlayArea[1];
         

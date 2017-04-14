@@ -31,7 +31,7 @@ public class Menu extends JPanel
     setLayout(new GridBagLayout());
     GridBagConstraints constraints = new GridBagConstraints();
  
-    MenuButton newGameButton = new MenuButton("New Game");
+    MenuButton newGameButton = new MenuButton("File");
     add(newGameButton, constraints);
     constraints.insets = new Insets(0,30,0,0);
     MenuButton resetButton = new MenuButton("Reset");

@@ -35,9 +35,17 @@ public class ButtonHover implements MouseListener {
     {
       ((MenuButton) e.getSource()).setBackground(new Color(50, 80, 250));
     }
-    else if(((MenuButton) e.getSource()).getName().equalsIgnoreCase("New Game"))
+    else if(((MenuButton) e.getSource()).getName().equalsIgnoreCase("File"))
     {
-      //((GUIButton) e.getSource()).setBackground(new Color(50, 80, 250));
+      ((MenuButton) e.getSource()).setBackground(new Color(50, 80, 250));
+    }
+    else if(((MenuButton) e.getSource()).getName().equalsIgnoreCase("Load"))
+    {
+      ((MenuButton) e.getSource()).setBackground(new Color(50, 80, 250));
+    }
+    else if(((MenuButton) e.getSource()).getName().equalsIgnoreCase("Save"))
+    {
+      ((MenuButton) e.getSource()).setBackground(new Color(50, 80, 250));
     }
     
   }
@@ -54,9 +62,17 @@ public class ButtonHover implements MouseListener {
     {
       ((MenuButton) e.getSource()).setBackground(new Color(142, 192, 228));
     }
-    else if(((MenuButton) e.getSource()).getName().equalsIgnoreCase("New Game"))
+    else if(((MenuButton) e.getSource()).getName().equalsIgnoreCase("File"))
     {
-//      ((MenuButton) e.getSource()).setBackground(new Color(142, 192, 228));
+      ((MenuButton) e.getSource()).setBackground(new Color(142, 192, 228));
+    }
+    else if(((MenuButton) e.getSource()).getName().equalsIgnoreCase("Load"))
+    {
+      ((MenuButton) e.getSource()).setBackground(new Color(142, 192, 228));
+    }
+    else if(((MenuButton) e.getSource()).getName().equalsIgnoreCase("Save"))
+    {
+      ((MenuButton) e.getSource()).setBackground(new Color(142, 192, 228));
     }
   }
 
