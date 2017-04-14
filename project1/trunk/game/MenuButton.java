@@ -30,7 +30,7 @@ public class MenuButton extends JButton
   {
     setForeground(Color.WHITE);
     setFocusPainted(false);
-    setBorderPainted(false);
+    setBorderPainted(true);
     setMinimumSize(new Dimension(125,60));
     setPreferredSize(new Dimension(125,60));
     setFont(new Font("Tahoma", Font.BOLD, 14));
