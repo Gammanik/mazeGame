@@ -10,7 +10,7 @@ public class FileManager {
 
   static public ArrayList<ArrayList<Line>> matrix = new ArrayList<ArrayList<Line>>();
   private String fileName;
-  private String fileLocation = "./project1/trunk/game/mazeFiles/";
+  private String fileLocation = "./trunk/game/mazeFiles/";
   
 
 FileManager() {

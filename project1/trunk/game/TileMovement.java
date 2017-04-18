@@ -32,7 +32,7 @@ public abstract class TileMovement {
 
 				}
 			}
-
+//Need to change the anonymous class 
 			component.addMouseListener(new MouseAdapter() {
 				public void mousePressed(MouseEvent evt) {
 					if (SwingUtilities.isLeftMouseButton(evt)) {

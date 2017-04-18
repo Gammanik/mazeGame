@@ -16,9 +16,11 @@ public class ButtonPressed implements ActionListener {
   @Override
   public void actionPerformed(ActionEvent e) 
   {
+    
     MenuButton currentButton = (MenuButton) e.getSource();
     MenuButton resetButton = (MenuButton) currentButton.getParent().getComponent(1);     
     MenuButton quitButton = (MenuButton) currentButton.getParent().getComponent(2);
+    
     
     if(currentButton.getName().equalsIgnoreCase("Quit")) 
     {
@@ -73,7 +75,14 @@ public class ButtonPressed implements ActionListener {
             }
      }
     }
-       
+    else if(currentButton.getName().equalsIgnoreCase("Save")) 
+    {
+      Component Parent = currentButton.getParent().getParent();
+      Component[] menuAndPlayArea = ((Container) Parent).getComponents();
+      Component playArea = menuAndPlayArea[1];
+      
+      ((PlayArea) playArea).saveConfig();
+    }
     
   }
   
