@@ -8,6 +8,13 @@ import java.awt.event.MouseListener;
 public class ButtonHover implements MouseListener {
   
   Point currentLocation;
+  Color colorBlue = new Color(50, 80, 250); 
+  Color colorLightBlue = new Color(142, 192, 228);
+  //for quit button
+  Color colorRed = new Color(242, 119, 101);
+  Color colorStrongRed = new Color(240, 0, 0);
+  
+  
   @Override
   public void mouseClicked(MouseEvent e) {
     
@@ -27,26 +34,14 @@ public class ButtonHover implements MouseListener {
   public void mouseEntered(MouseEvent e) 
   {
     MenuButton currentButton = ((MenuButton) e.getSource());
+    String buttonName = currentButton.getName();
     
-    if(currentButton.getName().equalsIgnoreCase("Quit"))
-    {
-      currentButton.setBackground(new Color(240, 0, 0));
-    }
-    else if(currentButton.getName().equalsIgnoreCase("Reset"))
-    {
-      currentButton.setBackground(new Color(50, 80, 250));
-    }
-    else if(currentButton.getName().equalsIgnoreCase("File"))
-    {
-      currentButton.setBackground(new Color(50, 80, 250));
-    }
-    else if(currentButton.getName().equalsIgnoreCase("Load"))
-    {
-      currentButton.setBackground(new Color(50, 80, 250));
-    }
-    else if(currentButton.getName().equalsIgnoreCase("Save"))
-    {
-      currentButton.setBackground(new Color(50, 80, 250));
+    switch(buttonName) {
+      case "Quit": currentButton.setBackground(colorStrongRed);
+        break;
+      default : //reset, file, load, save buttons  
+        currentButton.setBackground(colorBlue);
+        break;
     }
     
   }
@@ -55,27 +50,17 @@ public class ButtonHover implements MouseListener {
   public void mouseExited(MouseEvent e) 
   {
     MenuButton currentButton = ((MenuButton) e.getSource());
-    // TODO Auto-generated method stub
-    if(currentButton.getName().equalsIgnoreCase("Quit"))
-    {
-      currentButton.setBackground(new Color(242, 119, 101));
+    String buttonName = currentButton.getName();
+    
+    switch(buttonName) {
+      case "Quit": currentButton.setBackground(colorRed);
+        break;
+      default : //reset, file, load, save buttons  
+        currentButton.setBackground(colorLightBlue);
+        break;
     }
-    else if(currentButton.getName().equalsIgnoreCase("Reset"))
-    {
-      currentButton.setBackground(new Color(142, 192, 228));
-    }
-    else if(currentButton.getName().equalsIgnoreCase("File"))
-    {
-      currentButton.setBackground(new Color(142, 192, 228));
-    }
-    else if(currentButton.getName().equalsIgnoreCase("Load"))
-    {
-      currentButton.setBackground(new Color(142, 192, 228));
-    }
-    else if(currentButton.getName().equalsIgnoreCase("Save"))
-    {
-      currentButton.setBackground(new Color(142, 192, 228));
-    }
+    
+    
   }
 
 }
