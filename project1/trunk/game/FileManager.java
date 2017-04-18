@@ -10,6 +10,7 @@ public class FileManager {
 
   static public ArrayList<ArrayList<Line>> matrix = new ArrayList<ArrayList<Line>>();
   private String fileName;
+  private String fileLocation = "./project1/trunk/game/mazeFiles/";
   
 
 FileManager(String name) throws IOException
@@ -18,7 +19,7 @@ FileManager(String name) throws IOException
   ReadFile in = null;
     try {
       //TODO: make in = new ReadFile(directory + name);
-      in = new ReadFile(name);
+      in = new ReadFile(fileLocation + fileName);
       in.readInt(); //read 16
       int tileNum = in.readInt();
       while(tileNum != -1) //TODO: will do it for all 32 Tiles
