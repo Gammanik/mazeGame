@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Point;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.io.IOException;
 
 public class ButtonHover implements MouseListener {
   
@@ -18,6 +19,15 @@ public class ButtonHover implements MouseListener {
   @Override
   public void mouseClicked(MouseEvent e) {
     //TODO: save and load file handler here
+    MenuButton currentButton = ((MenuButton) e.getSource());
+    String buttonName = currentButton.getName();
+    
+    /** something like this
+    if(buttonName.equals("Load")) {
+      FileManager data = new FileManager();
+      data.readFile("default.mze");
+    }
+    */
   }
 
   @Override

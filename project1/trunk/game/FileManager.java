@@ -18,7 +18,6 @@ FileManager() {
 }
 
   public void readFile(String name) throws IOException {
-    //TODO:: clear matrix 
     matrix.clear();
     
     fileName = name;
