@@ -26,7 +26,7 @@ public class Main {
   public static void main(String[] args) throws IOException 
   {
 //  reads the data from the file and allows manipulation
-   FileManager data = new FileManager("default.mze");
+   FileManager data = new FileManager("defaultOLD.mze");
    data.randomize();
  // This is the play area
     new GameWindow();
