@@ -17,10 +17,11 @@ FileManager(String name) throws IOException
   fileName = name;
   ReadFile in = null;
     try {
+      //TODO: make in = new ReadFile(directory + name);
       in = new ReadFile(name);
       in.readInt(); //read 16
       int tileNum = in.readInt();
-      while(tileNum != -1) 
+      while(tileNum != -1) //TODO: will do it for all 32 Tiles
       { 
         ArrayList<Line> linesForTile = new ArrayList<Line>();
       
@@ -39,6 +40,11 @@ FileManager(String name) throws IOException
         linesForTile.add(tempLine);
         }
       
+        /**TODO: matrix.add(rotation, (ArrayList<Line>) linesForTile);
+        or make a class TileInfo with setRotation and addLine methods      
+        **/
+        
+        //why do we cast here?))
         matrix.add((ArrayList<Line>) linesForTile);
         tileNum = in.readInt();
       }    

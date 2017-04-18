@@ -17,17 +17,7 @@ public class ButtonHover implements MouseListener {
   
   @Override
   public void mouseClicked(MouseEvent e) {
-    
-  }
-
-  @Override
-  public void mousePressed(MouseEvent e) {
-    // TODO Auto-generated method stub
-  }
-
-  @Override
-  public void mouseReleased(MouseEvent e) {
-    // TODO Auto-generated method stub    
+    //TODO: save and load file handler here
   }
 
   @Override
@@ -60,7 +50,14 @@ public class ButtonHover implements MouseListener {
         break;
     }
     
-    
+  }
+  
+  @Override
+  public void mousePressed(MouseEvent e) {
+  }
+
+  @Override
+  public void mouseReleased(MouseEvent e) {
   }
 
 }
