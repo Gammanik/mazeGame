@@ -22,6 +22,8 @@ FileManager() {
 
 public void readFile(String name) throws IOException {
   matrix.clear();
+  for(int i = 0; i < 32; i++)
+      matrix.add(new ArrayList<Line>());
   int angle;
   fileName = name;
   ReadFile in = null;
@@ -108,8 +110,8 @@ public void readFile(String name) throws IOException {
             }    
           in.close();
           randomize();
-          for(int i = 0; i < 16; i++)
-            matrix.add(8, new ArrayList<Line>());
+//          for(int i = 0; i < 16; i++)
+//            matrix.add(8, new ArrayList<Line>());
         }
       else
         System.exit(0);
