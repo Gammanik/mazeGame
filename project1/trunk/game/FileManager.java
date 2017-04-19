@@ -35,6 +35,7 @@ public void readFile(String name) throws IOException {
         int tileNum = in.readInt();
         while(tileNum != -1) //TODO: will do it for all 32 Tiles
         { 
+          System.out.println(tileNum);
           angle = in.readInt();
           ArrayList<Line> linesForTile = new ArrayList<Line>();
           int numberOfLines = in.readInt();
@@ -63,11 +64,8 @@ public void readFile(String name) throws IOException {
         }    
       in.close();
         }
-      else
-        {
-          if(fileIdentifier.equals("cafebeef")) 
-            {
-              
+      else if (fileIdentifier.equals("cafebeef"))
+        {              
             System.out.println("Randomize");
             in.readInt(); //read 16
             int tileNum = in.readInt();
@@ -113,12 +111,12 @@ public void readFile(String name) throws IOException {
           for(int i = 0; i < 16; i++)
             matrix.add(8, new ArrayList<Line>());
         }
-       }
+      else
+        System.exit(0);
     }
    catch (FileNotFoundException e) 
       {
-     //System.exit(0);
-        System.out.println(fileName);
+     System.exit(0);
      e.printStackTrace();
   
     }
