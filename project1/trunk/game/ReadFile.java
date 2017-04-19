@@ -12,6 +12,7 @@ public class ReadFile extends FileInputStream {
   {
     super(name);   
   }
+  
   public int readInt() throws IOException 
   {
     byte[] myArray = new byte[4];
@@ -34,8 +35,16 @@ public class ReadFile extends FileInputStream {
     return ConvertByte.convertToFloat(myArray);
   }
   
- 
-  
-  
+  public String readHex() throws IOException 
+    {
+      byte[] myArray = new byte[4];
+      for(int i = 0; i<4; i++) 
+      {
+        myArray[i] = (byte) read();
+      }
+      
+      return ConvertByte.bytesToHex(myArray);
+    }
+    
   
 }

@@ -6,6 +6,7 @@ import java.awt.Container;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 
 import javax.swing.BorderFactory;
 import javax.swing.SwingConstants;
@@ -55,22 +56,23 @@ public abstract class TileMovement {
 
 							// click to a empty tile after an info tile
 							if (infoTileClicked && component.getName() == "emptyTile") {
-								//// System.out.println(component.getAccessibleContext().getAccessibleText());
+								
 								component.setBackground(Color.ORANGE);
 								((Tile) component).setId(previous.getId());
-								((Tile) component).setText(previous.getText()); // -edit
-																				// by
-																				// Dylan
+								((Tile) component).setText(previous.getText()); 
 								((Tile) component).setFont(new Font("Tahoma", Font.BOLD, 20));
 								Border border = BorderFactory.createLineBorder(Color.gray, 0);
 								((Tile) component).setBorder(border);
+								((Tile) component).setNumberOfLines(previous.getNumberOfLines());
+								((Tile) component).setCoordinates(previous.getCoordinates());
+								((Tile) component).setAngle(previous.getAngle());
 								// the above code sets the text from the
 								// previously clicked tile
 								// into the currently clicked tile
 								((Tile) component).setHorizontalAlignment(SwingConstants.CENTER);
 								// the above code centers the numbers in the
 								// tiles
-								previous.setText(" ");
+//								previous.setText(" ");
 								border = BorderFactory.createLineBorder(Color.gray, 1);
 								previous.setBorder(border);
 								previous.setBackground(Color.WHITE); // make for
@@ -84,6 +86,8 @@ public abstract class TileMovement {
 								component.setName("infoTile");
 								((Tile) component).setAngle(((Tile) previous).getAngle());
 								((Tile) previous).setAngle(0);
+								((Tile) previous).setNumberOfLines(0);
+                ((Tile) previous).setCoordinates(new ArrayList<Line>());
 							}
 							infoTileClicked = false;
 						}

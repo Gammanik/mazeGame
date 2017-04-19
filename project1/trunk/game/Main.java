@@ -27,11 +27,12 @@ public class Main {
   {
 //  reads the data from the file and allows manipulation
    FileManager data = new FileManager();
-   data.readFile("defaultOLD.mze");
-   data.randomize();
+   data.readFile("default.mze");
+//   data.randomize();
  // This is the play area
     new GameWindow();
-
+    
+    
     try {
       // The 4 that installed on Linux here
       // May have to test on Windows boxes to see what is there.

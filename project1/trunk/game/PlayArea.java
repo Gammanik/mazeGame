@@ -19,7 +19,8 @@ public class PlayArea extends JPanel {
    *
    */
 
-  private Component[][] startingConfig;   
+  private Component[][] startingConfig; 
+  private Component[][] saveConfig;
   
   
   private static final long serialVersionUID = 1L;
@@ -51,7 +52,7 @@ public class PlayArea extends JPanel {
 
   private void addEastSidePanel() {
     GridBagConstraints constraint = new GridBagConstraints();
-    SidePanel tilePanelEast = new SidePanel(8);
+    SidePanel tilePanelEast = new SidePanel(24);
 
     constraint.gridx = 2;
     constraint.gridy = 0;
@@ -92,9 +93,33 @@ public class PlayArea extends JPanel {
   }
 
    
-  public Component[][] getOriginalConfig() {
+  public Component[][] getOriginalConfig() 
+    {
     return startingConfig;
-  }
+    }
+  
+  public Component[][] getSaveConfig() 
+    {
+    return saveConfig;
+    }
+  
+  public final void saveFile()
+    {
+      Component[][] temp = new Component[3][];
+      temp[0] = new Component [8];
+      temp[1] = new Component [16];
+      temp[2] = new Component [8];
+      for(int i = 0; i < getComponents().length; i++) 
+        {
+        Component[] tiles = ((Container) getComponents()[i]).getComponents();
+        for(int j= 0; j < tiles.length; j++) 
+          {
+            Tile originalTile = new Tile((Tile) tiles[j]);
+            temp[i][j] = originalTile;
+          }
+        }
+      saveConfig = temp.clone();
+    }
   
   // currently not being used but theoretically for styling the
   // playArea panel.

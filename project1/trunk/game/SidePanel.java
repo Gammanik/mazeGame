@@ -33,7 +33,7 @@ public class SidePanel extends JPanel {
       Tile tile = new Tile("" + i);
       tile.setHorizontalAlignment(SwingConstants.CENTER); 
       tile.setFont(new Font("Tahoma", Font.BOLD, 20));
-      tile.setName("infoTile"); 
+//      tile.setName("infoTile"); 
      
       this.add(tile, cons);
     }

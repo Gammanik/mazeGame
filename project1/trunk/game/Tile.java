@@ -10,27 +10,55 @@ import java.util.Random;
 //import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 
 public class Tile extends JLabel {
 
-	// for random rotation
-	Random rand = new Random();
-	private int n = rand.nextInt(3) + 1;
-
-	private int angle = n * 90;
+	private int angle;
 	private static final long serialVersionUID = 1L;
 	private String id;
 	private String name;
+	private int numberOfLines;
+	private ArrayList<Line> coordinates;
+	private boolean infoTile;
 
 	private Color thisColor = Color.ORANGE;
 
 	public Tile(String newID) {
 		id = newID;
-		setBackground(thisColor);
+//		setBackground(thisColor);
 		setOpaque(true);
 		setMinimumSize(new Dimension(101, 101));
 		setPreferredSize(new Dimension(101, 101));
+		for(int i = 0; i < FileManager.rotation.length; i++) 
+		  {
+		  if(getId().equals(""+i)) 
+		    {
+		     setAngle(FileManager.rotation[i] * 90);
+		    }
+		}
+		for(int i = 0; i < FileManager.matrix.size(); i++)
+		  {
+		    if(getId().equals(""+i)) 
+		      {
+  		    if(FileManager.matrix.get(i).size() == 0)
+  		      {
+  		        setBackground(Color.WHITE);
+  		        setName("emptyTile");
+  		        setAngle(0);
+  		        setBorder(BorderFactory.createLineBorder(Color.gray, 1));
+  		      }
+  		    else
+  		      {
+  		        setBackground(Color.ORANGE);
+  		        setName("infoTile");
+  		        setBorder(BorderFactory.createLineBorder(Color.gray, 0));
+  		      }
+		      }
+		  }
+		
+		
 	}
 
 	// copy constructor
@@ -47,6 +75,8 @@ public class Tile extends JLabel {
 		this.setSize(originalCopy.getSize());
 		this.setFont(originalCopy.getFont());
 		this.setAngle(originalCopy.getAngle());
+		this.setCoordinates(originalCopy.getCoordinates());
+		this.setNumberOfLines(originalCopy.getNumberOfLines());
 
 	}
 
@@ -57,50 +87,87 @@ public class Tile extends JLabel {
 		g2.rotate(angle * Math.PI / 180, this.getBounds().width / 2, this.getBounds().height / 2);
 
 		for (int i = 0; i < FileManager.matrix.size(); i++) {
-			if (this.getName() == "infoTile" && this.getId().equals("" + i)) {
+		  int lineCounter = 0;
+			if ( this.getId().equals("" + i)) {
 				ArrayList<Line> temp = FileManager.matrix.get(i);
+				setCoordinates(temp);
 				for (Line l : temp) {
 					int temp1 = (int) l.getCoordinates()[0];
 					int temp2 = (int) l.getCoordinates()[1];
 					int temp3 = (int) l.getCoordinates()[2];
 					int temp4 = (int) l.getCoordinates()[3];
 					g2.drawLine(temp1, temp2, temp3, temp4);
+					lineCounter++;
 				}
+				setNumberOfLines(lineCounter);
 			}
+			
 		}
 	}
 
-	public String getName() {
+	public String getName() 
+	  {
 		return name;
-	}
+	  }
 
-	public void setName(String newName) {
+	public void setName(String newName) 
+	  {
 		name = newName;
-	}
-
-	public String getId() {
+	  }
+	
+	public String getId() 
+	  {
 		return id;
-	}
+	  }
 
-	public void setId(String newId) {
+	public void setId(String newId) 
+	  {
 		id = newId;
-	}
+	  }
 
-	public String getAccesibleContext() {
+	public String getAccesibleContext() 
+	  {
 		return id;
-	}
+	  }
 
-	public int getAngle() {
+	public int getAngle() 
+	  {
 		return angle;
 
-	}
+	  }
 
-	public void changeAngle() {
+	public void changeAngle() 
+	  {
 		angle += 90;
-	}
+	  }
 
-	public void setAngle(int ang) {
+	public void setAngle(int ang) 
+	  {
 		angle = ang;
+	  }
+	public void setNumberOfLines(int number)
+	{
+	  numberOfLines = number;
+	}
+	public int getNumberOfLines()
+	{
+	  return numberOfLines;
+	}
+	public void setCoordinates(ArrayList<Line> lines)
+	{
+	  coordinates = lines;
+	}
+	public ArrayList<Line> getCoordinates()
+	  {
+	    return coordinates;
+	  }
+	public boolean hasInfo()
+	{
+	  return infoTile;
+	}
+	public void setAsInfoTile(boolean condition)
+	{
+	  infoTile = condition;
 	}
 
 }

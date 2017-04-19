@@ -21,18 +21,13 @@ public class Board extends JPanel{
     
     GridBagConstraints constraint = new GridBagConstraints();
 
-    for (int i = 0; i < 16; i++) {
+    for (int i = 8; i < 24; i++) {
       constraint.gridx = i % 4;
-      Tile tile = new Tile(" ");
-      tile.setName("emptyTile"); 
-      Border border = BorderFactory.createLineBorder(Color.gray, 1);
-      tile.setBorder(border);
+      Tile tile = new Tile("" + i);
       constraint.gridy = (int) Math.floor(i / 4);
       constraint.weighty = 1;
       constraint.weightx = 1;
       constraint.fill = GridBagConstraints.NONE;
-      tile.setBackground(Color.WHITE); 
-      tile.setAngle(0);
       add(tile, constraint);
     }
   }
