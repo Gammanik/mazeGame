@@ -23,8 +23,7 @@ public class Tile extends JLabel {
 	private ArrayList<Line> coordinates;
 	private boolean infoTile;
 
-	private Color thisColor = Color.ORANGE;
-
+	
 	public Tile(String newID) {
 		id = newID;
 //		setBackground(thisColor);

@@ -56,7 +56,7 @@ public void readFile(String name) throws IOException {
           or make a class TileInfo with setRotation and addLine methods      
           **/
           
-          //why do we cast here?
+          
           rotation[tileNum] = angle;
           matrix.add(tileNum,(ArrayList<Line>) linesForTile);
           tileNum = in.readInt();
@@ -137,6 +137,7 @@ public void writeFile(String fileName) throws IOException {
        for(int i  = 0; i < save.size(); i++)
          {
            out.writeData(i); //tileId
+           System.out.println(saveRotation[i]);
            out.writeData(saveRotation[i]); //tile rotation
            out.writeData((save.get(i).size())); //number of lines
            for(int j = 0; j < save.get(i).size(); j++)
@@ -149,6 +150,8 @@ public void writeFile(String fileName) throws IOException {
            
          }
         out.close();
+        save.clear();
+        
       }
    catch (FileNotFoundException e) 
       {
