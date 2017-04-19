@@ -27,7 +27,7 @@ public class Main {
   {
 //  reads the data from the file and allows manipulation
    FileManager data = new FileManager();
-   data.readFile("testFile.mze");
+   data.readFile("default.mze");
 //   data.randomize();
  // This is the play area
     new GameWindow();
