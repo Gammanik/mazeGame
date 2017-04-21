@@ -3,6 +3,7 @@ package game.buttons;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Container;
+import java.awt.MenuItem;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -15,6 +16,7 @@ import javax.swing.JLabel;
 import javax.swing.JMenuItem;
 import javax.swing.JPopupMenu;
 
+import game.GameWindow;
 import game.Line;
 import game.PlayArea;
 import game.Tile;
@@ -143,16 +145,35 @@ public class ButtonPressed implements ActionListener
     private void showFilesPopup(MenuButton button) {
       JPopupMenu popup = new JPopupMenu();
 
-      //TODO: Pull a list of maze files 
+      //Pull a list of maze files from directory
       ArrayList<String> files = getListOfFiles();
       
       for(String file: files) {
         JMenuItem menuItem = new JMenuItem(file);
+        menuItem.addActionListener(new ActionListener(){
+
+          @Override
+          public void actionPerformed(ActionEvent e) {
+            JMenuItem chosenFile = (JMenuItem) e.getSource();
+            String chosenFileName = chosenFile.getText();
+            System.out.println(chosenFileName);
+            
+            FileManager data = new FileManager();
+            try {
+              data.readFile(chosenFileName);
+            } catch (IOException e1) {
+              e1.printStackTrace();
+            }
+            //TODO: redraw game 
+            new GameWindow();
+          }
+          
+        });
         popup.add(menuItem);
       }
       
       button.add(popup);
-      
+      //20 & 40 are coordinates in Load button
       popup.show(button, 20, 40); 
     }
     
