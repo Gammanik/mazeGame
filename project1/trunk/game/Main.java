@@ -20,6 +20,8 @@ package game;
 import java.io.IOException;
 import javax.swing.*;
 
+import game.model.FileManager;
+
 //import java.awt.*;
 public class Main {
     

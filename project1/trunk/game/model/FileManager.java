@@ -1,10 +1,12 @@
-package game;
+package game.model;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
+
+import game.Line;
 
 public class FileManager {
 

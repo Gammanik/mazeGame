@@ -1,4 +1,4 @@
-package game;
+package game.model;
 //Methods obained from the URL Doctor Buckner provided
 
 import java.nio.ByteBuffer;

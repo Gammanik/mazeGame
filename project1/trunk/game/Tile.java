@@ -13,6 +13,8 @@ import java.util.ArrayList;
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 
+import game.model.FileManager;
+
 public class Tile extends JLabel {
 
 	private int angle;

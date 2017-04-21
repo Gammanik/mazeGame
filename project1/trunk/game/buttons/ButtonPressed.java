@@ -11,10 +11,10 @@ import java.util.ArrayList;
 import javax.swing.JComponent;
 import javax.swing.JLabel;
 
-import game.FileManager;
 import game.Line;
 import game.PlayArea;
 import game.Tile;
+import game.model.FileManager;
 
 public class ButtonPressed implements ActionListener
   {
