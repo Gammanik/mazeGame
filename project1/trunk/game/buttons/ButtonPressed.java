@@ -5,11 +5,15 @@ import java.awt.Component;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.swing.JComponent;
 import javax.swing.JLabel;
+import javax.swing.JMenuItem;
+import javax.swing.JPopupMenu;
 
 import game.Line;
 import game.PlayArea;
@@ -124,7 +128,25 @@ public class ButtonPressed implements ActionListener
               }
               
           }
-
-      }
+        
+        if(currentButton.getName().equalsIgnoreCase("Load")) {
+          
+          System.out.println("load");
+          JPopupMenu popup = new JPopupMenu();
+          JMenuItem menuItem = new JMenuItem("A popup menu item");
+          //TODO: Pull a list of maze files 
+          //menuItem.addActionListener(this);
+          popup.add(menuItem);
+          menuItem = new JMenuItem("Another popup menu item");
+          menuItem.addActionListener(this);
+          popup.add(menuItem);
+          
+          currentButton.add(popup);
+          
+          popup.show(currentButton, 20, 40);        
+        
+        }
 
   }
+    
+}
