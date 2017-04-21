@@ -16,7 +16,7 @@ public class FileManager {
   private String fileLocation = "./trunk/game/mazeFiles/";
   
  
-FileManager() {
+public FileManager() {
   //TODO:? make it a singleton?
 }
 
@@ -118,6 +118,7 @@ public void readFile(String name) throws IOException {
     }
    catch (FileNotFoundException e) 
       {
+     //TODO: popup menu letting type the name
      System.exit(0);
      e.printStackTrace();
   

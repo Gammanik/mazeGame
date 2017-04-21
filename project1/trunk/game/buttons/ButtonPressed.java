@@ -1,4 +1,4 @@
-package game;
+package game.buttons;
 
 import java.awt.Color;
 import java.awt.Component;
@@ -10,6 +10,11 @@ import java.util.ArrayList;
 
 import javax.swing.JComponent;
 import javax.swing.JLabel;
+
+import game.FileManager;
+import game.Line;
+import game.PlayArea;
+import game.Tile;
 
 public class ButtonPressed implements ActionListener
   {

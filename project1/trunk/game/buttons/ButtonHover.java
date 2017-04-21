@@ -1,4 +1,4 @@
-package game;
+package game.buttons;
 
 import java.awt.Color;
 import java.awt.Point;

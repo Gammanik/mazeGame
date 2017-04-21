@@ -7,6 +7,8 @@ import java.awt.Insets;
 
 import javax.swing.JPanel;
 
+import game.buttons.MenuButton;
+
 
 // the menu class is a panel that contains the
 // new game, reset, and exit buttons
