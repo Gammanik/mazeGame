@@ -5,10 +5,10 @@ import java.awt.Component;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JComponent;
 import javax.swing.JLabel;
@@ -24,6 +24,7 @@ public class ButtonPressed implements ActionListener
   {
 
     private int click = 0;
+    private final String mazeFilesLocation = FileManager.fileLocation;
 
     @Override
     public void actionPerformed(ActionEvent e)
@@ -132,21 +133,42 @@ public class ButtonPressed implements ActionListener
         if(currentButton.getName().equalsIgnoreCase("Load")) {
           
           System.out.println("load");
-          JPopupMenu popup = new JPopupMenu();
-          JMenuItem menuItem = new JMenuItem("A popup menu item");
-          //TODO: Pull a list of maze files 
-          //menuItem.addActionListener(this);
-          popup.add(menuItem);
-          menuItem = new JMenuItem("Another popup menu item");
-          menuItem.addActionListener(this);
-          popup.add(menuItem);
-          
-          currentButton.add(popup);
-          
-          popup.show(currentButton, 20, 40);        
+          showFilesPopup(currentButton);
         
         }
-
+       
   }
+    
+    
+    private void showFilesPopup(MenuButton button) {
+      JPopupMenu popup = new JPopupMenu();
+
+      //TODO: Pull a list of maze files 
+      ArrayList<String> files = getListOfFiles();
+      
+      for(String file: files) {
+        JMenuItem menuItem = new JMenuItem(file);
+        popup.add(menuItem);
+      }
+      
+      button.add(popup);
+      
+      popup.show(button, 20, 40); 
+    }
+    
+    private ArrayList<String> getListOfFiles() {
+      File folder = new File(mazeFilesLocation);
+      File[] listOfFiles = folder.listFiles();
+      ArrayList<String> fileNames = new ArrayList<String>();
+
+      for (int i = 0; i < listOfFiles.length; i++) {
+        if (listOfFiles[i].isFile()) { //can do if listOfFiles[i].isDirectory() too
+          //System.out.println("File " + listOfFiles[i].getName());
+          fileNames.add(listOfFiles[i].getName());   
+        }
+      }
+          
+      return fileNames;
+    }
     
 }

@@ -15,7 +15,7 @@ public class FileManager {
   static public int rotation[] = new int[32];
   static public int saveRotation[] = new int[32];
   private String fileName;
-  private String fileLocation = "./trunk/game/mazeFiles/";
+  public static String fileLocation = "./trunk/game/mazeFiles/";
   
  
 public FileManager() {
